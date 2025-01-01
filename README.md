@@ -1,4 +1,3 @@
-Sure! Here's the updated `README.md` to include the integration with Fresha for managing bookings:
 
 ---
 
