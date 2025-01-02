@@ -522,12 +522,16 @@ aside .sidebar {
     align-items: start;
     justify-content: center;
     justify-items: center;
-    padding: 0px 100px 20px 40px;
+    padding: 0px 2px 20px 20px;
     font-family: 'DM Sans';
     background-image: linear-gradient(90deg, rgba(79, 73, 55, 0.859)100%, rgba(83, 79, 51, 0.768)70%);
 }
 
 #sectionAboutUs #aboutIntroContent{
+    margin: 0px 10px 10px 10px;
+}
+
+#sectionAboutUs #aboutMoreContent{
     margin: 0px 10px 10px 10px;
 }
 
@@ -557,14 +561,95 @@ aside .sidebar {
 }
 
 @media only screen and (max-width: 990px){
+    #sectionAboutUs{
+        padding: 0px 10px 10px 10px;
+    }
     #sectionAboutUs .header-text{
         font-size: 30px;
     }
     #sectionAboutUs .sub-header-text{
         font-size: 15px;
     }
+    #sectionAboutUs .container-right-picture{
+        width: 220px;
+        height: 250;
+        margin: 50px 20px 0 80px;
+    }
+    #sectionAboutUs .image{
+        height: 380px;
+        width: 300px;
+        margin: -50px 0px 0px -80px;
+        background-size: 110% 130%;
+    }
 
 } 
+
+@media only screen and (max-width: 803px) {
+    #sectionAboutUs{
+        padding: 0px 10px 10px 10px;
+    }
+    #sectionAboutUs .title-text{
+        font-size: 14px;
+    }
+    #sectionAboutUs .header-text{
+        font-size: 27px;
+    }
+    #sectionAboutUs .sub-header-text{
+        font-size: 13px;
+    }
+    #sectionAboutUs .container-right-picture{
+        width: 220px;
+        height: 200;
+        margin: 50px 10px 0 50px;
+        max-height: 250px;
+    }
+    #sectionAboutUs .image{
+        height: 300px;
+        width: 200px;
+        margin: -50px -10px 0px -50px;
+        background-size: 110% 130%;
+    }
+    #sectionAboutUs button{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #sectionAboutUs .header-text{
+        font-size: 16px;
+    }
+    #sectionAboutUs .sub-header-text{
+        font-size: 11px;
+        margin-top: -5px;
+    }
+    #sectionAboutUs .title-text{
+        font-size: 12px;
+    }
+    #sectionAboutUs .container-right-picture{
+        width: 220px;
+        height: 200;
+        margin: 40px 0 0 20px;
+        max-height: 250px;
+    }
+    #sectionAboutUs .image{
+        height: 300px;
+        width: 200px;
+        margin: -40px -8px 0px -25px;
+        background-size: 90% 110%;
+    }
+    #sectionAboutUs button{
+        font-size: 10px;
+        padding: 7px 10px;
+        margin: 0;
+    }
+    #sectionAboutUs #aboutIntroContent{
+        margin: 10px 5px 10px 5px;
+    }
+    
+    #sectionAboutUs #aboutMoreContent{
+        margin: 10px 5px 10px 5px;
+    }
+}
 
 
 
