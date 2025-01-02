@@ -1,0 +1,534 @@
+/*  01. Reset Section  */
+
+header {
+    padding: 0 0;
+    margin: 0 0;
+}
+
+.headerindex {
+    background-color: #302E2C;
+    background-position: center;
+    block-size: cover;
+    position: fixed;
+    z-index: 100000;
+}
+
+@keyframes dropHeader {
+    0% {
+        transform: translateY(-100%)
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1, 1)
+    }
+
+    50% {
+        transform: scale(1.2, 1.2)
+    }
+
+    100% {
+        transform: scale(1, 1)
+    }
+}
+
+.navbar {
+    background-position: center;
+    block-size: cover;
+    display: flex;
+    align-items:start;
+    justify-content:space-evenly;
+    max-width: 1320px;
+    width: 100%;
+    height: 65px;
+    background-color: #D4AC52;
+    overflow: visible;
+    top: 0;
+    left: 0;
+    padding: 0;
+    animation-name: dropHeader;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    position: fixed;
+    transition: transform 0.75s ease;
+    z-index: 20;
+}
+.left-nav-section{
+    width: 110px;
+    height: 90px;
+    padding: 5px 45px 5px 15px;
+    left: 0;
+    background-color: #1A5B38;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 80% 100%, 0% 100%, 0% 0%);
+}
+.navbar-container {
+    top: 0;
+    gap: 50px;
+    align-items: end;
+    justify-content: end;
+    flex-direction: row;
+    overflow: hidden;
+    width: 100%;
+    background-color: #1A5B38;
+    padding: 5px 20px;
+}
+
+.navbar-logo {
+    margin-right: 25px;
+    height: 110px;
+    width: 130px;
+    top: 5px;
+    padding: 3px;
+    overflow: hidden;
+}
+
+.navbar-logo img{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#btnToggleSideNavbar {
+    /*--border: 1px solid #737373; */
+    background-image: linear-gradient(90deg, #ebce27cb, #fdfacdcd, #ebce27c5);
+    background-size: 300% 100%;
+    animation: flicker 6s linear infinite;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: #000000;
+    cursor: pointer;
+    display: none;
+    height: 35px;
+    width: 45px;
+    transition: color 0.9s, background-image 0.3s;
+}
+
+#btnToggleSideNavbar:hover {
+    background: inherit;
+    border: 1px solid #D4AC52;
+    transition: all 0.3s ease;
+    color: #D4AC52;
+}
+
+.navbar-toggler span {
+    color: white;
+    font-size: 18px;
+}
+.navbar-items {
+    gap: 20px;
+}
+
+.navbar-items li{
+    list-style: none;
+}
+/* Navigation text */
+.nav-link {
+    font-weight: bolder;
+    color: white;
+    font-style: bold;
+    max-lines: 1;
+    text-decoration: none;
+    font-family: 'DM Sans';
+    font-size: small;
+    text-decoration: underline 3px;
+    text-decoration-color: #1A5B38;
+    text-underline-offset: 7px;
+    transition: text-decoration 0.9s, color 0.9s, display 0.9s;
+}
+
+@keyframes flicker {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+.active,
+.nav-link:is(:hover, :focus-visible) {
+    background: linear-gradient(90deg, #EBCE27, #FDFACD, #EBCE27);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: flicker 15s linear infinite;
+    text-decoration: underline 3px;
+    text-decoration-color: #EBCE27;
+    text-underline-offset: 7px;
+    transition: text-decoration 0.9s ease-in-out;
+}
+/* Sidepanel */
+/* Sidebar Styling */
+aside {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -320px;
+    background-color: #646262; /* Sidebar background */
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    color: white; /* Default text color */
+}
+
+aside .sidebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.sidepanel .sidebar img {
+    max-width: 100px;
+}
+
+.sidepanel .sidebar .closebtn {
+    background-image: linear-gradient(90deg, #B07614, #fdfacdcd, #B07614);
+    background-size: 300% 100%;
+    animation: flicker 6s linear infinite;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: #000000;
+    cursor: pointer;
+    display: block;
+    height: 35px;
+    width: 45px;
+    transition: color 0.9s, background-image 0.3s;
+    cursor: pointer;
+    top: -10px;
+    right: 0;
+}
+
+.sidepanel .sidebar .closebtn:hover {
+    background: inherit;
+    border: 1px solid #D4AC52;
+    transition: all 0.3s ease;
+    color: #D4AC52;
+}
+
+.sidepanel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidepanel ul li {
+    width: 100%;
+}
+
+.sidepanel ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 12px;
+    color: white; /* Text color */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#btnAsideBookApointment{
+    margin: 10px 20px;
+    box-shadow: none;
+    background: linear-gradient(90deg, #B07614, #fffbc1, #B07614, #fffbc1, #B07614);
+    background-size: 300% 100%;
+    animation: flicker infinite linear infinite;
+}
+@media only screen and (max-width: 946px) {
+    .navbar {
+        height: 65px;
+    }
+    .navbar-container{
+        gap: 20px;
+    }
+    .navbar-items {
+        gap: 10px;
+    }
+    .nav-link {
+        font-size: 11px;
+    }
+    .left-nav-section{
+        width: 110px;
+        height: 90px;
+    }
+    .navbar-logo {
+        height: 110px;
+        width: 130px;
+    }
+    .flickering-button {
+        font-size: x-small;
+        padding: 3px 15px;
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .navbar {
+        height: 55px;
+    }
+    .navbar-container{
+        gap: 5px !important;
+        padding: 0px 20px;
+        height: 52px !important;
+        overflow: hidden !important;
+    }
+    .navbar-items {
+        gap: 5px;
+    }
+    .nav-link {
+        font-size: 9px;
+    }
+    .left-nav-section{
+        width: 90px;
+        height: 70px;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 80% 100%, 0% 100%, 0% 0%);
+    }
+    .navbar-logo {
+        height: 110px;
+        width: 130px;
+    }
+    .flickering-button {
+        border-radius: 2px; /* Smooth rounded corners */
+        font-size: 10px;
+        padding: 2px 15px;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    /** Hide horizontal top navbar **/
+    .navbar-items li{
+        display: none;
+    }
+    #btnBookApointment{
+        display: none;
+    }
+    #btnToggleSideNavbar{
+        display: block;
+    }
+    .left-nav-section{
+        width: 62px;
+        height: 42px;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 100% 100%, 0% 100%, 0% 0%);
+    }
+    .navbar-logo {
+        height: 110px;
+        width: 130px;
+    }
+}
+
+/*** HOME DESIGN ***/
+#sectionHome{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.8)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/home-back-photo.jpeg);
+    margin-top: 60px;
+}
+#sectionHome .home-container{
+    margin: 0px 100px 20px 120px;
+}
+#sectionHome .home-container .header-text{
+    font-size: 50px;
+    font-weight: bolder;
+    color: #FFD700;
+    max-width: 750px;
+    text-align: start;
+}
+#sectionHome .home-container .sub-header-text{
+    font-size: 25px;
+    font-weight: bolder;
+    color: #D0D0D0;
+    max-width: 750px;
+    text-align: start;
+    margin-top: -30px;
+}
+#sectionHome .home-container .h-layout{
+    width: fit-content;
+    align-items: center;
+    justify-content: space-between;
+}
+#sectionHome .home-container .h-layout .v-layout{
+    align-items: center;
+    justify-content: center;
+}
+#sectionHome .flickering-text{
+    margin: 0 10px 0;
+    font-size: 50px;
+}
+#sectionHome .description{
+    margin: 0 10px 0;
+    text-align: left;
+    color: white;
+    max-width: 90px;
+    font-size: 14px;
+    font-weight: bold;
+}
+#sectionHome img{
+    height: 100px;
+    width: 5px;
+    margin: 0 10px 10px;
+}
+#sectionHome #btnBookAppointment{
+    min-width: fit-content;
+    margin: 35px 20px;
+    background: linear-gradient(90deg, #B07614, #fffbc1, #B07614, #fffbc1, #B07614);
+    background-size: 300% 100%;
+    animation: flicker 15s linear infinite;
+}
+#sectionHome #btnExploreServices{
+    min-width: fit-content;
+    margin: 35px 20px;
+    background: linear-gradient(90deg, #B07614, #fffbc1, #B07614, #fffbc1, #B07614);
+    background-size: 300% 100%;
+    animation: flicker 15s linear infinite;
+}
+
+#sectionHome .container-right-pic{
+    background-color: #4a3801;
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    margin: 15px 15px 0;
+}
+#sectionHome .image{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/owner.jpeg);
+    border-radius: 20px;
+    border: 0.5px solid #EBCE27;
+    border-color: #EBCE27;
+    height: 550px;
+    width: 400px;
+    margin: -25px 10px 10px -25px;
+    background-size: 110% 130%;
+}
+
+@media only screen and (max-width: 1068px) {
+    #sectionHome .home-container{
+        margin: 0px 50px 20px 100px;
+    }
+    #sectionHome .home-container .header-text{
+        font-size: 40px;
+    }
+    #sectionHome .home-container .sub-header-text{
+        font-size: 20px;
+    }
+    #sectionHome .flickering-text{
+        font-size: 40;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    #sectionHome{
+        margin-top: 55px;
+    }
+    #sectionHome .home-container{
+        margin: 0px 20px 10px 50px;
+    }
+    #sectionHome .home-container .header-text{
+        font-size: 30px;
+    }
+    #sectionHome .home-container .sub-header-text{
+        font-size: 17px;
+        margin-top: -20px;
+    }
+    #sectionHome .flickering-text{
+        font-size: 30;
+    }
+    #sectionHome img{
+        height: 70px;
+        width: 3px;
+    }
+    #sectionHome .image{
+        height: 450px;
+        width: 350px;
+        background-size: 100% 120%;
+    }
+    #sectionHome .description{
+        font-size: 12.5px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    #sectionHome{
+        margin-top: 50px;
+    }
+    #sectionHome .home-container{
+        margin: 0px 10px 5px 30px;
+    }
+    #sectionHome .home-container .header-text{
+        font-size: 27px;
+    }
+    #sectionHome .home-container .sub-header-text{
+        font-size: 16px;
+        margin-top: -10px;
+    }
+    #sectionHome .flickering-text{
+        font-size: 25px;
+    }
+    #sectionHome img{
+        height: 50px;
+        width: 2.5px;
+    }
+    #sectionHome .image{
+        height: 400px;
+        width: 300px;
+        background-size: 80% 100%;
+    }
+    #sectionHome #btnBookAppointment, 
+    #sectionHome #btnExploreServices{
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width: 803px) {
+    #sectionHome .image{
+        height: 250px;
+        width: 180px;
+        background-size: 80% 100%;
+    }
+}
+@media only screen and (max-width: 803px) {
+    #sectionHome{
+        margin-top: 47px;
+    }
+    #sectionHome .container-right-pic,
+    #sectionHome .image{
+        display: none;
+    }
+    #sectionHome .home-container{
+        margin: 0px 10px 5px 10px;
+    }
+    #sectionHome #btnBookAppointment, 
+    #sectionHome #btnExploreServices{
+        font-size: 10px;
+        margin: 25px 10px;
+    }
+    #sectionHome .description{
+        font-size: 12px;
+    }
+}
+
+/***  ABOUT DESIGN ***/
+#sectionAboutUs{
+    background-color: #4F4B37;
+    margin-top: 0px;
+    align-items: start;
+    padding: 0px 100px 20px 40px;
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.8)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/home-back-photo.jpeg);
+}
+
+#sectionAboutUs #aboutIntroContent{
+    margin: 0px 10px 10px 10px;
+}
+
+
+
+
+

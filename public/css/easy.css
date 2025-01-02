@@ -1,0 +1,247 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* 02 Global Style  */
+
+h1 {
+    font-size: 75px;
+    font-weight: 800px;
+    line-height: 85px;
+}
+
+h2 {
+    font-size: 45px;
+    font-weight: 800px;
+    line-height: 51px;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: 800px;
+    line-height: 31px;
+}
+
+h4 {
+    font-size: 22px;
+    font-weight: 800px;
+    line-height: 28px;
+}
+
+h5 {
+    font-size: 20px;
+    font-weight: 600px;
+    line-height: 26px;
+}
+
+/* Flex Box */
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-space-betweeen {
+    justify-content: space-between;
+}
+
+.flex-start {
+    /* left side */
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+}
+
+.flex-end {
+    /* right side */
+    justify-content: flex-end !important;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+
+.flickering-button {
+    background: linear-gradient(90deg, #e6c300, #fffbc1, #e6c300, #fffbc1, #e6c300); /* Gradient background */
+    background-size: 300% 100%; /* Makes the gradient larger to enable animation */
+    border: none;
+    border-radius: 7px; /* Smooth rounded corners */
+    color: black;
+    font-size: small;
+    font-weight: bold;
+    padding: 8px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    outline: none;
+    animation: flicker 12s linear infinite; /* Smooth color shift animation */
+}
+
+.flickering-text {
+    font-size: 80px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #e6c300, #fffbc1, #e6c300);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: flicker 15s linear infinite;
+}
+
+.banner {
+    position: relative;
+    width: 400px;
+    height: 50px;
+    background: linear-gradient(to right, #a17d00, #d4af37); /* Gradient background */
+    clip-path: polygon(0% 0%, 100% 0%, 80% 50%, 100% 100%, 0% 100%, 20% 50%); /* Creates triangular ends */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+}
+
+/*<!--button class="flickering-button">Click Me</button>
+    <div class="flickering-text">10K+</div>
+    <div class="banner"></div>
+    <div class="background">
+        <div class="overlay">
+            <h1 class="see-through-text">Elixil</h1>
+        </div>
+    </div>
+    <div class="background">
+        <h1 class="hollow-text">Elixil</h1>
+    </div-->
+
+    <div class="container">
+        <div class="background"></div>
+        <h1 class="hollow-text">Elixil</h1>
+        <div class="overlay"></div>
+    </div>*/
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% color overlay */
+    z-index: 2;
+}
+
+.see-through-text {
+    font-size: 100px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: transparent;
+    background: linear-gradient(to right, #ffcc33, #ff6600, #ffcc33);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    letter-spacing: 5px;
+    z-index: 10;
+}
+
+.hollow-text {
+    width: 100px;
+    height: 150px;
+    position: relative;
+    font-size: 150px;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0); /* Outline of the text */
+    text-transform: uppercase;
+    z-index: 3;
+    background: url(../resources/elix.jpeg) no-repeat center center/cover;
+    -webkit-background-clip:text;
+    background-clip: text;
+    text-orientation:sideways-right;
+    rotate: 270deg;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(../resources/elix.jpeg) no-repeat center center/cover;
+        z-index: 1;
+        -webkit-mask-image: text("Elixil");
+        mask-image: text("Elixil");
+        background:repeat; 
+    }
+
+@keyframes flicker {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.flickering-button:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.section-container{
+    padding: 20px 0;
+    background-image: linear-gradient(90deg, rgba(235, 206, 39, 0.4)70%, rgba(235, 206, 39, 0.4)70%), url(/resources/background-image.jpeg);
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.v-layout{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+}
+
+.h-layout{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: fit-content;
+}
+
+.title-text{
+    font-size: 16px;
+    color: #FDFACD;
+    font-weight: bold;
+}
+
+.header-text{
+    font-size: 50px;
+    font-weight: bolder;
+    color: #FFD700;
+    max-width: 750px;
+    text-align: start;
+}
+
+.sub-header-text{
+    font-size: 25px;
+    font-weight: bolder;
+    color: #D0D0D0;
+    max-width: 750px;
+    text-align: start;
+    margin-top: -30px;
+}
