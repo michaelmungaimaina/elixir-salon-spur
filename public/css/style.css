@@ -4,6 +4,10 @@ header {
     padding: 0 0;
     margin: 0 0;
 }
+body {
+    padding: 0 0;
+    margin: 0 0;
+}
 
 .headerindex {
     background-color: #302E2C;
@@ -341,6 +345,8 @@ aside .sidebar {
     color: #FFD700;
     max-width: 750px;
     text-align: start;
+    transform: translateY(20px);
+      animation: fadeSlideUp 1.5s ease-out forwards;
 }
 #sectionHome .home-container .sub-header-text{
     font-size: 25px;
@@ -349,6 +355,8 @@ aside .sidebar {
     max-width: 750px;
     text-align: start;
     margin-top: -30px;
+    transform: translateY(20px);
+      animation: fadeSlideUp 1.5s ease-out forwards;
 }
 #sectionHome .home-container .h-layout{
     width: fit-content;
@@ -514,7 +522,16 @@ aside .sidebar {
         font-size: 12px;
     }
 }
-
+@keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 /***  ABOUT DESIGN ***/
 #sectionAboutUs{
     background-color: #4F4B37;
@@ -525,6 +542,8 @@ aside .sidebar {
     padding: 0px 2px 20px 20px;
     font-family: 'DM Sans';
     background-image: linear-gradient(90deg, rgba(79, 73, 55, 0.859)100%, rgba(83, 79, 51, 0.768)70%);
+    
+    width: 100%;
 }
 
 #sectionAboutUs #aboutIntroContent{
@@ -626,14 +645,14 @@ aside .sidebar {
         font-size: 12px;
     }
     #sectionAboutUs .container-right-picture{
-        width: 220px;
+        width: 190px;
         height: 200;
         margin: 40px 0 0 20px;
         max-height: 250px;
     }
     #sectionAboutUs .image{
         height: 300px;
-        width: 200px;
+        width: 170px;
         margin: -40px -8px 0px -25px;
         background-size: 90% 110%;
     }
