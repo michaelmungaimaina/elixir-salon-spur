@@ -520,14 +520,51 @@ aside .sidebar {
     background-color: #4F4B37;
     margin-top: 0px;
     align-items: start;
+    justify-content: center;
+    justify-items: center;
     padding: 0px 100px 20px 40px;
-    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.8)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/home-back-photo.jpeg);
+    font-family: 'DM Sans';
+    background-image: linear-gradient(90deg, rgba(79, 73, 55, 0.859)100%, rgba(83, 79, 51, 0.768)70%);
 }
 
 #sectionAboutUs #aboutIntroContent{
     margin: 0px 10px 10px 10px;
 }
 
+#sectionAboutUs .header-text{
+    margin-top: -10px;
+}
+
+#sectionAboutUs .sub-header-text{
+    text-align: justify;
+}
+#sectionAboutUs button{
+    width: fit-content;
+    margin: 10px 10px 10px 10px;
+    background: linear-gradient(90deg, #B07614, #fffbc1, #B07614, #fffbc1, #B07614);
+    background-size: 300% 100%;
+    animation: flicker 15s linear infinite;
+}
+
+#sectionAboutUs .container-right-picture{
+    margin: 70px 20px 0 100px;
+    max-height: 330px;
+}
+
+#sectionAboutUs .image{
+    margin: -70px 0px 0px -100px;
+    background-size: 110% 130%;
+}
+
+@media only screen and (max-width: 990px){
+    #sectionAboutUs .header-text{
+        font-size: 30px;
+    }
+    #sectionAboutUs .sub-header-text{
+        font-size: 15px;
+    }
+
+} 
 
 
 

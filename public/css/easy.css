@@ -230,7 +230,7 @@ h5 {
 }
 
 .header-text{
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bolder;
     color: #FFD700;
     max-width: 750px;
@@ -238,10 +238,27 @@ h5 {
 }
 
 .sub-header-text{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bolder;
     color: #D0D0D0;
     max-width: 750px;
     text-align: start;
     margin-top: -30px;
+}
+
+.container-right-picture{
+    background: radial-gradient(circle, #B07614, #fffbc1, #B07614, #fffbc1, #B07614);
+    padding: 20px;
+    width: 250px;
+    height: 250;
+    border-radius: 20px;
+    overflow: visible;
+}
+.image{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/owner.jpeg);
+    border-radius: 20px;
+    border: 0.5px solid #EBCE27;
+    border-color: #EBCE27;
+    height: 400px;
+    width: 350px;
 }
