@@ -335,6 +335,7 @@ aside .sidebar {
 #sectionHome{
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.8)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/home-back-photo.jpeg);
     margin-top: 60px;
+    transition: background-image 3s ease-in-out;
 }
 #sectionHome .home-container{
     margin: 0px 100px 20px 120px;

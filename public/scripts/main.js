@@ -1,5 +1,6 @@
 // Component initialization
 const serviceList = document.getElementById('serviceList');
+const sectionHome = document.getElementById('sectionHome');
 
 document.addEventListener("DOMContentLoaded", () => {
     const serviceList = document.querySelectorAll(".service-card .list-item");
@@ -45,7 +46,7 @@ function animateAddition() {
                     const topPosition = serviceDetail.offsetTop - offset;
                     window.scrollTo({ top: topPosition, behavior: 'smooth' });
                 } else {
-                    alert(`Service details for ${service} not found.`);
+                    alert(`Service details for ${service} not found.\n Please Click the button Below for more Details.`);
                 }
             });
             banner.innerHTML = `<p>${service}</p>`;
@@ -67,3 +68,38 @@ function animateAddition() {
 
 // Start the animation
 animateAddition();
+
+// Function to initialize the backgrounds
+function createBackgroundLayer(url) {
+    const layer = document.createElement('div');
+    layer.classList.add('background-image');
+    layer.style.backgroundImage = `url(${url})`;
+    sectionHome.appendChild(layer);
+    return layer;
+}
+
+// Image background change
+const images = [
+    './resources/home-back-photo.jpeg',
+    './resources/home-back-photo1.jpeg',
+    './resources/home-back-photo2.jpeg'
+];
+
+let currentIndex = 0;
+
+function changeBackground() {
+    // Update the background-image using the current index
+    sectionHome.style.backgroundImage = `
+        linear-gradient(90deg, rgba(46, 35, 1, 0.8) 100%, rgba(235, 206, 39, 0.4) 70%), 
+        url(${images[currentIndex]})
+    `;
+    
+    // Increment the index and reset if it exceeds the array length
+    currentIndex = (currentIndex + 1) % images.length;
+}
+
+// Initialize the first background
+changeBackground();
+
+// Set the interval for background changes
+setInterval(changeBackground, 5000); // Change every 5 seconds
