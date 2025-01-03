@@ -95,10 +95,13 @@ h5 {
 
 .banner {
     position: relative;
-    width: 400px;
-    height: 50px;
+    display: flex;
+    justify-content: start;
+    width: 250px;
+    margin: 5px 0;
+    padding: 5px 0px 5px 80px;
     background: linear-gradient(to right, #a17d00, #d4af37); /* Gradient background */
-    clip-path: polygon(0% 0%, 100% 0%, 80% 50%, 100% 100%, 0% 100%, 20% 50%); /* Creates triangular ends */
+    clip-path: polygon(0% 0%, 100% 0%, 85% 50%, 100% 100%, 0% 100%, 15% 50%);;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
 }
 
@@ -118,7 +121,24 @@ h5 {
         <div class="background"></div>
         <h1 class="hollow-text">Elixil</h1>
         <div class="overlay"></div>
-    </div>*/
+    </div>
+    <div class="service-card">
+                        <div class="service-card-image"></div>
+                        <p class="service-card-title">Hair Care</p>
+                        <p class="service-card-description">From haircuts to coloring, our expert stylists will help you
+                            achieve the look you desire.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card-image"></div>
+                        <p class="service-card-title">Skin Care</p>
+                        <p class="service-card-description">Indulge in our range of facials, peels, and treatments to
+                            rejuvenate your skin.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card-image"></div>
+                        <p class="service-card-title">Spa Treatments</p>
+                        <p class="service-card-description">Relax and unwind with our selection of massages, scrubs, and
+                            wraps.</p>*/
 
 .overlay {
     position: absolute;
@@ -194,6 +214,13 @@ h5 {
 .flickering-button:hover {
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
     transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .section-container{
