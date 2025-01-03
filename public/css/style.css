@@ -535,7 +535,7 @@ aside .sidebar {
 /***  ABOUT DESIGN ***/
 #sectionAboutUs{
     background-color: #4F4B37;
-    margin-top: 0px;
+    margin-top: 0.3px;
     align-items: start;
     justify-content: center;
     justify-items: center;
@@ -547,11 +547,11 @@ aside .sidebar {
 }
 
 #sectionAboutUs #aboutIntroContent{
-    margin: 0px 10px 10px 10px;
+    margin: 0px 10px 10px 80px;
 }
 
 #sectionAboutUs #aboutMoreContent{
-    margin: 0px 10px 10px 10px;
+    margin: 0px 10px 10px 80px;
 }
 
 #sectionAboutUs .header-text{
@@ -669,6 +669,212 @@ aside .sidebar {
         margin: 10px 5px 10px 5px;
     }
 }
+
+/***  SERVICES DESIGN ***/
+#sectionOurServices{
+    background-color: #4F4B37;
+    margin-top: 0.3px;
+    align-items: start;
+    justify-content: center;
+    justify-items: center;
+    padding: 0px 2px 20px 20px;
+    font-family: 'DM Sans';
+    background-image: linear-gradient(90deg, rgba(79, 73, 55, 0.859)100%, rgba(83, 79, 51, 0.768)70%);
+    border-top: 1.5px solid #7D8489;
+    width: 100%;
+}
+
+#sectionOurServices .header-text{
+    margin-top: -5px;
+    margin-left: 80px;
+}
+
+/** SERVICE CATALOG **/
+#serviceCatalog .catalog-banner{
+    height: 30px;
+}
+#serviceCatalog .catalog-banner p{
+    color: white;
+    font-family: "DM Sans";
+    font-size: 15px;
+    font-weight: bold;
+}
+#serviceCatalog #serviceList{
+    margin: 0 0 0 30px;
+}
+#serviceCatalog #serviceList .h-layout{
+    margin-top: 15px;
+    width: 400px;
+    justify-content: space-between;
+    align-items: center;
+}
+#serviceCatalog .right-image{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv1.jpeg);
+}
+#serviceCatalog .right-image-two{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serve2.jpeg);
+}
+
+/** WAXING SERVICE **/
+#service-waxing-detail{
+    margin-top: 40px;
+    padding-top: 10px;
+    border-top: 1.5px solid #7D8489;
+}
+
+#service-waxing-detail .service-banner p{
+    color: white;
+    font-family: "DM Sans";
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#service-waxing-detail .service-card{
+    width: 350px;
+    margin: 20px 0 0 30px;
+    padding: 15px 30px;
+    background-color: #928769;
+    border-radius: 20px;
+}
+#service-waxing-detail .service-card .list-item{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+#service-waxing-detail .service-card .list-item p{
+    color: white;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-weight: bold;
+}
+#service-waxing-detail .service-card .list-item .top{
+    color: #FDFACD;
+    font-size: 16px;
+}
+#service-waxing-detail .right-image-container{
+    margin-top: 130px;
+}
+#service-waxing-detail .right-image{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv3.jpeg);
+}
+#service-waxing-detail .right-image-two{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv4.jpeg);
+    background-size: 150% 100%;
+}
+#btnBookWaxing{
+    margin: 25px 0px 30px 30px;
+}
+
+/** BODY SCRUB SERVICE **/
+#service-body-scrub-detail{
+    margin-top: 40px;
+    padding-top: 10px;
+    border-top: 1.5px solid #7D8489;
+}
+#service-body-scrub-detail .right-image-container{
+    margin-top: 130px;
+}
+#service-body-scrub-detail .right-image{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serve7.jpeg);
+}
+#service-body-scrub-detail .right-image-two{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serve2.jpeg);
+    background-size: 150% 100%;
+}
+#btnBookBodyScrub{
+    margin: 25px 0px 30px 30px;
+}
+
+/** HAIR SERVICE **/
+#service-hair-services-detail{
+    margin-top: 40px;
+    padding-top: 10px;
+    border-top: 1.5px solid #7D8489;
+}
+
+#service-hair-services-detail .right-image-container{
+    margin-top: 130px;
+}
+#service-hair-services-detail .right-image{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv8.jpeg);
+    background-size: 100% 100%;
+}
+#service-hair-services-detail .right-image-two{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv9.jpeg);
+    background-size: 100% 100%;
+}
+#btnBookHairServices{
+    margin: 25px 0px 30px 30px;
+}
+
+/** MAKE UP SERVICE **/
+#service-make-up-lashes-detail{
+    margin-top: 40px;
+    padding-top: 10px;
+    border-top: 1.5px solid #7D8489;
+}
+
+#service-make-up-lashes-detail .right-image-container{
+    margin-top: 130px;
+}
+#service-make-up-lashes-detail .right-image{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv10.jpeg);
+    background-size: 100% 100%;
+}
+#service-make-up-lashes-detail .right-image-two{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv11.jpg);
+    background-size: 150% 100%;
+}
+#btnBookMakeUp{
+    margin: 25px 0px 30px 30px;
+}
+
+/** EYEBROWS SERVICE **/
+#service-eyebrows-detail{
+    margin-top: 40px;
+    padding-top: 10px;
+    border-top: 1.5px solid #7D8489;
+}
+
+#service-eyebrows-detail .right-image-container{
+    margin-top: 130px;
+}
+#service-eyebrows-detail .right-image{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv12.jpg);
+    background-size: 100% 100%;
+}
+#service-eyebrows-detail .right-image-two{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serve13.jpg);
+    background-size: 100% 100%;
+}
+#btnBookEyebrows{
+    margin: 25px 0px 30px 30px;
+}
+
+/** MEN'S SERVICE **/
+#service-men-services-detail{
+    margin-top: 40px;
+    padding-top: 10px;
+    border-top: 1.5px solid #7D8489;
+}
+
+#service-men-services-detail .right-image-container{
+    margin-top: 130px;
+}
+#service-men-services-detail .right-image{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv15.jpeg);
+    background-size: 100% 100%;
+}
+#service-men-services-detail .right-image-two{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serve14.jpeg);
+    background-size: 100% 100%;
+}
+#btnBookMenServices{
+    margin: 25px 0px 30px 30px;
+}
+
+    
+
 
 
 
