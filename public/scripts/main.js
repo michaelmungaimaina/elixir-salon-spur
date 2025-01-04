@@ -14,6 +14,41 @@ document.addEventListener("DOMContentLoaded", () => {
             item.classList.add("visible");
         }, index * delay);
     });
+
+    const wrapper = document.querySelector("#sectionTestimonial .testimonial-scroll-wrapper");
+    const container = document.querySelector("#sectionTestimonial .testimonial-container");
+
+    // Duplicate content for infinite scrolling
+    const clone = wrapper.cloneNode(true);
+    clone.style.position = "absolute";
+    clone.style.left = `${wrapper.scrollWidth}px`; // Place it after the original content
+    container.appendChild(clone);
+
+    // Continuous scroll function
+    function continuousScroll() {
+        const wrapperWidth = wrapper.scrollWidth;
+
+        // Move the wrapper
+        wrapper.style.transform = `translateX(${-wrapperWidth}px)`;
+        wrapper.style.transition = `transform 20s linear`;
+
+        // Move the clone after the wrapper scroll completes
+        clone.style.transform = `translateX(${-wrapperWidth}px)`;
+        clone.style.transition = `transform 20s linear`;
+
+        // Reset position after transition ends
+        setTimeout(() => {
+            wrapper.style.transition = "none";
+            clone.style.transition = "none";
+            wrapper.style.transform = `translateX(0)`;
+            clone.style.transform = `translateX(0)`;
+
+            continuousScroll(); // Restart scroll
+        }, 20000); // Match the transition duration
+    }
+
+    // Start the scroll
+    continuousScroll();
 });
 
 // Add event listener for scrolling

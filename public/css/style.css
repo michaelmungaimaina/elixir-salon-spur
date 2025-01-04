@@ -1014,7 +1014,7 @@ textarea{
 
 #sectionPromotion .v-layout{
     border-radius: 10px;
-    margin: 5px 20px;
+    margin: 5px 5px;
     padding: 5px 15px;
     width: 250px;
     height: 310px;
@@ -1072,12 +1072,12 @@ textarea{
     position: relative;
     display: flex; /* Enables horizontal alignment */
     align-items: center;
-    overflow: hidden;
 }
 #sectionTestimonial .testimonial-container .testimonial-scroll-wrapper {
     display: flex; /* Arrange items horizontally */
-    animation: horizontalScroll 70s linear infinite; /* Horizontal scroll animation */
-    position: relative;
+    animation: none; /* Horizontal scroll animation */
+    width: max-content; /* Allow content to expand indefinitely */
+    position: relative; /* Ensure proper positioning */
 }
 #sectionTestimonial .testimonial-container .card-rating{
     border-radius: 10px;
