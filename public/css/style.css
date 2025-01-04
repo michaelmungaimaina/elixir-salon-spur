@@ -874,6 +874,345 @@ aside .sidebar {
     margin: 25px 0px 30px 30px;
 }
 
+
+/** BOOKING SECTION **/
+#sectionBooking{
+    background-color: #4F4B37;
+    margin-top: 0.3px;
+    align-items: start;
+    justify-content: center;
+    justify-items: center;
+    padding: 0px 2px 20px 20px;
+    background-image: linear-gradient(90deg, rgba(79, 73, 55, 0.859)100%, rgba(83, 79, 51, 0.768)70%);
+    border-top: 1.5px solid #7D8489;
+    width: 100%;
+}
+
+#sectionBooking .header-text{
+}
+#sectionBooking .h-layout{
+    margin-left: 80px;
+}
+#sectionBooking h5{
+    margin-top: 20px;
+    margin-bottom: 60px;
+    font-size: 25px;
+}
+
+/** CONTACT SECTION **/
+#sectionContactUs{
+    background-color: #4F4B37;
+    margin-top: 0.3px;
+    align-items: start;
+    justify-content: center;
+    justify-items: center;
+    padding: 0px 2px 20px 20px;
+    background-image: linear-gradient(90deg, rgba(79, 73, 55, 0.859)100%, rgba(83, 79, 51, 0.768)70%);
+    border-top: 1.5px solid #7D8489;
+    width: 100%;
+}
+#sectionContactUs .header-text{
+    margin-left: 80px;
+}
+#sectionContactUs .right-col .h-layout p{
+    text-align: start;
+    font-family: DN Sans;
+    color: #D0D0D0;
+    text-align: start;
+}
+#sectionContactUs .right-col{
+    width: 400px;
+    margin-left: 80px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+#sectionContactUs .right-col .h-layout{
+    height: 30px;
+    width: 250px;
+    align-items: center;
+    justify-content: space-between;
+}
+#sectionContactUs .card-form{
+    background-color:#838e4961;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-left: 50px;
+}
+#sectionContactUs .card-form p{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 250px;
+    text-align: justify;
+}
+#sectionContactUs .card-form h6{
+    font-size: larger;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    color: #FDFACD;
+    font-family: "DM Sans";
+}
+label{
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "DM Sans";
+    text-align: start;
+    margin: 0 0 5px;
+}
+input{
+    width: 250px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+textarea{
+    min-width: 250px;
+    max-width: 350px;
+    width: 250px;
+    min-height: 50px;
+    max-height: 500px;
+    border-radius: 5px;
+}
+#btnSubmitContact{
+    width: 100%;
+    margin: 20px 0 20px;
+}
+
+/** WORK SECTION **/
+#sectionWorkWithUs{
+    background-color: #4F4B37;
+    margin-top: 0.3px;
+    align-items: start;
+    justify-content: center;
+    justify-items: center;
+    padding: 0px 2px 20px 20px;
+    background-image: linear-gradient(90deg, rgba(79, 73, 55, 0.859)100%, rgba(83, 79, 51, 0.768)70%);
+    border-top: 1.5px solid #7D8489;
+    width: 100%;
+}
+
+/** WORK SECTION **/
+#sectionPromotion{
+    background-color: #4F4B37;
+    margin-top: 0.3px;
+    align-items: start;
+    justify-content: center;
+    justify-items: center;
+    padding: 0px 2px 20px 20px;
+    background-image: linear-gradient(90deg, rgba(79, 73, 55, 0.859)100%, rgba(83, 79, 51, 0.768)70%);
+    border-top: 1.5px solid #7D8489;
+    width: 100%;
+}
+#sectionPromotion .header-text{
+    margin-left: 80px;
+}
+#sectionPromotion .h-layout{
+    margin-left: 80px;
+    justify-content: space-around;
+    justify-items: center;
+}
+
+#sectionPromotion .v-layout{
+    border-radius: 10px;
+    margin: 5px 20px;
+    padding: 5px 15px;
+    width: 250px;
+    height: 310px;
+    background-color: #292820;
+}
+#sectionPromotion .fill-outer{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#sectionPromotion #offerTitle{
+    color: #FFD700;
+    font-size: 30px;
+    font: bold;
+}
+#sectionPromotion #offerBody{
+    color: #FDFACD;
+    font-size: 25px;
+    font: bold;
+}
+#sectionPromotion #btnClaimOffer{
+    margin-bottom: 10px;
+}
+#sectionPromotion .sub-header-text{
+    margin-left: 80px;
+}
+
+#sectionPromotion #btnBookApointment{
+    margin-left: 80px;
+}
+
+/** TESTIMONIAL SECTION **/
+#sectionTestimonial{
+    background-color: #4F4B37;
+    margin-top: 0.3px;
+    align-items: start;
+    justify-content: center;
+    justify-items: center;
+    padding: 0px 2px 20px 20px;
+    background-image: linear-gradient(90deg, rgba(79, 73, 55, 0.859)100%, rgba(83, 79, 51, 0.768)70%);
+    border-top: 1.5px solid #7D8489;
+    width: 100%;
+}
+#sectionTestimonial .header-text,
+#sectionTestimonial .h-layout{
+    margin-left: 80PX;
+}
+#sectionTestimonial .card-rating{
+    border-radius: 10px;
+    margin: 5px 20px;
+    padding: 5px 15px;
+    width: 250px;
+    height: 310px;
+    background-color: #292820;
+    align-items: start;
+}
+
+#sectionTestimonial #clientName{
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: start;
+}
+#sectionTestimonial #type{
+    color: #FDFACD;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: start;
+    margin-top: -7px;
+    margin-left: 10px;
+}
+#sectionTestimonial #clientComment{
+    color: #D0D0D0;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: justify;
+    margin-top: -1px;
+    margin-left: 10px;
+}
+#sectionTestimonial .card-rating .h-layout{
+    width: fit-content;
+    align-items: start;
+    margin-left: 5px;
+}
+#sectionTestimonial .card-rating img{
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+}
+#sectionTestimonial #feedBack{
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: start;
+}
+#sectionTestimonial #feedback{
+    color: #D0D0D0;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: justify;
+    margin-top: -1px;
+    margin-left: 10px;
+}
+
+/** FOOTER SECTION **/
+footer{
+    background-color: #181813;
+    margin-top: 0.3px;
+    align-items: start;
+    justify-content: center;
+    justify-items: center;
+    padding: 30px 0px 0px 0px;
+    border-top: 1.5px solid #7D8489;
+    width: 100%;
+}
+footer .h-footer{
+    width: 90%;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+footer .image-logo{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.0)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/elixir_logo.png);
+    border-radius: 20px;
+    /*border: 0.1px solid #EBCE27;*/
+    background-position: center;
+    background-size: 100% 99%;
+    height: 210px;
+    width: 200px;
+    margin-top: 20px;
+}
+
+footer .contact{
+    margin: 0 20px;
+    /*border: 0.1px solid #EBCE27;*/
+    padding: 0 10px;
+}
+footer .contact i{
+    color: white;
+    font-size: 15px;
+    margin: 0 0 7px 0;
+    font-family: DM Sans;
+}
+footer .contact .v-layout{
+    margin-left: 5px;
+}
+footer .contact .v-layout p{
+    color: white;
+    margin: 0 0 7px 0;
+    font-size: 15px;
+    font-family: DM Sans;
+}
+
+footer .q-link{
+    /*border: 0.1px solid #EBCE27;*/
+    margin: 0 20px;
+    padding: 0 10px;
+}
+footer .q-link a{
+    color: #D0D0D0;
+    font-size: 19px;
+    margin-bottom: 9px;
+    text-decoration: none;
+    transition: color 0.4s ease;
+    font-family: DM Sans;
+}
+footer .q-link a:hover{
+    color: #D4AC52;
+}
+
+footer .gallery{
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.0)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/elixir_logo.png);
+    border-radius: 20px;
+    /*border: 0.1px solid #EBCE27;*/
+    background-position: center;
+    background-size: 100% 99%;
+    height: 210px;
+    width: 200px;
+    margin-top: 5px;
+}
+
+footer .bottom{
+    background-color: #1A5B38;
+    justify-content: center;
+    width: 100%;
+}
+footer .bottom p{
+    color: wheat;
+    margin-right: 100px;
+    font-family: DM Sans;
+}
+footer .bottom p a{
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFD700;
+}
     
 
 

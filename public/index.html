@@ -348,8 +348,8 @@
                 </div>
                 <div class="v-layout service-card">
                     <div class="h-layout list-item">
-                        <p>SERVICE DESCRIPTION</p>
-                        <p>PRICE</p>
+                        <p class="top">SERVICE DESCRIPTION</p>
+                        <p class="top">PRICE</p>
                     </div>
                     <div class="h-layout list-item">
                         <p>OWN MAKE-UP</p>
@@ -410,8 +410,8 @@
                 </div>
                 <div class="v-layout service-card">
                     <div class="h-layout list-item">
-                        <p>SERVICE DESCRIPTION</p>
-                        <p>PRICE</p>
+                        <p class="top">SERVICE DESCRIPTION</p>
+                        <p class="top">PRICE</p>
                     </div>
                     <div class="h-layout list-item">
                         <p>MICROBLADING</p>
@@ -464,8 +464,8 @@
                 </div>
                 <div class="v-layout service-card">
                     <div class="h-layout list-item">
-                        <p>SERVICE DESCRIPTION</p>
-                        <p>PRICE</p>
+                        <p class="top">SERVICE DESCRIPTION</p>
+                        <p class="top">PRICE</p>
                     </div>
                     <div class="h-layout list-item">
                         <p>HAIRCUT</p>
@@ -515,9 +515,211 @@
         </div>
         <!--END-->
     </section>
+
+    <!-- GALLERY SECTION -->
     <section id="sectionGallery" class="section-container"></section>
-    <section id="sectionContactUs" class="section-container"></section>
-    <section id="sectionWorkWithUs" class="section-container"></section>
+
+    <!-- BOOKING SECTION -->
+    <section id="sectionBooking" class="section-container">
+        <p class="title-text">BOOKING</p>
+        <div class="h-layout">
+            <div class="v-layout">
+                <p class="header-text">Book Your Experience Today</p>
+                <h5 class="sub-header-text">Team of Professionals is Waiting for You.</h5>
+                <p class="sub-header-text">Choose your service, select a date and time,
+                    and confirm your appointment in minutes
+                </p>
+                <button class="flickering-button booking-btn">CLICK TO CONTINUE</button>
+            </div>
+            <div class="container-right-picture right-image-container">
+                <div class="image right-image"></div>
+            </div>
+            <div class="container-right-picture right-image-container">
+                <div class="image right-image-two"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="sectionContactUs" class="section-container">
+        <p class="title-text">CONTACT US</p>
+        <h3 class="header-text">We'd Love to Hear from You.</h3>
+        <div class="h-layout">
+            <div class="v-layout right-col">
+                <p class="sub-header-text">We are here to answer all
+                    your questions and assist with your bookings. Feel
+                    free to contact us anytime!
+                </p>
+                <p class="title info">Contact Info:</p>
+                <div class="h-layout">
+                    <p class="title">Email:</p>
+                    <p>info@elixirsalonandspa.co.ke</p>
+                </div>
+                <div class="h-layout">
+                    <p class="title">Phone:</p>
+                    <p>+254 717 733 000</p>
+                </div>
+                <div class="h-layout">
+                    <p class="title">Whatsapp: </p>
+                    <p>+254 717 733 000</p>
+                </div>
+                <p class="title info">Social Media Links:</p>
+                <div class="h-layout">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="v-layout card-form">
+                <p>Please fill out the form below, and we'll
+                    get back to you as soon as possible
+                </p>
+                <h6>FILL THE FORM</h6>
+                <form method="post" action="submit" class="v-layout">
+                    <label for="fullName">FULL NAME</label>
+                    <input id="fullName" type="text" placeholder="Enter Your Full Name Here!">
+                    <label for="clientEmail">ENTER EMAIL</label>
+                    <input id="clientEmail" type="email" placeholder="Enter Your Email Here!">
+                    <label for="phone">ENTER PHONE NUMBER</label>
+                    <input id="phone" type="tel" placeholder="Enter Your Phone Number Here!">
+                    <label for="message">FULL NAME</label>
+                    <textarea id="message" type="text" placeholder="Tell us something here!"></textarea>
+                </form>
+                <button id="btnSubmitContact" class="flickering-button">SUBMIT</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- WORK WITH US SECTION -->
+    <section id="sectionWorkWithUs" class="section-container">
+        <p class="title-text">WORK WITH US</p>
+        <h3 class="header-text">Available Oppotunities.</h3>
+    </section>
+
+    <!-- PROMOTION SECTION -->
+    <section id="sectionPromotion" class="section-container">
+        <p class="title-text">PROMOTIONS</p>
+        <h3 class="header-text">Exclusive Offers for You!</h3>
+        <div class="h-layout">
+            <div class="v-layout">
+                <div class="fill-outer">
+                    <p id="offerTitle"> New Clients Offer!</p>
+                    <p id="offerBody"> Enjoy 20% off your first booking</p>
+                </div>
+                <button id="btnClaimOffer" class="flickering-button">CLAIM OFFER NOW</button>
+            </div>
+            <div class="v-layout">
+                <div class="fill-outer">
+                    <p id="offerTitle"> Special Package Offer!</p>
+                    <p id="offerBody"> Book a massage and get a free Manicure this Weekend</p>
+                </div>
+                <button id="btnClaimOffer" class="flickering-button">CLAIM OFFER NOW</button>
+            </div>
+        </div>
+        <p class="header-text">Your Beauty Journey Starts Here.</p>
+        <p class="sub-header-text">Don't wait to feel your best. Book your appointment with us today!</p>
+        <button id="btnBookApointment" class="flickering-button">BOOK APPOINTMENT NOW</button>
+    </section>
+
+    <!-- TESTIMONIAL SECTION -->
+    <section id="sectionTestimonial" class="section-container">
+            <p class="title-text">TESTIMONIALS</p>
+            <h3 class="header-text">What Our Clients Say!</h3>
+            <div class="h-layout">
+                <div class="v-layout card-rating">
+                    <p id="clientName">Sarah M.</p>
+                    <p id="type">Customer</p>
+                    <p id="clientComment">I’ve never felt so pampered before. The
+                        spa treatments at Elixir are out of this world!
+                    </p>
+                    <div class="h-layout">
+                        <img src="./resources/star-rating.png" alt="">
+                        <img src="./resources/star-rating.png" alt="">
+                        <img src="./resources/star-rating.png" alt="">
+                        <img src="./resources/star-rating.png" alt="">
+                    </div>
+                    <p id="feedBack">Our Feedback</p>
+                    <p id="feedback">Thank you Sarah for your 4 star rating. We are happy to serve.</p>
+                </div>
+                <div class="v-layout card-rating">
+                    <p id="clientName">Lucy N.</p>
+                    <p id="type">Customer</p>
+                    <p id="clientComment">The perfect place to relax and unwind.
+                        Highly recommend their massage packages.
+                    </p>
+                    <div class="h-layout">
+                        <img src="./resources/star-rating.png" alt="">
+                        <img src="./resources/star-rating.png" alt="">
+                        <img src="./resources/star-rating.png" alt="">
+                        <img src="./resources/star-rating.png" alt="">
+                        <img src="./resources/star-rating.png" alt="">
+                    </div>
+                    <p id="feedBack">Our Feedback</p>
+                    <p id="feedback">Thank you Lucy for your 5 star rating. We are happy to serve.</p>
+                </div>
+            </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="h-layout h-footer">
+            <!-- Logo Section -->
+            <div class="v-layout">
+                <div class="image-logo"></div>
+                <div class="h-layout">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="v-layout contact">
+                <p class="title">Contact Us</p>
+                <i class="fa-brands fa-location">Kilimani, Commodore Office Suite, G3</i>
+                <i class="fa-brands fa-mail">info@elixirsalonandspa.co.ke</i>
+                <i class="fa-brands fa-call">+254 717 733 000</i>
+                <div class="h-layout">
+                    <i class="fa-brands fa-time"></i>
+                    <div class="v-layout">
+                        <p>MON: 08:00 - 20:00</p>
+                        <p>TUE - FRI: 07:30 - 20:00</p>
+                        <p>SAT: 08:00 - 20:00</p>
+                        <p>SUN: 08:00 - 20:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="v-layout q-link">
+                <p class="title">Quick Links</p>
+                <a href="#">Services</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Book Appointment</a>
+                <a href="#">Work With Us</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+            <!-- Gallery -->
+            <div class="v-layout">
+                <p class="title">Gallery</p>
+                <div class="h-layout">
+                    <div class="gallery"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="h-layout bottom">
+            <p>© 2024 <a href="index.html">Elixirsalonandspa.</a> All rights reserved.</p>
+            <p>Built and Managed By: <span><a href="www.adconnect.co.ke">AdConnect.</a></span></p>
+        </div>
+    </footer>
 
     <script src="./scripts/main.js"></script>
 </body>

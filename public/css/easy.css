@@ -364,3 +364,10 @@ h5 {
     justify-content: space-between;
     align-items: center;
 }
+.title{
+    color: #FFD700;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: DM Sans;
+    text-align: start;
+}
