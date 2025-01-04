@@ -387,7 +387,24 @@ h5 {
     width: 30px;
     margin: 5px 5px;
 }
-.fa-solid:hover{
-    color: #FFD700;
-    cursor: pointer;
+
+.fa-regular{
+    color: #fffbc1;
+    height: 30px;
+    width: 30px;
+    margin: 5px 5px;
+}
+
+.icon p{
+    color: #D0D0D0;
+    font-size: 12px;
+    font-family: "DM Sans";
+}
+.icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
 }

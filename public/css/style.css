@@ -1017,7 +1017,7 @@ textarea{
     margin: 5px 5px;
     padding: 5px 15px;
     width: 250px;
-    height: 310px;
+    height: 350px;
     background-color: #292820;
 }
 #sectionPromotion .fill-outer{
@@ -1033,7 +1033,7 @@ textarea{
 }
 #sectionPromotion #offerBody{
     color: #FDFACD;
-    font-size: 25px;
+    font-size: 16px;
     font: bold;
 }
 #sectionPromotion #btnClaimOffer{
