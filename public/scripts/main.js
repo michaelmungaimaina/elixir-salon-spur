@@ -51,12 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
     continuousScroll();
 });
 
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+const bookingSection = this.document.getElementById('sectionBooking')
+
+function scrollToSection() {
+    if (bookingSection) {
+        bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
+
+scrollToSection(bookingSection);
 
 // Add event listener for scrolling
 window.addEventListener('scroll', function() {
