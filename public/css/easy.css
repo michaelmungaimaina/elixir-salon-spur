@@ -388,16 +388,17 @@ h5 {
     margin: 5px 5px;
 }
 
-.fa-regular{
+.icon img{
     color: #fffbc1;
-    height: 30px;
-    width: 30px;
-    margin: 5px 5px;
+    height: 20px;
+    width: 20px;
+    margin: 5px 10px;
 }
 
 .icon p{
     color: #D0D0D0;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: bold;
     font-family: "DM Sans";
 }
 .icon{
@@ -407,4 +408,5 @@ h5 {
     justify-items: center;
     justify-self: center;
     align-items: center;
+    height: 30px;
 }
