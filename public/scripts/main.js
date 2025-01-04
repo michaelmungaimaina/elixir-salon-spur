@@ -51,6 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
     continuousScroll();
 });
 
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
 // Add event listener for scrolling
 window.addEventListener('scroll', function() {
     const sections = document.querySelectorAll('section');
