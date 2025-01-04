@@ -381,3 +381,13 @@ h5 {
     color: #FFD700;
     cursor: pointer;
 }
+.fa-solid{
+    color: #fffbc1;
+    height: 30px;
+    width: 30px;
+    margin: 5px 5px;
+}
+.fa-solid:hover{
+    color: #FFD700;
+    cursor: pointer;
+}
