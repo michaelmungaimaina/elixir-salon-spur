@@ -99,17 +99,26 @@ Make sure you have the following installed:
 The repository is organized as follows:
 
 ```
-/elixir-salon-spur
-|-- /public            # Static assets like images, fonts, etc.
-|-- /src
-    |-- /models        # Mongoose models for MongoDB
-    |-- /routes        # Express routes (API endpoints)
-    |-- /views         # HTML templates
-    |-- /styles        # CSS files
-    |-- /scripts       # JavaScript files
-|-- .env               # Environment variables (e.g., MongoDB URI)
-|-- server.js          # Main server file (entry point)
-|-- package.json       # Project dependencies and scripts
+/elixir-salon-spur/
+│
+├── public/                    # Frontend files
+│   ├── index.html             # Main HTML file
+│   ├── styles.css             # CSS file
+│   ├── easy.css               # CSS file (Inherited Classes)
+│   ├── script.js              # Frontend JavaScript
+│
+├── server/                    # Backend files
+│   ├── server.js              # Express server file
+│   ├── config.js              # Configuration file for MySQL and Nodemailer
+│   ├── setupDatabase.js       # Script to initialize MySQL database and table
+│
+├── node_modules/              # Installed dependencies (auto-generated)
+├── .env                       # Environment variables
+├── nodemon.json               # Nodemon configuration file
+├── package.json               # Node.js package configuration
+├── package-lock.json          # Auto-generated dependency lock file
+├── README.md                  # Documentation (optional)
+
 ```
 
 ---

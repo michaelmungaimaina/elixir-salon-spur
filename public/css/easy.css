@@ -371,3 +371,13 @@ h5 {
     font-family: DM Sans;
     text-align: start;
 }
+.fa-brands{
+    color: #fffbc1;
+    height: 30px;
+    width: 30px;
+    margin: 5px 5px;
+}
+.fa-brands:hover{
+    color: #FFD700;
+    cursor: pointer;
+}

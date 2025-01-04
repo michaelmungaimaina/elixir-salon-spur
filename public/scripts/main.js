@@ -1,3 +1,5 @@
+console.log('main.js - Loaded');
+
 // Component initialization
 const serviceList = document.getElementById('serviceList');
 const sectionHome = document.getElementById('sectionHome');
@@ -13,6 +15,73 @@ document.addEventListener("DOMContentLoaded", () => {
         }, index * delay);
     });
 });
+
+// Add event listener for scrolling
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    let currentSection = '';
+    
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 50;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach((link) => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === currentSection) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Smooth scrolling with custom speed
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach((link) => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetSection = document.querySelector(link.getAttribute('href'));
+        
+        // Custom scroll function for smooth scrolling with adjustable speed
+        smoothScrollTo(targetSection.offsetTop - 65, 5000); // 1000ms for the scroll duration
+    });
+});
+
+function smoothScrollTo(target, duration) {
+    const start = window.pageYOffset;
+    const distance = target - start;
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, start, distance, duration);
+        window.scrollTo(0, run);
+        
+        if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+        }
+    }
+
+    // Ease function for smooth scroll effect (ease-in-out)
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
+
 /**
  * This script is responsible for the animation of the services
  */
@@ -103,3 +172,44 @@ changeBackground();
 
 // Set the interval for background changes
 setInterval(changeBackground, 5000); // Change every 5 seconds
+
+
+// Initilalize the testimonials container
+const appContainer = document.querySelector('#sectionTestimonial .testimonial-container');
+
+// Fetch ratings when the page loads
+async function fetchRatings() {
+    const response = await fetch('/ratings');
+    const ratings = await response.json();
+    appContainer.innerHTML = ratings.map(rating => `
+        <div class="v-layout card-rating">
+            <p id="clientName">${rating.clientName}</p>
+            <p id="type">${rating.clientType}</p>
+            <p id="clientComment">${rating.comment}</p>
+            <div class="h-layout">
+                ${Array(rating.stars).fill('<img src="./resources/star-rating.png" alt="">').join('')}
+            </div>
+            <p id="feedBack">Our Feedback</p>
+            <p id="feedback">${rating.feedback}</p>
+        </div>
+    `).join('');
+}
+
+// Add a new rating
+async function addRating(rating) {
+    await fetch('/ratings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(rating)
+    });
+    // Refresh the ratings
+    fetchRatings();
+}
+
+// Call fetchRatings to load initial data
+fetchRatings();
+
+// Add horizontal scroll functionality
+appContainer.style.display = 'flex';
+appContainer.style.overflowX = 'auto';
+appContainer.style.gap = '16px';

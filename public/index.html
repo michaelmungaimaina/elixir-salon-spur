@@ -40,12 +40,13 @@
             <div class="navbar-container flex">
                 <!-- Menu -->
                 <ul class="navbar-items flex">
-                    <li><a href="/index.html" class="nav-link active">HOME</a></li>
-                    <li><a href="/" class="nav-link">ABOUT US</a></li>
-                    <li><a href="/" class="nav-link">OUR SERVICES</a></li>
-                    <li><a href="/" class="nav-link">GALLERY</a></li>
-                    <li><a href="/" class="nav-link">CONTACT US</a></li>
-                    <li><a href="/" class="nav-link">WORK WITH US</a></li>
+                    <li><a href="#sectionHome" class="nav-link active">HOME</a></li>
+                    <li><a href="#sectionAboutUs" class="nav-link">ABOUT US</a></li>
+                    <li><a href="#sectionOurServices" class="nav-link">OUR SERVICES</a></li>
+                    <li><a href="#sectionGallery" class="nav-link">GALLERY</a></li>
+                    <li><a href="#sectionContactUs" class="nav-link">CONTACT US</a></li>
+                    <li><a href="#sectionPromotion" class="nav-link">WORK WITH US</a></li><li><a href="#sectionWorkWithUs" class="nav-link">PROMO</a></li>
+                    <li><a href="#sectionTestimonial" class="nav-link">TESTIMONIALS</a></li>
                 </ul>
                 <button id="btnBookApointment" class="flickering-button">BOOK NOW</button>
                 <button id="btnToggleSideNavbar" onclick="openNav()" class="button" type="button">
@@ -63,13 +64,15 @@
             </div>
             <!-- Side Menus -->
             <div>
-                <ul>
-                    <li><a href="/index.html" class="nav-link active">HOME</a></li>
-                    <li><a href="/" class="nav-link">ABOUT US</a></li>
-                    <li><a href="/" class="nav-link">OUR SERVICES</a></li>
-                    <li><a href="/" class="nav-link">GALLERY</a></li>
-                    <li><a href="/" class="nav-link">CONTACT US</a></li>
-                    <li><a href="/" class="nav-link">WORK WITH US</a></li>
+                <ul class="navbar-items flex">
+                    <li><a href="#sectionHome" class="nav-link active">HOME</a></li>
+                    <li><a href="#sectionAboutUs" class="nav-link">ABOUT US</a></li>
+                    <li><a href="#sectionOurServices" class="nav-link">OUR SERVICES</a></li>
+                    <li><a href="#sectionGallery" class="nav-link">GALLERY</a></li>
+                    <li><a href="#sectionContactUs" class="nav-link">CONTACT US</a></li>
+                    <li><a href="#sectionWorkWithUs" class="nav-link">WORK WITH US</a></li>
+                    <li><a href="#sectionPromotion" class="nav-link">PROMO</a></li>
+                    <li><a href="#sectionTestimonial" class="nav-link">TESTIMONIALS</a></li>
                 </ul>
                 <button id="btnAsideBookApointment" class="flickering-button">BOOK APPOINTMENT NOW</button>
             </div>
@@ -565,10 +568,10 @@
                 </div>
                 <p class="title info">Social Media Links:</p>
                 <div class="h-layout">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61571514984682"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@elixrexecutive?lang=en"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/elixirexecutive/"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
@@ -628,7 +631,7 @@
     <section id="sectionTestimonial" class="section-container">
             <p class="title-text">TESTIMONIALS</p>
             <h3 class="header-text">What Our Clients Say!</h3>
-            <div class="h-layout">
+            <div class="h-layout testimonial-container">
                 <div class="v-layout card-rating">
                     <p id="clientName">Sarah M.</p>
                     <p id="type">Customer</p>
@@ -669,11 +672,11 @@
             <!-- Logo Section -->
             <div class="v-layout">
                 <div class="image-logo"></div>
-                <div class="h-layout">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <div class="h-layout socials">
+                    <a href="https://www.facebook.com/profile.php?id=61571514984682"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@elixrexecutive?lang=en"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/elixirexecutive/"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
@@ -681,11 +684,11 @@
             <!-- Contact Section -->
             <div class="v-layout contact">
                 <p class="title">Contact Us</p>
-                <i class="fa-brands fa-location">Kilimani, Commodore Office Suite, G3</i>
-                <i class="fa-brands fa-mail">info@elixirsalonandspa.co.ke</i>
-                <i class="fa-brands fa-call">+254 717 733 000</i>
+                <i class="fa-solid fa-location-dot">Kilimani, Commodore Office Suite, G3</i>
+                <i class="fa-solid fa-envelope">info@elixirsalonandspa.co.ke</i>
+                <i class="fa-solid fa-phone">+254 717 733 000</i>
                 <div class="h-layout">
-                    <i class="fa-brands fa-time"></i>
+                    <i class="fa-regular fa-clock"></i>
                     <div class="v-layout">
                         <p>MON: 08:00 - 20:00</p>
                         <p>TUE - FRI: 07:30 - 20:00</p>
