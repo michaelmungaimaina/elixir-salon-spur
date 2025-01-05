@@ -4,6 +4,7 @@ header {
     padding: 0 0;
     margin: 0 0;
 }
+
 body {
     padding: 0 0;
     margin: 0 0;
@@ -45,8 +46,8 @@ body {
     background-position: center;
     block-size: cover;
     display: flex;
-    align-items:start;
-    justify-content:space-evenly;
+    align-items: start;
+    justify-content: space-evenly;
     max-width: 1320px;
     width: 100%;
     height: 65px;
@@ -63,7 +64,8 @@ body {
     transition: transform 0.75s ease;
     z-index: 20;
 }
-.left-nav-section{
+
+.left-nav-section {
     width: 110px;
     height: 90px;
     padding: 5px 45px 5px 15px;
@@ -71,6 +73,7 @@ body {
     background-color: #1A5B38;
     clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 80% 100%, 0% 100%, 0% 0%);
 }
+
 .navbar-container {
     top: 0;
     gap: 50px;
@@ -92,7 +95,7 @@ body {
     overflow: hidden;
 }
 
-.navbar-logo img{
+.navbar-logo img {
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -124,13 +127,15 @@ body {
     color: white;
     font-size: 18px;
 }
+
 .navbar-items {
     gap: 20px;
 }
 
-.navbar-items li{
+.navbar-items li {
     list-style: none;
 }
+
 /* Navigation text */
 .nav-link {
     font-weight: bolder;
@@ -150,13 +155,16 @@ body {
     0% {
         background-position: 0% 0%;
     }
+
     50% {
         background-position: 100% 0%;
     }
+
     100% {
         background-position: 0% 0%;
     }
 }
+
 .active,
 .nav-link:is(:hover, :focus-visible) {
     background: linear-gradient(90deg, #EBCE27, #FDFACD, #EBCE27);
@@ -169,6 +177,7 @@ body {
     text-underline-offset: 7px;
     transition: text-decoration 0.9s ease-in-out;
 }
+
 /* Sidepanel */
 /* Sidebar Styling */
 aside {
@@ -177,14 +186,16 @@ aside {
     position: fixed;
     top: 0;
     left: -320px;
-    background-color: #646262; /* Sidebar background */
+    background-color: #646262;
+    /* Sidebar background */
     overflow-x: hidden;
     transition: 0.5s;
     z-index: 1000;
     display: flex;
     flex-direction: column;
     padding-top: 20px;
-    color: white; /* Default text color */
+    color: white;
+    /* Default text color */
 }
 
 aside .sidebar {
@@ -194,6 +205,7 @@ aside .sidebar {
     padding: 0 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 .sidepanel .sidebar img {
     max-width: 100px;
 }
@@ -239,38 +251,46 @@ aside .sidebar {
     padding: 10px 20px;
     text-decoration: none;
     font-size: 12px;
-    color: white; /* Text color */
+    color: white;
+    /* Text color */
     transition: background-color 0.3s, color 0.3s;
 }
 
-#btnAsideBookApointment{
+#btnAsideBookApointment {
     margin: 10px 20px;
     box-shadow: none;
     background: linear-gradient(90deg, #B07614, #fffbc1, #B07614, #fffbc1, #B07614);
     background-size: 300% 100%;
     animation: flicker infinite linear infinite;
 }
+
 @media only screen and (max-width: 946px) {
     .navbar {
         height: 65px;
     }
-    .navbar-container{
+
+    .navbar-container {
         gap: 20px;
     }
+
     .navbar-items {
         gap: 10px;
     }
+
     .nav-link {
         font-size: 11px;
     }
-    .left-nav-section{
+
+    .left-nav-section {
         width: 110px;
         height: 90px;
     }
+
     .navbar-logo {
         height: 110px;
         width: 130px;
     }
+
     .flickering-button {
         font-size: x-small;
         padding: 3px 15px;
@@ -281,50 +301,62 @@ aside .sidebar {
     .navbar {
         height: 55px;
     }
-    .navbar-container{
+
+    .navbar-container {
         gap: 5px !important;
         padding: 0px 20px;
         height: 52px !important;
         overflow: hidden !important;
     }
+
     .navbar-items {
         gap: 5px;
     }
+
     .nav-link {
         font-size: 9px;
     }
-    .left-nav-section{
+
+    .left-nav-section {
         width: 90px;
         height: 70px;
         clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 80% 100%, 0% 100%, 0% 0%);
     }
+
     .navbar-logo {
         height: 110px;
         width: 130px;
     }
+
     .flickering-button {
-        border-radius: 2px; /* Smooth rounded corners */
+        border-radius: 2px;
+        /* Smooth rounded corners */
         font-size: 10px;
         padding: 2px 15px;
     }
 }
 
 @media only screen and (max-width: 680px) {
+
     /** Hide horizontal top navbar **/
-    .navbar-items li{
+    .navbar-items li {
         display: none;
     }
-    #btnBookApointment{
+
+    #btnBookApointment {
         display: none;
     }
-    #btnToggleSideNavbar{
+
+    #btnToggleSideNavbar {
         display: block;
     }
-    .left-nav-section{
+
+    .left-nav-section {
         width: 62px;
         height: 42px;
         clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 100% 100%, 0% 100%, 0% 0%);
     }
+
     .navbar-logo {
         height: 110px;
         width: 130px;
@@ -332,24 +364,27 @@ aside .sidebar {
 }
 
 /*** HOME DESIGN ***/
-#sectionHome{
+#sectionHome {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.8)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/home-back-photo.jpeg);
     margin-top: 60px;
     transition: background-image 3s ease-in-out;
 }
-#sectionHome .home-container{
+
+#sectionHome .home-container {
     margin: 0px 100px 20px 120px;
 }
-#sectionHome .home-container .header-text{
+
+#sectionHome .home-container .header-text {
     font-size: 50px;
     font-weight: bolder;
     color: #FFD700;
     max-width: 750px;
     text-align: start;
     transform: translateY(20px);
-      animation: fadeSlideUp 1.5s ease-out forwards;
+    animation: fadeSlideUp 1.5s ease-out forwards;
 }
-#sectionHome .home-container .sub-header-text{
+
+#sectionHome .home-container .sub-header-text {
     font-size: 25px;
     font-weight: bolder;
     color: #D0D0D0;
@@ -357,22 +392,26 @@ aside .sidebar {
     text-align: start;
     margin-top: -30px;
     transform: translateY(20px);
-      animation: fadeSlideUp 1.5s ease-out forwards;
+    animation: fadeSlideUp 1.5s ease-out forwards;
 }
-#sectionHome .home-container .h-layout{
+
+#sectionHome .home-container .h-layout {
     width: fit-content;
     align-items: center;
     justify-content: space-between;
 }
-#sectionHome .home-container .h-layout .v-layout{
+
+#sectionHome .home-container .h-layout .v-layout {
     align-items: center;
     justify-content: center;
 }
-#sectionHome .flickering-text{
+
+#sectionHome .flickering-text {
     margin: 0 10px 0;
     font-size: 50px;
 }
-#sectionHome .description{
+
+#sectionHome .description {
     margin: 0 10px 0;
     text-align: left;
     color: white;
@@ -380,19 +419,14 @@ aside .sidebar {
     font-size: 14px;
     font-weight: bold;
 }
-#sectionHome img{
+
+#sectionHome img {
     height: 100px;
     width: 5px;
     margin: 0 10px 10px;
 }
-#sectionHome #btnBookAppointment{
-    min-width: fit-content;
-    margin: 35px 20px;
-    background: linear-gradient(90deg, #B07614, #fffbc1, #B07614, #fffbc1, #B07614);
-    background-size: 300% 100%;
-    animation: flicker 15s linear infinite;
-}
-#sectionHome #btnExploreServices{
+
+#sectionHome #btnBookAppointment {
     min-width: fit-content;
     margin: 35px 20px;
     background: linear-gradient(90deg, #B07614, #fffbc1, #B07614, #fffbc1, #B07614);
@@ -400,7 +434,15 @@ aside .sidebar {
     animation: flicker 15s linear infinite;
 }
 
-#sectionHome .container-right-pic{
+#sectionHome #btnExploreServices {
+    min-width: fit-content;
+    margin: 35px 20px;
+    background: linear-gradient(90deg, #B07614, #fffbc1, #B07614, #fffbc1, #B07614);
+    background-size: 300% 100%;
+    animation: flicker 15s linear infinite;
+}
+
+#sectionHome .container-right-pic {
     background-color: #4a3801;
     padding: 20px;
     width: fit-content;
@@ -408,7 +450,8 @@ aside .sidebar {
     border-radius: 20px;
     margin: 15px 15px 0;
 }
-#sectionHome .image{
+
+#sectionHome .image {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/owner.jpeg);
     border-radius: 20px;
     border: 0.5px solid #EBCE27;
@@ -420,121 +463,147 @@ aside .sidebar {
 }
 
 @media only screen and (max-width: 1068px) {
-    #sectionHome .home-container{
+    #sectionHome .home-container {
         margin: 0px 50px 20px 100px;
     }
-    #sectionHome .home-container .header-text{
+
+    #sectionHome .home-container .header-text {
         font-size: 40px;
     }
-    #sectionHome .home-container .sub-header-text{
+
+    #sectionHome .home-container .sub-header-text {
         font-size: 20px;
     }
-    #sectionHome .flickering-text{
+
+    #sectionHome .flickering-text {
         font-size: 40;
     }
 }
 
 @media only screen and (max-width: 980px) {
-    #sectionHome{
+    #sectionHome {
         margin-top: 55px;
     }
-    #sectionHome .home-container{
+
+    #sectionHome .home-container {
         margin: 0px 20px 10px 50px;
     }
-    #sectionHome .home-container .header-text{
+
+    #sectionHome .home-container .header-text {
         font-size: 30px;
     }
-    #sectionHome .home-container .sub-header-text{
+
+    #sectionHome .home-container .sub-header-text {
         font-size: 17px;
         margin-top: -20px;
     }
-    #sectionHome .flickering-text{
+
+    #sectionHome .flickering-text {
         font-size: 30;
     }
-    #sectionHome img{
+
+    #sectionHome img {
         height: 70px;
         width: 3px;
     }
-    #sectionHome .image{
+
+    #sectionHome .image {
         height: 450px;
         width: 350px;
         background-size: 100% 120%;
     }
-    #sectionHome .description{
+
+    #sectionHome .description {
         font-size: 12.5px;
     }
 }
 
 @media only screen and (max-width: 980px) {
-    #sectionHome{
+    #sectionHome {
         margin-top: 50px;
     }
-    #sectionHome .home-container{
+
+    #sectionHome .home-container {
         margin: 0px 10px 5px 30px;
     }
-    #sectionHome .home-container .header-text{
+
+    #sectionHome .home-container .header-text {
         font-size: 27px;
     }
-    #sectionHome .home-container .sub-header-text{
+
+    #sectionHome .home-container .sub-header-text {
         font-size: 16px;
         margin-top: -10px;
     }
-    #sectionHome .flickering-text{
+
+    #sectionHome .flickering-text {
         font-size: 25px;
     }
-    #sectionHome img{
+
+    #sectionHome img {
         height: 50px;
         width: 2.5px;
     }
-    #sectionHome .image{
+
+    #sectionHome .image {
         height: 400px;
         width: 300px;
         background-size: 80% 100%;
     }
-    #sectionHome #btnBookAppointment, 
-    #sectionHome #btnExploreServices{
+
+    #sectionHome #btnBookAppointment,
+    #sectionHome #btnExploreServices {
         font-size: 11px;
     }
 }
+
 @media only screen and (max-width: 803px) {
-    #sectionHome .image{
+    #sectionHome .image {
         height: 250px;
         width: 180px;
         background-size: 80% 100%;
     }
 }
+
 @media only screen and (max-width: 803px) {
-    #sectionHome{
+    #sectionHome {
         margin-top: 47px;
     }
+
     #sectionHome .container-right-pic,
-    #sectionHome .image{
+    #sectionHome .image {
         display: none;
     }
-    #sectionHome .home-container{
+
+    #sectionHome .home-container {
         margin: 0px 10px 5px 10px;
     }
-    #sectionHome #btnBookAppointment, 
-    #sectionHome #btnExploreServices{
+
+    #sectionHome #btnBookAppointment,
+    #sectionHome #btnExploreServices {
         font-size: 10px;
         margin: 25px 10px;
     }
-    #sectionHome .description{
+
+    #sectionHome .description {
         font-size: 12px;
     }
 }
+
 @keyframes fadeSlideUp {
     0% {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
+
     100% {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
+}
+
 /***  ABOUT DESIGN ***/
-#sectionAboutUs{
+#sectionAboutUs {
     background-color: #4F4B37;
     margin-top: 0.3px;
     align-items: start;
@@ -543,26 +612,27 @@ aside .sidebar {
     padding: 0px 2px 20px 20px;
     font-family: 'DM Sans';
     background-image: linear-gradient(90deg, rgba(79, 73, 55, 0.859)100%, rgba(83, 79, 51, 0.768)70%);
-    
+
     width: 100%;
 }
 
-#sectionAboutUs #aboutIntroContent{
+#sectionAboutUs #aboutIntroContent {
     margin: 0px 10px 10px 80px;
 }
 
-#sectionAboutUs #aboutMoreContent{
+#sectionAboutUs #aboutMoreContent {
     margin: 0px 10px 10px 80px;
 }
 
-#sectionAboutUs .header-text{
+#sectionAboutUs .header-text {
     margin-top: -10px;
 }
 
-#sectionAboutUs .sub-header-text{
+#sectionAboutUs .sub-header-text {
     text-align: justify;
 }
-#sectionAboutUs button{
+
+#sectionAboutUs button {
     width: fit-content;
     margin: 10px 10px 10px 10px;
     background: linear-gradient(90deg, #B07614, #fffbc1, #B07614, #fffbc1, #B07614);
@@ -570,109 +640,125 @@ aside .sidebar {
     animation: flicker 15s linear infinite;
 }
 
-#sectionAboutUs .container-right-picture{
+#sectionAboutUs .container-right-picture {
     margin: 70px 20px 0 100px;
     max-height: 330px;
 }
 
-#sectionAboutUs .image{
+#sectionAboutUs .image {
     margin: -70px 0px 0px -100px;
     background-size: 110% 130%;
 }
 
-@media only screen and (max-width: 990px){
-    #sectionAboutUs{
+@media only screen and (max-width: 990px) {
+    #sectionAboutUs {
         padding: 0px 10px 10px 10px;
     }
-    #sectionAboutUs .header-text{
+
+    #sectionAboutUs .header-text {
         font-size: 30px;
     }
-    #sectionAboutUs .sub-header-text{
+
+    #sectionAboutUs .sub-header-text {
         font-size: 15px;
     }
-    #sectionAboutUs .container-right-picture{
+
+    #sectionAboutUs .container-right-picture {
         width: 220px;
         height: 250;
         margin: 50px 20px 0 80px;
     }
-    #sectionAboutUs .image{
+
+    #sectionAboutUs .image {
         height: 380px;
         width: 300px;
         margin: -50px 0px 0px -80px;
         background-size: 110% 130%;
     }
 
-} 
+}
 
 @media only screen and (max-width: 803px) {
-    #sectionAboutUs{
+    #sectionAboutUs {
         padding: 0px 10px 10px 10px;
     }
-    #sectionAboutUs .title-text{
+
+    #sectionAboutUs .title-text {
         font-size: 14px;
     }
-    #sectionAboutUs .header-text{
+
+    #sectionAboutUs .header-text {
         font-size: 27px;
     }
-    #sectionAboutUs .sub-header-text{
+
+    #sectionAboutUs .sub-header-text {
         font-size: 13px;
     }
-    #sectionAboutUs .container-right-picture{
+
+    #sectionAboutUs .container-right-picture {
         width: 220px;
         height: 200;
         margin: 50px 10px 0 50px;
         max-height: 250px;
     }
-    #sectionAboutUs .image{
+
+    #sectionAboutUs .image {
         height: 300px;
         width: 200px;
         margin: -50px -10px 0px -50px;
         background-size: 110% 130%;
     }
-    #sectionAboutUs button{
+
+    #sectionAboutUs button {
         font-size: 12px;
     }
 }
 
 @media only screen and (max-width: 450px) {
-    #sectionAboutUs .header-text{
+    #sectionAboutUs .header-text {
         font-size: 16px;
     }
-    #sectionAboutUs .sub-header-text{
+
+    #sectionAboutUs .sub-header-text {
         font-size: 11px;
         margin-top: -5px;
     }
-    #sectionAboutUs .title-text{
+
+    #sectionAboutUs .title-text {
         font-size: 12px;
     }
-    #sectionAboutUs .container-right-picture{
+
+    #sectionAboutUs .container-right-picture {
         width: 190px;
         height: 200;
         margin: 40px 0 0 20px;
         max-height: 250px;
     }
-    #sectionAboutUs .image{
+
+    #sectionAboutUs .image {
         height: 300px;
         width: 170px;
         margin: -40px -8px 0px -25px;
         background-size: 90% 110%;
     }
-    #sectionAboutUs button{
+
+    #sectionAboutUs button {
         font-size: 10px;
         padding: 7px 10px;
         margin: 0;
     }
-    #sectionAboutUs #aboutIntroContent{
+
+    #sectionAboutUs #aboutIntroContent {
         margin: 10px 5px 10px 5px;
     }
-    
-    #sectionAboutUs #aboutMoreContent{
+
+    #sectionAboutUs #aboutMoreContent {
         margin: 10px 5px 10px 5px;
     }
 }
 
 /***  SERVICES DESIGN ***/
-#sectionOurServices{
+#sectionOurServices {
     background-color: #4F4B37;
     margin-top: 0.3px;
     align-items: start;
@@ -685,197 +771,225 @@ aside .sidebar {
     width: 100%;
 }
 
-#sectionOurServices .header-text{
+#sectionOurServices .header-text {
     margin-top: -5px;
     margin-left: 80px;
 }
 
 /** SERVICE CATALOG **/
-#serviceCatalog .catalog-banner{
+#serviceCatalog .catalog-banner {
     height: 30px;
 }
-#serviceCatalog .catalog-banner p{
+
+#serviceCatalog .catalog-banner p {
     color: white;
     font-family: "DM Sans";
     font-size: 15px;
     font-weight: bold;
 }
-#serviceCatalog #serviceList{
+
+#serviceCatalog #serviceList {
     margin: 0 0 0 30px;
 }
-#serviceCatalog #serviceList .h-layout{
+
+#serviceCatalog #serviceList .h-layout {
     margin-top: 15px;
     width: 400px;
     justify-content: space-between;
     align-items: center;
 }
-#serviceCatalog .right-image{
+
+#serviceCatalog .right-image {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv1.jpeg);
 }
-#serviceCatalog .right-image-two{
+
+#serviceCatalog .right-image-two {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serve2.jpeg);
 }
 
 /** WAXING SERVICE **/
-#service-waxing-detail{
+#service-waxing-detail {
     margin-top: 40px;
     padding-top: 10px;
     border-top: 1.5px solid #7D8489;
 }
 
-#service-waxing-detail .service-banner p{
+#service-waxing-detail .service-banner p {
     color: white;
     font-family: "DM Sans";
     font-size: 15px;
     font-weight: bold;
 }
 
-#service-waxing-detail .service-card{
+#service-waxing-detail .service-card {
     width: 350px;
     margin: 20px 0 0 30px;
     padding: 15px 30px;
     background-color: #928769;
     border-radius: 20px;
 }
-#service-waxing-detail .service-card .list-item{
+
+#service-waxing-detail .service-card .list-item {
     width: 100%;
     justify-content: space-between;
     align-items: center;
 }
-#service-waxing-detail .service-card .list-item p{
+
+#service-waxing-detail .service-card .list-item p {
     color: white;
     font-family: DM Sans;
     font-size: 14px;
     font-weight: bold;
 }
-#service-waxing-detail .service-card .list-item .top{
+
+#service-waxing-detail .service-card .list-item .top {
     color: #FDFACD;
     font-size: 16px;
 }
-#service-waxing-detail .right-image-container{
+
+#service-waxing-detail .right-image-container {
     margin-top: 130px;
 }
-#service-waxing-detail .right-image{
+
+#service-waxing-detail .right-image {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv3.jpeg);
 }
-#service-waxing-detail .right-image-two{
+
+#service-waxing-detail .right-image-two {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv4.jpeg);
     background-size: 150% 100%;
 }
-#btnBookWaxing{
+
+#btnBookWaxing {
     margin: 25px 0px 30px 30px;
 }
 
 /** BODY SCRUB SERVICE **/
-#service-body-scrub-detail{
+#service-body-scrub-detail {
     margin-top: 40px;
     padding-top: 10px;
     border-top: 1.5px solid #7D8489;
 }
-#service-body-scrub-detail .right-image-container{
+
+#service-body-scrub-detail .right-image-container {
     margin-top: 130px;
 }
-#service-body-scrub-detail .right-image{
+
+#service-body-scrub-detail .right-image {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serve7.jpeg);
 }
-#service-body-scrub-detail .right-image-two{
+
+#service-body-scrub-detail .right-image-two {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serve2.jpeg);
     background-size: 150% 100%;
 }
-#btnBookBodyScrub{
+
+#btnBookBodyScrub {
     margin: 25px 0px 30px 30px;
 }
 
 /** HAIR SERVICE **/
-#service-hair-services-detail{
+#service-hair-services-detail {
     margin-top: 40px;
     padding-top: 10px;
     border-top: 1.5px solid #7D8489;
 }
 
-#service-hair-services-detail .right-image-container{
+#service-hair-services-detail .right-image-container {
     margin-top: 130px;
 }
-#service-hair-services-detail .right-image{
+
+#service-hair-services-detail .right-image {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv8.jpeg);
     background-size: 100% 100%;
 }
-#service-hair-services-detail .right-image-two{
+
+#service-hair-services-detail .right-image-two {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv9.jpeg);
     background-size: 100% 100%;
 }
-#btnBookHairServices{
+
+#btnBookHairServices {
     margin: 25px 0px 30px 30px;
 }
 
 /** MAKE UP SERVICE **/
-#service-make-up-lashes-detail{
+#service-make-up-lashes-detail {
     margin-top: 40px;
     padding-top: 10px;
     border-top: 1.5px solid #7D8489;
 }
 
-#service-make-up-lashes-detail .right-image-container{
+#service-make-up-lashes-detail .right-image-container {
     margin-top: 130px;
 }
-#service-make-up-lashes-detail .right-image{
+
+#service-make-up-lashes-detail .right-image {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv10.jpeg);
     background-size: 100% 100%;
 }
-#service-make-up-lashes-detail .right-image-two{
+
+#service-make-up-lashes-detail .right-image-two {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv11.jpg);
     background-size: 150% 100%;
 }
-#btnBookMakeUp{
+
+#btnBookMakeUp {
     margin: 25px 0px 30px 30px;
 }
 
 /** EYEBROWS SERVICE **/
-#service-eyebrows-detail{
+#service-eyebrows-detail {
     margin-top: 40px;
     padding-top: 10px;
     border-top: 1.5px solid #7D8489;
 }
 
-#service-eyebrows-detail .right-image-container{
+#service-eyebrows-detail .right-image-container {
     margin-top: 130px;
 }
-#service-eyebrows-detail .right-image{
+
+#service-eyebrows-detail .right-image {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv12.jpg);
     background-size: 100% 100%;
 }
-#service-eyebrows-detail .right-image-two{
+
+#service-eyebrows-detail .right-image-two {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serve13.jpg);
     background-size: 100% 100%;
 }
-#btnBookEyebrows{
+
+#btnBookEyebrows {
     margin: 25px 0px 30px 30px;
 }
 
 /** MEN'S SERVICE **/
-#service-men-services-detail{
+#service-men-services-detail {
     margin-top: 40px;
     padding-top: 10px;
     border-top: 1.5px solid #7D8489;
 }
 
-#service-men-services-detail .right-image-container{
+#service-men-services-detail .right-image-container {
     margin-top: 130px;
 }
-#service-men-services-detail .right-image{
+
+#service-men-services-detail .right-image {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serv15.jpeg);
     background-size: 100% 100%;
 }
-#service-men-services-detail .right-image-two{
+
+#service-men-services-detail .right-image-two {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/serve14.jpeg);
     background-size: 100% 100%;
 }
-#btnBookMenServices{
+
+#btnBookMenServices {
     margin: 25px 0px 30px 30px;
 }
 
 /** GALLERY SECTION  **/
-#sectionGallery{
+#sectionGallery {
     background-color: #4F4B37;
     margin-top: 0.3px;
     align-items: start;
@@ -886,37 +1000,46 @@ aside .sidebar {
     border-top: 1.5px solid #7D8489;
     width: 100%;
 }
-#sectionGallery .gallery {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    width: 90%;
-    max-width: 1200px;
-    gap: 20px;
-}
 
-#sectionGallery .gallery  .photo-section{
+#sectionGallery .gallery .photo-scroll-container .photo-section {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    /* Dynamic columns */
+    grid-template-rows: repeat(2, 150px);
+    /* Limit to 2 rows */
     gap: 10px;
-    align-items: start;
+    overflow: hidden;
+    /* Ensure no vertical overflow */
+    height: calc(150px * 2 + 10px);
+    /* Exact height for two rows and the gap */
+    white-space: nowrap;
+    /* Prevent wrapping */
 }
-
-#sectionGallery .gallery  .video-section {
+#sectionGallery .gallery .video-scroll-container .video-section {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    /* Dynamic columns */
+    grid-template-rows: repeat(1, 150px);
+    /* Limit to 2 rows */
     gap: 10px;
-    align-items: start;
+    overflow: hidden;
+    /* Ensure no vertical overflow */
+    height: calc(150px * 2 + 10px);
+    /* Exact height for two rows and the gap */
+    white-space: nowrap;
+    /* Prevent wrapping */
 }
 
-#sectionGallery .gallery  .photo-section img, 
-#sectionGallery .gallery  .video-section video {
+#sectionGallery .gallery .photo-scroll-container .photo-section video,
+#sectionGallery .gallery .photo-scroll-container .photo-section img{
     width: 100%;
-    height: 150px;
+    height: 100%;
     object-fit: cover;
+    /* Keep images proportional */
     cursor: pointer;
 }
 
-#sectionGallery  .video-popup {
+#sectionGallery .video-popup {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -929,18 +1052,39 @@ aside .sidebar {
     padding: 20px;
 }
 
-#overlay .h-layout{
+#overlay .h-layout {
     justify-content: center;
     justify-items: center;
     align-items: center;
     gap: 10px;
     margin-top: 80px;
 }
-#overlay img{
+
+#overlay img {
     height: 50px;
     width: 30px;
 }
-#photoPopupLeft{
+
+#photo-scroll-container {
+    width: 95%;
+    height: 300px;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    margin: 0 20px 30px;
+}
+#video-scroll-container{
+    width: 95%;
+    height: 600px;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    margin: 0 20px 30px;
+}
+
+#photoPopupLeft {
     width: 250px;
     height: 380px;
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.7)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/owner.jpeg);
@@ -952,7 +1096,8 @@ aside .sidebar {
     align-items: center;
     justify-content: center;
 }
-#photoPopupCenter{
+
+#photoPopupCenter {
     width: 400px;
     height: 480px;
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/owner.jpeg);
@@ -961,7 +1106,7 @@ aside .sidebar {
     background-size: 100% 100%;
 }
 
-#photoPopupRight{
+#photoPopupRight {
     width: 250px;
     height: 380px;
     background-image: linear-gradient(90deg, rgba(32, 24, 1, 0.7)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/owner.jpeg);
@@ -989,19 +1134,19 @@ aside .sidebar {
     cursor: pointer;
 }
 
-#btnClosePhotoPopUp:hover{
+#btnClosePhotoPopUp:hover {
     border: 1.5px solid #B07614;
     background: #ffa200;
     color: #ffa200;
 }
 
-#sectionGallery .photo-popup img, 
+#sectionGallery .photo-popup img,
 #sectionGallery .video-popup video {
     width: 90%;
     max-width: 800px;
 }
 
-#sectionGallery .photo-popup .navigation, 
+#sectionGallery .photo-popup .navigation,
 #sectionGallery .photo-popup .close-btn,
 #sectionGallery .video-popup .close-btn {
     margin: 10px;
@@ -1027,7 +1172,7 @@ aside .sidebar {
 
 
 /** BOOKING SECTION **/
-#sectionBooking{
+#sectionBooking {
     background-color: #4F4B37;
     margin-top: 0.3px;
     align-items: start;
@@ -1039,19 +1184,20 @@ aside .sidebar {
     width: 100%;
 }
 
-#sectionBooking .header-text{
-}
-#sectionBooking .h-layout{
+#sectionBooking .header-text {}
+
+#sectionBooking .h-layout {
     margin-left: 80px;
 }
-#sectionBooking h5{
+
+#sectionBooking h5 {
     margin-top: 20px;
     margin-bottom: 60px;
     font-size: 25px;
 }
 
 /** CONTACT SECTION **/
-#sectionContactUs{
+#sectionContactUs {
     background-color: #4F4B37;
     margin-top: 0.3px;
     align-items: start;
@@ -1062,48 +1208,56 @@ aside .sidebar {
     border-top: 1.5px solid #7D8489;
     width: 100%;
 }
-#sectionContactUs .header-text{
+
+#sectionContactUs .header-text {
     margin-left: 80px;
 }
-#sectionContactUs .right-col .h-layout p{
+
+#sectionContactUs .right-col .h-layout p {
     text-align: start;
     font-family: DN Sans;
     color: #D0D0D0;
     text-align: start;
 }
-#sectionContactUs .right-col{
+
+#sectionContactUs .right-col {
     width: 400px;
     margin-left: 80px;
     margin-top: 20px;
     margin-right: 20px;
 }
-#sectionContactUs .right-col .h-layout{
+
+#sectionContactUs .right-col .h-layout {
     height: 30px;
     width: 250px;
     align-items: center;
     justify-content: space-between;
 }
-#sectionContactUs .card-form{
-    background-color:#838e4961;
+
+#sectionContactUs .card-form {
+    background-color: #838e4961;
     border-radius: 20px;
     padding: 10px 30px;
     margin-left: 50px;
 }
-#sectionContactUs .card-form p{
+
+#sectionContactUs .card-form p {
     color: white;
     font-size: 20px;
     font-weight: bold;
     width: 250px;
     text-align: justify;
 }
-#sectionContactUs .card-form h6{
+
+#sectionContactUs .card-form h6 {
     font-size: larger;
     margin-top: -10px;
     margin-bottom: 10px;
     color: #FDFACD;
     font-family: "DM Sans";
 }
-label{
+
+label {
     color: white;
     font-weight: bold;
     font-size: 14px;
@@ -1111,12 +1265,14 @@ label{
     text-align: start;
     margin: 0 0 5px;
 }
-input{
+
+input {
     width: 250px;
     border-radius: 5px;
     margin-bottom: 10px;
 }
-textarea{
+
+textarea {
     min-width: 250px;
     max-width: 350px;
     width: 250px;
@@ -1124,13 +1280,14 @@ textarea{
     max-height: 500px;
     border-radius: 5px;
 }
-#btnSubmitContact{
+
+#btnSubmitContact {
     width: 100%;
     margin: 20px 0 20px;
 }
 
 /** WORK SECTION **/
-#sectionWorkWithUs{
+#sectionWorkWithUs {
     background-color: #4F4B37;
     margin-top: 0.3px;
     align-items: start;
@@ -1141,31 +1298,36 @@ textarea{
     border-top: 1.5px solid #7D8489;
     width: 100%;
 }
-#sectionWorkWithUs .v-layout{
+
+#sectionWorkWithUs .v-layout {
     padding: 20px;
     margin-left: 60px;
     margin-top: -50px;
     height: fit-content;
 }
 
-#sectionWorkWithUs .v-layout h3{
+#sectionWorkWithUs .v-layout h3 {
     color: #FDFACD;
     text-align: left;
 }
-#sectionWorkWithUs .v-layout ul{
+
+#sectionWorkWithUs .v-layout ul {
     margin-top: -10px;
     margin-bottom: -10px;
 }
-#sectionWorkWithUs .v-layout li{
+
+#sectionWorkWithUs .v-layout li {
     color: #D0D0D0;
     list-style: none;
     font-family: DM Sans;
     text-align: start;
 }
-#workApplication{
+
+#workApplication {
     margin: 40px;
     width: 200px;
 }
+
 #btnCloseApplication {
     width: 37px;
     height: 30px;
@@ -1181,11 +1343,12 @@ textarea{
     cursor: pointer;
 }
 
-#btnCloseApplication:hover{
+#btnCloseApplication:hover {
     border: 1.5px solid #B07614;
     background: #ffa200;
     color: #ffa200;
 }
+
 #sectionWorkWithUs .popup-overlay {
     display: inline;
 }
@@ -1216,9 +1379,10 @@ textarea{
     justify-items: center;
 }
 
-#sectionWorkWithUs .popup form input{
+#sectionWorkWithUs .popup form input {
     width: 375px;
 }
+
 #sectionWorkWithUs .popup form input,
 #sectionWorkWithUs .popup form button {
     margin-bottom: 10px;
@@ -1238,7 +1402,7 @@ textarea{
 }
 
 /** WORK PROMOTION **/
-#sectionPromotion{
+#sectionPromotion {
     background-color: #4F4B37;
     margin-top: 0.3px;
     align-items: start;
@@ -1249,16 +1413,18 @@ textarea{
     border-top: 1.5px solid #7D8489;
     width: 100%;
 }
-#sectionPromotion .header-text{
+
+#sectionPromotion .header-text {
     margin-left: 80px;
 }
-#sectionPromotion .h-layout{
+
+#sectionPromotion .h-layout {
     margin-left: 80px;
     justify-content: space-around;
     justify-items: center;
 }
 
-#sectionPromotion .v-layout{
+#sectionPromotion .v-layout {
     border-radius: 10px;
     margin: 5px 5px;
     padding: 5px 15px;
@@ -1266,41 +1432,46 @@ textarea{
     height: 350px;
     background-color: #292820;
 }
-#sectionPromotion a{
+
+#sectionPromotion a {
     text-decoration: none;
     font-size: 15px;
     font-family: DM Sans;
     font-weight: bold;
 }
-#sectionPromotion .fill-outer{
+
+#sectionPromotion .fill-outer {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-#sectionPromotion #offerTitle{
+#sectionPromotion #offerTitle {
     color: #FFD700;
     font-size: 30px;
     font: bold;
 }
-#sectionPromotion #offerBody{
+
+#sectionPromotion #offerBody {
     color: #FDFACD;
     font-size: 16px;
     font: bold;
 }
-#sectionPromotion #btnClaimOffer{
+
+#sectionPromotion #btnClaimOffer {
     margin-bottom: 10px;
 }
-#sectionPromotion .sub-header-text{
+
+#sectionPromotion .sub-header-text {
     margin-left: 80px;
 }
 
-#sectionPromotion #btnBookApointment{
+#sectionPromotion #btnBookApointment {
     margin-left: 80px;
 }
 
 /** TESTIMONIAL SECTION **/
-#sectionTestimonial{
+#sectionTestimonial {
     background-color: #4F4B37;
     margin-top: 0.3px;
     align-items: start;
@@ -1312,26 +1483,38 @@ textarea{
     width: 100%;
     margin-right: 80px;
 }
+
 #sectionTestimonial .header-text,
-#sectionTestimonial .h-layout{
+#sectionTestimonial .h-layout {
     margin-left: 80PX;
 }
-#sectionTestimonial .testimonial-container{
+
+#sectionTestimonial .testimonial-container {
     height: fit-content;
-    max-width: 90%; /* Ensure it spans horizontally */
-    overflow: hidden; /* Hide scrollbars */
-    margin-right: 80px; /* Right margin for spacing */
+    max-width: 90%;
+    /* Ensure it spans horizontally */
+    overflow: hidden;
+    /* Hide scrollbars */
+    margin-right: 80px;
+    /* Right margin for spacing */
     position: relative;
-    display: flex; /* Enables horizontal alignment */
+    display: flex;
+    /* Enables horizontal alignment */
     align-items: center;
 }
+
 #sectionTestimonial .testimonial-container .testimonial-scroll-wrapper {
-    display: flex; /* Arrange items horizontally */
-    animation: none; /* Horizontal scroll animation */
-    width: max-content; /* Allow content to expand indefinitely */
-    position: relative; /* Ensure proper positioning */
+    display: flex;
+    /* Arrange items horizontally */
+    animation: none;
+    /* Horizontal scroll animation */
+    width: max-content;
+    /* Allow content to expand indefinitely */
+    position: relative;
+    /* Ensure proper positioning */
 }
-#sectionTestimonial .testimonial-container .card-rating{
+
+#sectionTestimonial .testimonial-container .card-rating {
     border-radius: 10px;
     margin: 5px 20px;
     padding: 5px 15px;
@@ -1348,6 +1531,7 @@ textarea{
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-100%);
     }
@@ -1363,20 +1547,24 @@ textarea{
 #sectionTestimonial .testimonial-scroll-wrapper::after {
     content: '';
     position: absolute;
-    top: 100%; /* Position directly after the last item */
+    top: 100%;
+    /* Position directly after the last item */
     left: 0;
     width: 100%;
-    height: 100%; /* Duplicate height */
+    height: 100%;
+    /* Duplicate height */
     display: flex;
     flex-direction: column;
 }
-#sectionTestimonial #clientName{
+
+#sectionTestimonial #clientName {
     color: #FFD700;
     font-weight: bold;
     font-size: 17px;
     text-align: start;
 }
-#sectionTestimonial #type{
+
+#sectionTestimonial #type {
     color: #FDFACD;
     font-weight: bold;
     font-size: 14px;
@@ -1384,7 +1572,8 @@ textarea{
     margin-top: -7px;
     margin-left: 10px;
 }
-#sectionTestimonial #clientComment{
+
+#sectionTestimonial #clientComment {
     color: #D0D0D0;
     font-weight: bold;
     font-size: 16px;
@@ -1392,23 +1581,27 @@ textarea{
     margin-top: -1px;
     margin-left: 10px;
 }
-#sectionTestimonial .card-rating .h-layout{
+
+#sectionTestimonial .card-rating .h-layout {
     width: fit-content;
     align-items: start;
     margin-left: 5px;
 }
-#sectionTestimonial .card-rating img{
+
+#sectionTestimonial .card-rating img {
     height: 20px;
     width: 20px;
     margin-left: 5px;
 }
-#sectionTestimonial #feedBack{
+
+#sectionTestimonial #feedBack {
     color: #FFD700;
     font-weight: bold;
     font-size: 17px;
     text-align: start;
 }
-#sectionTestimonial #feedback{
+
+#sectionTestimonial #feedback {
     color: #D0D0D0;
     font-weight: bold;
     font-size: 16px;
@@ -1434,17 +1627,19 @@ textarea{
     cursor: pointer;
 }
 
-#btnClosePrivacyPolicy:hover{
+#btnClosePrivacyPolicy:hover {
     border: 1.5px solid #B07614;
     background: #ffa200;
     color: #ffa200;
 }
-#privacyPolicy .h-layout{
-    margin-top:30px;
+
+#privacyPolicy .h-layout {
+    margin-top: 30px;
     margin-left: 20px;
     margin-bottom: 10px;
 }
-#privacyPolicy .outer-container{
+
+#privacyPolicy .outer-container {
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -1456,46 +1651,53 @@ textarea{
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
-#privacyPolicy #date{
+
+#privacyPolicy #date {
     color: #FDFACD;
     font-weight: bold;
     font-size: 15px;
 }
-#privacyPolicy p{
+
+#privacyPolicy p {
     text-align: justify;
     font-size: 14px;
     color: white;
     margin: 5px 20px 5px 30px;
     margin-top: 5px;
 }
-#privacyPolicy p a{
+
+#privacyPolicy p a {
     color: #4ABC4F;
     font-size: 15px;
     font-weight: bold;
 }
-#privacyPolicy #header{
+
+#privacyPolicy #header {
     font-size: 19px;
     color: white;
     margin: 0 0 0 5px;
 }
-#privacyPolicy h6{
+
+#privacyPolicy h6 {
     font-size: 15px;
     color: #FFD700;
     margin: 0px 20px 0px 30px;
 }
+
 /* Responsiveness of the Privacy Policy Section */
 @media screen and (max-width: 880px) {
     .background-tint-black .appointment-layout {
         margin: 80px 10px;
     }
-    #privacyPolicy p{
+
+    #privacyPolicy p {
         margin: 5px 20px 5px 20px;
     }
 }
 
 
 /** FOOTER SECTION **/
-footer{
+footer {
     background-color: #181813;
     margin-top: 0.3px;
     align-items: start;
@@ -1505,14 +1707,16 @@ footer{
     border-top: 1.5px solid #7D8489;
     width: 100%;
 }
-footer .h-footer{
+
+footer .h-footer {
     width: 90%;
     padding: 0 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-footer .image-logo{
+
+footer .image-logo {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.0)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/elixir_logo.png);
     border-radius: 20px;
     /*border: 0.1px solid #EBCE27;*/
@@ -1523,40 +1727,52 @@ footer .image-logo{
     margin-top: 20px;
 }
 
-footer .socials{
+footer .socials {
     width: 200px;
     margin-top: 10px;
     margin-bottom: 10px;
     justify-content: space-between;
 }
 
-footer .contact{
+footer .contact {
     margin: 0 20px;
     /*border: 0.1px solid #EBCE27;*/
     padding: 0 10px;
 }
-footer .contact i{
+
+footer .contact i {
     color: white;
     font-size: 15px;
     margin: 0 0 7px 0;
     font-family: DM Sans;
 }
-footer .contact .v-layout{
+
+footer .contact a {
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    margin: 0 0 7px 0;
+    font-family: DM Sans;
+}
+
+footer .contact .v-layout {
     margin-left: 5px;
 }
-footer .contact .v-layout p{
+
+footer .contact .v-layout p {
     color: white;
     margin: 0 0 7px 0;
     font-size: 15px;
     font-family: DM Sans;
 }
 
-footer .q-link{
+footer .q-link {
     /*border: 0.1px solid #EBCE27;*/
     margin: 0 20px;
     padding: 0 10px;
 }
-footer .q-link a{
+
+footer .q-link a {
     color: #D0D0D0;
     font-size: 15px;
     margin-bottom: 9px;
@@ -1564,11 +1780,12 @@ footer .q-link a{
     transition: color 0.4s ease;
     font-family: DM Sans;
 }
-footer .q-link a:hover{
+
+footer .q-link a:hover {
     color: #D4AC52;
 }
 
-footer .gallery{
+footer .gallery {
     background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.0)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/gallery-icon.png);
     border-radius: 20px;
     /*border: 0.1px solid #EBCE27;*/
@@ -1579,24 +1796,20 @@ footer .gallery{
     margin-top: 5px;
 }
 
-footer .bottom{
+footer .bottom {
     background-color: #1A5B38;
     justify-content: center;
     width: 100%;
 }
-footer .bottom p{
+
+footer .bottom p {
     color: wheat;
     margin-right: 100px;
     font-family: DM Sans;
 }
-footer .bottom p a{
+
+footer .bottom p a {
     font-weight: bold;
     text-decoration: none;
     color: #FFD700;
 }
-    
-
-
-
-
-

@@ -7,6 +7,7 @@ const sectionHome = document.getElementById('sectionHome');
 const sectionPrivacyPolicy = document.getElementById('privacyPolicy');
 const btnClosePrivacyPolicy = document.getElementById('btnClosePrivacyPolicy');
 const sectionWorkApplicationOverlay = document.getElementById('workPopupOverlay');
+const sectionOurServices = document.getElementById('sectionOurServices');
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phonePattern = /^(?:\+254|0)(7|1)\d{8}$/;
@@ -68,6 +69,14 @@ function scrollToSection() {
 }
 
 scrollToSection(bookingSection);
+
+function scrollToService(){
+    if (sectionOurServices) {
+        sectionOurServices.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+scrollToService();
 
 // Function to get URL parameters
 function getUrlParameter(name) {
@@ -313,8 +322,7 @@ function animateAddition() {
             // Add the banner to the layout
             serviceList.appendChild(banner);
             if (index === services.length - 1) {
-                hLayout.innerHTML = '<button id="btnBookAppointment" class="flickering-button">BOOK NOW</button>';
-                hLayout.innerHTML += '<button id="btnViewMoreServices" class="flickering-button">VIEW MORE SERVICES</button>';
+                hLayout.innerHTML += '<a href="https://bit.ly/elixirsalonandspaBooking" class="flickering-button booking-btn" style="text-decoration: none;>BOOK APPOINTMENT NOW</a>';
                 banner.parentNode.appendChild(hLayout);
             }
             // Trigger the animation
@@ -557,7 +565,7 @@ function updateBackground() {
 function showVideoPopup(video) {
     popupVideo.src = video;
     videoPopup.style.display = 'flex';
-    overlay.style.height = '100%';
+    overlay.style.height = '0%';
 }
 
 function balanceSectionHeights() {

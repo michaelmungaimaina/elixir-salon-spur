@@ -104,9 +104,10 @@
                     </div>
                 </div>
                 <div class="h-layout">
-                    <button id="btnBookAppointment" onclick="scrollToSection()" class="flickering-button">BOOK
-                        APPOINTMENT NOW</button>
-                    <button id="btnExploreServices" class="flickering-button">EXPLORE OUR SERVICES</button>
+                    <a href="https://bit.ly/elixirsalonandspaBooking" class="flickering-button booking-btn">BOOK
+                        APPOINTMENT NOW</a>
+                    <button id="btnExploreServices" class="flickering-button" onclick="scrollToService()">EXPLORE OUR
+                        SERVICES</button>
                 </div>
             </div>
             <div class="container-right-pic">
@@ -229,7 +230,8 @@
                         <p>500</p>
                     </div>
                 </div>
-                <button id="btnBookWaxing" class="flickering-button">BOOK NOW</button>
+                <a id="btnBookWaxing" href="https://bit.ly/elixirsalonandspaBooking"
+                    class="flickering-button booking-btn" style="text-decoration: none;">BOOK NOW</a>
             </div>
             <div class="container-right-picture right-image-container">
                 <div class="image right-image"></div>
@@ -274,7 +276,8 @@
                         <p>1,500</p>
                     </div>
                 </div>
-                <button id="btnBookBodyScrub" class="flickering-button">BOOK NOW</button>
+                <a id="btnBookBodyScrub" href="https://bit.ly/elixirsalonandspaBooking"
+                    class="flickering-button booking-btn" style="text-decoration: none;">BOOK NOW</a>
             </div>
             <div class="container-right-picture right-image-container">
                 <div class="image right-image"></div>
@@ -336,7 +339,8 @@
                         <p>3,500 - 5,500</p>
                     </div>
                 </div>
-                <button id="btnBookHairServices" class="flickering-button">BOOK NOW</button>
+                <a id="btnBookHairServices" href="https://bit.ly/elixirsalonandspaBooking"
+                    class="flickering-button booking-btn" style="text-decoration: none;">BOOK NOW</a>
             </div>
             <div class="container-right-picture right-image-container">
                 <div class="image right-image"></div>
@@ -398,7 +402,8 @@
                         <p>1,500</p>
                     </div>
                 </div>
-                <button id="btnBookMakeUp" class="flickering-button">BOOK NOW</button>
+                <a id="btnBookMakeUp" href="https://bit.ly/elixirsalonandspaBooking"
+                    class="flickering-button booking-btn" style="text-decoration: none;">BOOK NOW</a>
             </div>
             <div class="container-right-picture right-image-container">
                 <div class="image right-image"></div>
@@ -452,7 +457,8 @@
                         <p>' '</p>
                     </div>
                 </div>
-                <button id="btnBookEyebrows" class="flickering-button">BOOK NOW</button>
+                <a id="btnBookEyebrows" href="https://bit.ly/elixirsalonandspaBooking"
+                    class="flickering-button booking-btn" style="text-decoration: none;">BOOK NOW</a>
             </div>
             <div class="container-right-picture right-image-container">
                 <div class="image right-image"></div>
@@ -510,7 +516,8 @@
                         <p>500 - 1,500</p>
                     </div>
                 </div>
-                <button id="btnBookMenServices" class="flickering-button">BOOK NOW</button>
+                <a id="btnBookMenServices" href="https://bit.ly/elixirsalonandspaBooking"
+                    class="flickering-button booking-btn" style="text-decoration: none;">BOOK NOW</a>
             </div>
             <div class="container-right-picture right-image-container">
                 <div class="image right-image"></div>
@@ -528,13 +535,17 @@
         <p class="header-text">A Glimpse of Elixil</p>
         <div class="gallery">
             <!-- Photo Section -->
-            <div class="photo-section" id="photoSection">
-                <!-- Photos will be dynamically inserted here -->
+            <div class="photo-scroll-container" id="photo-scroll-container">
+                <div class="photo-section" id="photoSection">
+                    <!-- Photos will be dynamically inserted here -->
+                </div>
             </div>
 
             <!-- Video Section -->
-            <div class="video-section" id="videoSection">
-                <!-- Videos will be dynamically inserted here -->
+            <div class="video-scroll-container" id="video-scroll-container">
+                <div class="video-section" id="videoSection">
+                    <!-- Videos will be dynamically inserted here -->
+                </div>
             </div>
         </div>
 
@@ -958,11 +969,13 @@
                 <p class="title">Contact Us</p>
                 <div class="icon">
                     <img src="./resources/location.png" alt="">
-                    <p>Kilimani, Commodore Office Suite, G3</p>
+                    <a href="https://maps.google.com/?cid=16060609366277038593&entry=gps&g_st=aw">Kilimani, Commodore
+                        Office Suite, G3</a>
                 </div>
                 <div class="icon">
                     <img src="./resources/email.png" alt="">
-                    <p>info@elixirsalonandspa.co.ke</p>
+                    <a
+                        href="mailto:info@elixirsalonandspa.co.ke?subject=Request the Service&body=Dear Elixir Team,">Sinfo@elixirsalonandspa.co.ke</a>
                 </div>
                 <div class="icon">
                     <img src="./resources/call.png" alt="">
@@ -970,7 +983,8 @@
                 </div>
                 <div class="icon">
                     <img src="./resources/whatsapp.png" alt="">
-                    <p>+254 717 733 000</p>
+                    <a href="https://wa.me/254717733000?text=Hello,%20I%20am%20interested%20in%20your%20services!"
+                        target="_blank">+254 717 733 000</a>
                 </div>
                 <div class="h-layout">
                     <div class="icon">
