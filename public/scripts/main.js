@@ -322,7 +322,7 @@ function animateAddition() {
             // Add the banner to the layout
             serviceList.appendChild(banner);
             if (index === services.length - 1) {
-                hLayout.innerHTML += '<a href="https://bit.ly/elixirsalonandspaBooking" class="flickering-button booking-btn" style="text-decoration: none;>BOOK APPOINTMENT NOW</a>';
+                hLayout.innerHTML = '<a href="https://bit.ly/elixirsalonandspaBooking" class="flickering-button booking-btn" style="text-decoration: none;>BOOK APPOINTMENT NOW</a>';
                 banner.parentNode.appendChild(hLayout);
             }
             // Trigger the animation
@@ -476,23 +476,23 @@ const photos = [
 ];
 
 const videos = [
-    '/public/resources/vid1.mp4', 
-    '/public/resources/vid2.mp4', 
-    '/public/resources/vid3.mp4', 
-    '/public/resources/vid4.mp4', 
-    '/public/resources/vid5.mp4', 
-    '/public/resources/vid6.mp4', 
-    '/public/resources/vid7.mp4', 
-    '/public/resources/vid8.mp4', 
-    '/public/resources/vid9.mp4', 
-    '/public/resources/vid10.mp4', 
-    '/public/resources/vid11.mp4', 
-    '/public/resources/vid12.mp4', 
-    '/public/resources/vid13.mp4', 
-    '/public/resources/vid14.mp4', 
-    '/public/resources/vid15.mp4', 
-    '/public/resources/vid16.mp4', 
-    '/public/resources/vid17.mp4'
+    './resources/vid1.mp4', 
+    './resources/vid2.mp4', 
+    './resources/vid3.mp4', 
+    './resources/vid4.mp4', 
+    './resources/vid5.mp4', 
+    './resources/vid6.mp4', 
+    './resources/vid7.mp4', 
+    './resources/vid8.mp4', 
+    './resources/vid9.mp4', 
+    './resources/vid10.mp4', 
+    './resources/vid11.mp4', 
+    './resources/vid12.mp4', 
+    './resources/vid13.mp4', 
+    './resources/vid14.mp4', 
+    './resources/vid15.mp4', 
+    './resources/vid16.mp4', 
+    './resources/vid17.mp4'
 ];
 
 const photoSection = document.getElementById('photoSection');
