@@ -42,6 +42,16 @@ CREATE TABLE IF NOT EXISTS ratings (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );`;
 
+const createTableApplications = 
+`CREATE TABLE IF NOT EXISTS applications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    cv VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);`
+
 // Create database and tables
     db.query(createDbQuery, (err) => {
         if (err) throw err;
@@ -54,13 +64,19 @@ CREATE TABLE IF NOT EXISTS ratings (
             // Create users table
             db.query(createTableQuery, (err) => {
                 if (err) throw err;
-                console.log('Table created or already exists.', err);
+                console.log('Table users created or already exists.', err);
             });
 
             // Create ratings table
             db.query(createTableRatings, (err) => {
                 if (err) throw err;
-                console.error('Table creation failed:', err);
+                console.error('Table ratings creation failed:', err);
+            });
+
+            // Create applications table
+            db.query(createTableApplications, (err) => {
+                if (err) throw err;
+                console.error('Table applications creation failed:', err);
             });
             db.end();
         });

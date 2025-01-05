@@ -46,8 +46,8 @@
                     <li><a href="#sectionOurServices" class="nav-link">OUR SERVICES</a></li>
                     <li><a href="#sectionGallery" class="nav-link">GALLERY</a></li>
                     <li><a href="#sectionContactUs" class="nav-link">CONTACT US</a></li>
-                    <li><a href="#sectionPromotion" class="nav-link">WORK WITH US</a></li>
-                    <li><a href="#sectionWorkWithUs" class="nav-link">PROMO</a></li>
+                    <li><a href="#sectionWorkWithUs" class="nav-link">WORK WITH US</a></li>
+                    <li><a href="#sectionPromotion" class="nav-link">PROMO</a></li>
                     <li><a href="#sectionTestimonial" class="nav-link">TESTIMONIALS</a></li>
                 </ul>
                 <button id="btnBookApointment" onclick="scrollToSection()" class="flickering-button">BOOK NOW</button>
@@ -104,7 +104,8 @@
                     </div>
                 </div>
                 <div class="h-layout">
-                    <button id="btnBookAppointment" onclick="scrollToSection()" class="flickering-button">BOOK APPOINTMENT NOW</button>
+                    <button id="btnBookAppointment" onclick="scrollToSection()" class="flickering-button">BOOK
+                        APPOINTMENT NOW</button>
                     <button id="btnExploreServices" class="flickering-button">EXPLORE OUR SERVICES</button>
                 </div>
             </div>
@@ -522,7 +523,49 @@
     </section>
 
     <!-- GALLERY SECTION -->
-    <section id="sectionGallery" class="section-container"></section>
+    <section id="sectionGallery" class="section-container">
+        <p class="title-text">GALLERY</p>
+        <p class="header-text">A Glimpse of Elixil</p>
+        <div class="gallery">
+            <!-- Photo Section -->
+            <div class="photo-section" id="photoSection">
+                <!-- Photos will be dynamically inserted here -->
+            </div>
+
+            <!-- Video Section -->
+            <div class="video-section" id="videoSection">
+                <!-- Videos will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Photo Popup -->
+        <div class="background-tint-gold" id="overlay">
+            <div id="btnClosePhotoPopUp" onclick="closePopup()" class="btn_hover1" style="position: fixed;">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="h-layout">
+                <div class="border">
+                    <div id="photoPopupLeft">
+                        <img onclick="nextPhoto()" src="./resources/prev-icon.png" alt="" id="prevId">
+                    </div>
+                </div>
+                <div class="border">
+                    <div id="photoPopupCenter"></div>
+                </div>
+                <div class="border">
+                    <div id="photoPopupRight">
+                        <img src="/public/resources/next-icon.png" alt="" id="nextId" onclick="nextPhoto()">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Popup -->
+        <div class="video-popup" id="videoPopup">
+            <button class="close-btn" onclick="closePopup()">Close</button>
+            <video id="popupVideo" controls autoplay></video>
+        </div>
+    </section>
 
     <!-- BOOKING SECTION -->
     <section id="sectionBooking" class="section-container">
@@ -534,7 +577,8 @@
                 <p class="sub-header-text">Choose your service, select a date and time,
                     and confirm your appointment in minutes
                 </p>
-                <a href="https://bit.ly/elixirsalonandspaBooking" class="flickering-button booking-btn">CLICK TO CONTINUE</a>
+                <a href="https://bit.ly/elixirsalonandspaBooking" class="flickering-button booking-btn">CLICK TO
+                    CONTINUE</a>
             </div>
             <div class="container-right-picture right-image-container">
                 <div class="image right-image"></div>
@@ -604,22 +648,24 @@
         <p class="title-text">WORK WITH US</p>
         <div class="v-layout">
             <h2 class="header-text">Work With Us</h2>
-            <p class="sub-header-text">At Elixir Salon & Spa, we’re always on the lookout for passionate, talented, and creative individuals to join our growing team! If you’re ready to bring beauty and confidence to our clients, we’d love to hear from you.</p>
-            
+            <p class="sub-header-text">At Elixir Salon & Spa, we’re always on the lookout for passionate, talented, and
+                creative individuals to join our growing team! If you’re ready to bring beauty and confidence to our
+                clients, we’d love to hear from you.</p>
+
             <h3>Why Join Us?</h3>
             <ul>
                 <li>A supportive and inclusive work environment.</li>
                 <li>Opportunities for professional growth and training.</li>
                 <li>Work with the latest tools and trends in the beauty industry.</li>
             </ul>
-            
+
             <h3>Current Openings</h3>
             <ul>
                 <li>Hair Stylists</li>
                 <li>Beauty Therapists</li>
                 <li>Receptionists</li>
             </ul>
-    
+
             <h3>Requirements</h3>
             <ul>
                 <li>Relevant qualifications or certifications for the position applied for.</li>
@@ -630,15 +676,21 @@
 
             <button id="workApplication" onclick="openApplicationForm()" class="flickering-button">Apply Now</button>
         </div>
-    
-        <div class="popup-overlay background-tint-gold" id="popupOverlay">
+
+        <div class="background-tint-gold popup-overlay" id="workPopupOverlay">
+            <div id="btnCloseApplication" onclick="closeApplicationForm()" class="btn_hover1" style="position: fixed;">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
             <div class="popup">
+                <div id="errorMessageContainer"
+                    style="color: rgb(236, 2, 2); width: 355px; display: none; margin: 65px 10px 2px 10px; background-color: #fc7b7b; text-align: center; font-size: 15px; padding: 4px 15px; border-radius: 5px; position: fixed; margin-top: -50px;">
+                </div>
                 <h3>Application Form</h3>
                 <form id="applicationForm">
-                    <input type="text" id="name" placeholder="Name" required>
-                    <input type="email" id="email" placeholder="Email" required>
-                    <input type="text" id="phone" placeholder="Phone" required>
-                    <input type="file" id="cv" accept=".pdf, .doc, .docx" required>
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                    <input type="tel" id="phoneNumber" placeholder="Phone Number (0712345678)" required>
+                    <input type="file" id="cv" accept=".pdf, .doc, .docx" required="true">
                     <button type="button" onclick="submitApplication()">Submit</button>
                 </form>
             </div>
@@ -653,35 +705,44 @@
             <div class="v-layout">
                 <div class="fill-outer">
                     <p id="offerTitle">🌟 Exclusive Offer for New Clients!</p>
-                    <p id="offerBody">Welcome to our services! Enjoy 20% off your first booking. Check your email for details and experience our exceptional aftercare.</p>
+                    <p id="offerBody">Welcome to our services! Enjoy 20% off your first booking. Check your email for
+                        details and experience our exceptional aftercare.</p>
                 </div>
-                <button id="btnClaimOffer" class="flickering-button">CLAIM OFFER NOW</button>
+                <a href="https://bit.ly/elixirsalonandspaBooking" id="btnClaimOffer" class="flickering-button">CLAIM
+                    OFFER NOW</a>
             </div>
             <div class="v-layout">
                 <div class="fill-outer">
                     <p id="offerTitle">🎉 Celebrate Your Special Day with Us!</p>
-                    <p id="offerBody">Book our special package and enjoy 20% off on all our services. Make your day truly unforgettable!</p>
+                    <p id="offerBody">Book our special package and enjoy 20% off on all our services. Make your day
+                        truly unforgettable!</p>
                 </div>
-                <button id="btnClaimOffer" class="flickering-button">CLAIM OFFER NOW</button>
-            </div> 
+                <a href="https://bit.ly/elixirsalonandspaBooking" id="btnClaimOffer" class="flickering-button">CLAIM
+                    OFFER NOW</a>
+            </div>
             <div class="v-layout">
                 <div class="fill-outer">
                     <p id="offerTitle">💎 Loyalty Reward - We Value You!</p>
-                    <p id="offerBody">As a token of our appreciation, enjoy 20% off your next booking. Thank you for choosing us again!</p>
+                    <p id="offerBody">As a token of our appreciation, enjoy 20% off your next booking. Thank you for
+                        choosing us again!</p>
                 </div>
-                <button id="btnClaimOffer" class="flickering-button">CLAIM OFFER NOW</button>
+                <a href="https://bit.ly/elixirsalonandspaBooking" id="btnClaimOffer" class="flickering-button">CLAIM
+                    OFFER NOW</a>
             </div>
             <div class="v-layout">
                 <div class="fill-outer">
                     <p id="offerTitle">✨ Seventh Appointment Special - You Deserve It!</p>
-                    <p id="offerBody">Your loyalty matters! Celebrate your 7th appointment with us and enjoy 20% off on all our services. Thank you for being part of our journey!</p>
+                    <p id="offerBody">Your loyalty matters! Celebrate your 7th appointment with us and enjoy 20% off on
+                        all our services. Thank you for being part of our journey!</p>
                 </div>
-                <button id="btnClaimOffer" class="flickering-button">CLAIM OFFER NOW</button>
+                <a href="https://bit.ly/elixirsalonandspaBooking" id="btnClaimOffer" class="flickering-button">CLAIM
+                    OFFER NOW</a>
             </div>
         </div>
         <p class="header-text">Your Beauty Journey Starts Here.</p>
         <p class="sub-header-text">Don't wait to feel your best. Book your appointment with us today!</p>
-        <button id="btnBookApointment" class="flickering-button">BOOK APPOINTMENT NOW</button>
+        <a href="https://bit.ly/elixirsalonandspaBooking" id="btnBookApointment" class="flickering-button">BOOK
+            APPOINTMENT NOW</a>
     </section>
 
     <!-- TESTIMONIAL SECTION -->
@@ -812,58 +873,67 @@
     <!-- PRIVACY POLICY -->
     <section id="privacyPolicy" class="background-tint-gold">
         <div id="btnClosePrivacyPolicy" onclick="closePrivacyPolicy()" class="btn_hover1" style="position: fixed;">
-          <i class="fa-solid fa-xmark"></i>
+            <i class="fa-solid fa-xmark"></i>
         </div>
         <div class="appointment-layout outer-container">
-          <div class="h-layout">
-            <div class="slash-rect"></div>
-            <p id="header" class="header-text">Our Privacy Policy</p>
-          </div>
-          <p id="date">Effective: Jan 7th, 2025</p>
-          <p>At <a href=".index.html">Elixir Salon & Spa</a>, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you interact with our website, services, and facilities. </p>
-          <h6>1. Information We Collect</h6>
-          <p>We collect the following types of:<br>
-            - <b>Personal Information:</b> <i>Name, email address, phone number,</i> and billing details when you book appointments or contact us. <br>
-            - <b>Usage Information:</b> <i>IP address, browser type, operating system, and browsing behavior</i> through cookies and tracking technologies (e.g., Google Analytics, Facebook Pixel). <br>
-            - <b>Device Information:</b> <i>Device type, screen resolution, and geographic location</i>  (if shared).
+            <div class="h-layout">
+                <div class="slash-rect"></div>
+                <p id="header" class="header-text">Our Privacy Policy</p>
+            </div>
+            <p id="date">Effective: Jan 7th, 2025</p>
+            <p>At <a href=".index.html">Elixir Salon & Spa</a>, we are committed to protecting your privacy. This
+                Privacy Policy explains how we collect, use, and safeguard your personal information when you interact
+                with our website, services, and facilities. </p>
+            <h6>1. Information We Collect</h6>
+            <p>We collect the following types of:<br>
+                - <b>Personal Information:</b> <i>Name, email address, phone number,</i> and billing details when you
+                book appointments or contact us. <br>
+                - <b>Usage Information:</b> <i>IP address, browser type, operating system, and browsing behavior</i>
+                through cookies and tracking technologies (e.g., Google Analytics, Facebook Pixel). <br>
+                - <b>Device Information:</b> <i>Device type, screen resolution, and geographic location</i> (if shared).
             </p>
             <h6>2. How We Use Your Data</h6>
             <p>We use the collected data to: <br>
-              - Process bookings and provide personalized services. <br>
-              - Communicate updates, promotions, and confirmations related to your appointments. <br>
-              - Enhance our website and customer experience. <br>
-              - Comply with legal requirements or resolve disputes.<br>
-              - To respond to your inquiries or requests.
-              </p>
+                - Process bookings and provide personalized services. <br>
+                - Communicate updates, promotions, and confirmations related to your appointments. <br>
+                - Enhance our website and customer experience. <br>
+                - Comply with legal requirements or resolve disputes.<br>
+                - To respond to your inquiries or requests.
+            </p>
             <h6>3. Sharing Your Data</h6>
-            <p>We respect your privacy and do not sell or share your personal information with third parties, except: <br>
-              - With<b>trusted partners</b> necessary to process your bookings (e.g., payment processors).<br>
-              - If <b>required by law</b>or to <b>protect</b> our rights and safety. <br>
-              - We do not sell, rent, or trade your personal data with third parties for their own purposes. <br>
-              </p>
-              <h6>4. Data Security</h6> 
-              <p>We implement robust security measures to protect your information from unauthorized access or disclosure. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.<br>
-                </p>
-              <h6>5. Your Rights</h6> 
-              <p>You have the right to:<br> 
+            <p>We respect your privacy and do not sell or share your personal information with third parties, except:
+                <br>
+                - With<b>trusted partners</b> necessary to process your bookings (e.g., payment processors).<br>
+                - If <b>required by law</b>or to <b>protect</b> our rights and safety. <br>
+                - We do not sell, rent, or trade your personal data with third parties for their own purposes. <br>
+            </p>
+            <h6>4. Data Security</h6>
+            <p>We implement robust security measures to protect your information from unauthorized access or disclosure.
+                However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute
+                security.<br>
+            </p>
+            <h6>5. Your Rights</h6>
+            <p>You have the right to:<br>
                 - Access, update, or delete your personal information. <br>
                 - Opt-out of marketing communications at any time. <br>
                 - Request clarification on how we handle your data. <br>
                 - To exercise these rights, contact us at <b>info@elixersalonandspa</b>.
             </p>
-              <h6>6. Cookies and Tracking</h6> 
-              <p>We use cookies to improve your experience on our website, analyze traffic, and provide targeted promotions. You can manage your cookie preferences through your browser settings.
-              </p>
-              <h6>7. Changes to This Policy</h6>
-              <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal reasons. The latest version will always be available on our website. <br>
-              </p>
-              <h6>8. Contact Us</h6>
-              <p>For questions or concerns about this Privacy Policy or your data, contact us at: <br>
+            <h6>6. Cookies and Tracking</h6>
+            <p>We use cookies to improve your experience on our website, analyze traffic, and provide targeted
+                promotions. You can manage your cookie preferences through your browser settings.
+            </p>
+            <h6>7. Changes to This Policy</h6>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal
+                reasons. The latest version will always be available on our website. <br>
+            </p>
+            <h6>8. Contact Us</h6>
+            <p>For questions or concerns about this Privacy Policy or your data, contact us at: <br>
                 <b>Phone:</b> 0717 733 000 <br>
                 <b>E-Mail</b> info@elixersalonandspa or elixirsalonandspa25@gmail.com
-              </p>
+            </p>
         </div>
-      </section>
+    </section>
 
     <!-- FOOTER SECTION -->
     <footer>

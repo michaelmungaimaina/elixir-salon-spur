@@ -453,3 +453,10 @@ h5 {
 .btn_hover1:hover::before {
     transform: scale(1.2); /* Expand background effect */
 }
+
+.border{
+    background: radial-gradient(circle, #B07614, #fffbc1, #B07614, #fffbc1, #B07614);
+    border-radius: 20px;
+    width: fit-content;
+    height: fit-content;
+}

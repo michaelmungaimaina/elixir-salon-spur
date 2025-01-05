@@ -874,6 +874,152 @@ aside .sidebar {
     margin: 25px 0px 30px 30px;
 }
 
+/** GALLERY SECTION  **/
+#sectionGallery{
+    background-color: #4F4B37;
+    margin-top: 0.3px;
+    align-items: start;
+    justify-content: center;
+    justify-items: center;
+    padding: 0px 2px 20px 20px;
+    background-image: linear-gradient(90deg, rgba(79, 73, 55, 0.859)100%, rgba(83, 79, 51, 0.768)70%);
+    border-top: 1.5px solid #7D8489;
+    width: 100%;
+}
+#sectionGallery .gallery {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 90%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+#sectionGallery .gallery  .photo-section, 
+#sectionGallery .gallery  .video-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: start;
+}
+
+#sectionGallery .gallery  .photo-section img, 
+#sectionGallery .gallery  .video-section video {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+#sectionGallery .h-layout .photo-popup, 
+#sectionGallery  .video-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#overlay .h-layout{
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 80px;
+}
+#overlay img{
+    height: 50px;
+    width: 30px;
+}
+#photoPopupLeft{
+    width: 250px;
+    height: 380px;
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.7)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/owner.jpeg);
+    border-radius: 20px;
+    margin: 3px;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#photoPopupCenter{
+    width: 400px;
+    height: 480px;
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.4)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/owner.jpeg);
+    border-radius: 20px;
+    margin: 6px;
+    background-size: 100% 100%;
+}
+
+#photoPopupRight{
+    width: 250px;
+    height: 380px;
+    background-image: linear-gradient(90deg, rgba(32, 24, 1, 0.7)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/owner.jpeg);
+    border-radius: 20px;
+    margin: 3px;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#btnClosePhotoPopUp {
+    width: 37px;
+    height: 30px;
+    position: absolute;
+    right: 0px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    border: 1.5px solid #B07614;
+    color: white;
+    margin: 60px;
+    cursor: pointer;
+}
+
+#btnClosePhotoPopUp:hover{
+    border: 1.5px solid #B07614;
+    background: #ffa200;
+    color: #ffa200;
+}
+
+#sectionGallery .photo-popup img, 
+#sectionGallery .video-popup video {
+    width: 90%;
+    max-width: 800px;
+}
+
+#sectionGallery .photo-popup .navigation, 
+#sectionGallery .photo-popup .close-btn,
+#sectionGallery .video-popup .close-btn {
+    margin: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+#sectionGallery .video-section video:hover {
+    filter: brightness(0.8);
+}
+
+#sectionGallery .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
 
 /** BOOKING SECTION **/
 #sectionBooking{
@@ -1015,15 +1161,28 @@ textarea{
     margin: 40px;
     width: 200px;
 }
+#btnCloseApplication {
+    width: 37px;
+    height: 30px;
+    position: absolute;
+    right: 0px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    border: 1.5px solid #B07614;
+    color: white;
+    margin: 60px;
+    cursor: pointer;
+}
+
+#btnCloseApplication:hover{
+    border: 1.5px solid #B07614;
+    background: #ffa200;
+    color: #ffa200;
+}
 #sectionWorkWithUs .popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    display: inline;
 }
 
 #sectionWorkWithUs .popup {
@@ -1031,22 +1190,30 @@ textarea{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #fff;
+    background: #4F4B37;
     padding: 20px;
     border-radius: 10px;
     width: 400px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    justify-items: center;
 }
 
 #sectionWorkWithUs .popup h3 {
     margin-top: 0;
+    color: #FDFACD;
 }
 
 #sectionWorkWithUs .popup form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    justify-items: center;
 }
 
+#sectionWorkWithUs .popup form input{
+    width: 375px;
+}
 #sectionWorkWithUs .popup form input,
 #sectionWorkWithUs .popup form button {
     margin-bottom: 10px;
@@ -1065,7 +1232,7 @@ textarea{
     background-color: #A06010;
 }
 
-/** WORK SECTION **/
+/** WORK PROMOTION **/
 #sectionPromotion{
     background-color: #4F4B37;
     margin-top: 0.3px;
@@ -1093,6 +1260,12 @@ textarea{
     width: 250px;
     height: 350px;
     background-color: #292820;
+}
+#sectionPromotion a{
+    text-decoration: none;
+    font-size: 15px;
+    font-family: DM Sans;
+    font-weight: bold;
 }
 #sectionPromotion .fill-outer{
     display: flex;
