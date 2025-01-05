@@ -453,7 +453,7 @@ const photos = [
     './resources/serv38.jpeg', 
     './resources/serv39.jpeg', 
     './resources/serv40.jpeg', 
-    './resources/serv2.jpeg', 
+    './resources/serve2.jpeg', 
     './resources/serv3.jpeg', 
     './resources/serv4.jpeg', 
     './resources/serv8.jpeg', 
@@ -461,7 +461,6 @@ const photos = [
     './resources/serv15.jpeg', 
     './resources/home-back-photo.jpeg', 
     './resources/home-back-photo1.jpeg', 
-    './resources/home-back-photo2.jpeg',
     './resources/serv11.jpg', 
     './resources/serv12.jpg', 
     './resources/serv9.jpeg', 
@@ -560,7 +559,7 @@ function updateBackground() {
 function showVideoPopup(video) {
     popupVideo.src = video;
     videoPopup.style.display = 'flex';
-    overlay.style.display = 'block';
+    overlay.style.height = '100%';
 }
 
 function balanceSectionHeights() {
