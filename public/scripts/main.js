@@ -538,13 +538,11 @@ function closePopup() {
 
 function nextPhoto() {
     currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
-    photoPopupCenter.style.backgroundImage = `url(${photos[currentPhotoIndex]})`;
     updateBackground();
 }
 
 function prevPhoto() {
     currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
-    photoPopupCenter.style.backgroundImage = `url(${photos[currentPhotoIndex]})`;
     updateBackground();
 }
 

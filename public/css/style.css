@@ -894,7 +894,13 @@ aside .sidebar {
     gap: 20px;
 }
 
-#sectionGallery .gallery  .photo-section, 
+#sectionGallery .gallery  .photo-section{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: start;
+}
+
 #sectionGallery .gallery  .video-section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -910,7 +916,6 @@ aside .sidebar {
     cursor: pointer;
 }
 
-#sectionGallery .h-layout .photo-popup, 
 #sectionGallery  .video-popup {
     position: fixed;
     top: 50%;
