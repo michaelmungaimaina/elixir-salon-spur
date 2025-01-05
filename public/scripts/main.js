@@ -322,7 +322,7 @@ function animateAddition() {
             // Add the banner to the layout
             serviceList.appendChild(banner);
             if (index === services.length - 1) {
-                hLayout.innerHTML = '<a href="https://bit.ly/elixirsalonandspaBooking" class="flickering-button booking-btn" style="text-decoration: none;>BOOK APPOINTMENT NOW</a>';
+                hLayout.innerHTML = '<a href="https://bit.ly/elixirsalonandspaBooking" class="flickering-button booking-btn" style="text-decoration: none;">BOOK APPOINTMENT NOW</a>';
                 banner.parentNode.appendChild(hLayout);
             }
             // Trigger the animation
@@ -349,7 +349,7 @@ function createBackgroundLayer(url) {
 const images = [
     './resources/home-back-photo.jpeg',
     './resources/home-back-photo1.jpeg',
-    './resources/serv2.jpeg',
+    './resources/serve2.jpeg',
     './resources/serv3.jpeg',
     './resources/serv8.jpeg',
 ];
