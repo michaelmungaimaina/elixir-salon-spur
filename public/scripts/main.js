@@ -4,6 +4,13 @@ console.log('main.js - Loaded');
 const serviceList = document.getElementById('serviceList');
 const sectionHome = document.getElementById('sectionHome');
 
+const sectionPrivacyPolicy = document.getElementById('privacyPolicy');
+const btnClosePrivacyPolicy = document.getElementById('btnClosePrivacyPolicy');
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phonePattern = /^(?:\+254|0)(7|1)\d{8}$/;
+const twoWordsPattern = /^\S+\s+\S+/;
+
 document.addEventListener("DOMContentLoaded", () => {
     const serviceList = document.querySelectorAll(".service-card .list-item");
     const delay = 300; // Delay between items (in milliseconds)
@@ -60,6 +67,33 @@ function scrollToSection() {
 }
 
 scrollToSection(bookingSection);
+
+// Function to get URL parameters
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+// Show the popup if the URL parameter `{}=true` is present
+window.onload = function () {
+    const privacyPolicy = getUrlParameter('privacy-policy');
+
+    if (privacyPolicy === 'true') openPrivacyPolicy();
+};
+
+function openPrivacyPolicy() {
+    if (sectionPrivacyPolicy) {
+        sectionPrivacyPolicy.style.height = '100%';
+        const newUrl = `${baseUrl.slice(0, 0)}?privacy-policy=true`;
+        window.history.pushState({}, '', newUrl);
+    }
+}
+function closePrivacyPolicy() {
+    if (sectionPrivacyPolicy) {
+        sectionPrivacyPolicy.style.height = '0%';
+        window.history.pushState({}, '', baseUrl);
+    }
+}
 
 // Add event listener for scrolling
 window.addEventListener('scroll', function() {

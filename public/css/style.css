@@ -990,6 +990,80 @@ textarea{
     border-top: 1.5px solid #7D8489;
     width: 100%;
 }
+#sectionWorkWithUs .v-layout{
+    padding: 20px;
+    margin-left: 60px;
+    margin-top: -50px;
+    height: fit-content;
+}
+
+#sectionWorkWithUs .v-layout h3{
+    color: #FDFACD;
+    text-align: left;
+}
+#sectionWorkWithUs .v-layout ul{
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+#sectionWorkWithUs .v-layout li{
+    color: #D0D0D0;
+    list-style: none;
+    font-family: DM Sans;
+    text-align: start;
+}
+#workApplication{
+    margin: 40px;
+    width: 200px;
+}
+#sectionWorkWithUs .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#sectionWorkWithUs .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#sectionWorkWithUs .popup h3 {
+    margin-top: 0;
+}
+
+#sectionWorkWithUs .popup form {
+    display: flex;
+    flex-direction: column;
+}
+
+#sectionWorkWithUs .popup form input,
+#sectionWorkWithUs .popup form button {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#sectionWorkWithUs .popup form button {
+    background-color: #B07614;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#sectionWorkWithUs .popup form button:hover {
+    background-color: #A06010;
+}
 
 /** WORK SECTION **/
 #sectionPromotion{
@@ -1165,6 +1239,83 @@ textarea{
     margin-left: 10px;
 }
 
+
+/**************************      Privacy Policy Page Syles     ****************************/
+#btnClosePrivacyPolicy {
+    width: 37px;
+    height: 30px;
+    position: absolute;
+    right: 0px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    border: 1.5px solid #B07614;
+    color: white;
+    margin: 60px;
+    cursor: pointer;
+}
+
+#btnClosePrivacyPolicy:hover{
+    border: 1.5px solid #B07614;
+    background: #ffa200;
+    color: #ffa200;
+}
+#privacyPolicy .h-layout{
+    margin-top:30px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+#privacyPolicy .outer-container{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 90%;
+    margin: 60px 100px;
+    max-width: 800px;
+    background-color: rgba(21, 39, 13, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+#privacyPolicy #date{
+    color: #FDFACD;
+    font-weight: bold;
+    font-size: 15px;
+}
+#privacyPolicy p{
+    text-align: justify;
+    font-size: 14px;
+    color: white;
+    margin: 5px 20px 5px 30px;
+    margin-top: 5px;
+}
+#privacyPolicy p a{
+    color: #4ABC4F;
+    font-size: 15px;
+    font-weight: bold;
+}
+#privacyPolicy #header{
+    font-size: 19px;
+    color: white;
+    margin: 0 0 0 5px;
+}
+#privacyPolicy h6{
+    font-size: 15px;
+    color: #FFD700;
+    margin: 0px 20px 0px 30px;
+}
+/* Responsiveness of the Privacy Policy Section */
+@media screen and (max-width: 880px) {
+    .background-tint-black .appointment-layout {
+        margin: 80px 10px;
+    }
+    #privacyPolicy p{
+        margin: 5px 20px 5px 20px;
+    }
+}
+
+
 /** FOOTER SECTION **/
 footer{
     background-color: #181813;
@@ -1229,7 +1380,7 @@ footer .q-link{
 }
 footer .q-link a{
     color: #D0D0D0;
-    font-size: 19px;
+    font-size: 15px;
     margin-bottom: 9px;
     text-decoration: none;
     transition: color 0.4s ease;
@@ -1240,7 +1391,7 @@ footer .q-link a:hover{
 }
 
 footer .gallery{
-    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.0)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/elixir_logo.png);
+    background-image: linear-gradient(90deg, rgba(46, 35, 1, 0.0)100%, rgba(235, 206, 39, 0.4)70%), url(../resources/gallery-icon.png);
     border-radius: 20px;
     /*border: 0.1px solid #EBCE27;*/
     background-position: center;
