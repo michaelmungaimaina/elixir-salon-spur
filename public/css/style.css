@@ -247,7 +247,7 @@ aside .sidebar {
 .sidepanel ul li {
     width: 100%;
     height: 20px;
-    margin-bottom: -10px;
+    margin-bottom: 2px;
 }
 
 .sidepanel ul li a {
@@ -343,7 +343,7 @@ aside .sidebar {
 @media only screen and (max-width: 680px) {
 
     /** Hide horizontal top navbar **/
-    .navbar-items li {
+    .top li {
         display: none;
     }
 
@@ -371,7 +371,7 @@ aside .sidebar {
         width: 90%;
     }
     /** Hide horizontal top navbar **/
-    .navbar-items li {
+    .top li {
         display: none;
     }
 
@@ -495,6 +495,10 @@ aside .sidebar {
 }
 
 @media only screen and (max-width: 1068px) {
+    body{
+        background-color: #4F4B37;
+        padding-left: 7px
+    }
     #sectionHome .home-container {
         margin: 0px 50px 20px 100px;
     }
@@ -643,9 +647,21 @@ aside .sidebar {
 }
 
 @media only screen and (max-width: 480px) {
+    .left-nav-section {
+        width: 90px;
+        height: 70px;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 80% 100%, 0% 100%, 0% 0%);
+    }
+    .navbar-logo {
+        height: 110px;
+        width: 130px;
+    }
     #sectionHome {
-        width: 113.5%;
+        width: 119.6%;
         margin-top: 47px;
+        margin-left: -7px;
+        padding-top: 50px;
+        padding-left: 10px;
     }
 
     #sectionHome .container-right-pic,
@@ -842,7 +858,7 @@ aside .sidebar {
 
 @media only screen and (max-width: 480px) {
     #sectionAboutUs{
-        width: 108%;
+        width: 110.8%;
         margin-left: 0;
         margin-right: 0;
     }
@@ -1126,7 +1142,7 @@ aside .sidebar {
 
 @media only screen and (max-width: 480px) {
     #sectionOurServices {
-        width: 107.5%;
+        width: 110.2%;
     }
     #sectionOurServices .title-text{
         margin-left: 10px;
@@ -1673,7 +1689,7 @@ aside .sidebar {
 
 @media only screen and (max-width: 480px) {
     #sectionGallery {
-        width: 107.5%;
+        width: 110.2%;
     }
     #sectionGallery .title-text{
         margin-left: 10px;
@@ -1772,7 +1788,7 @@ aside .sidebar {
 
 @media only screen and (max-width: 480px) {
     #sectionBooking {
-        width: 105.3%;
+        width: 108.1%;
         padding: 0 15px;
         padding-bottom: 65px;
     }
@@ -1915,7 +1931,7 @@ textarea {
 
 @media only screen and (max-width: 480px) {
     #sectionContactUs {
-        width: 107.5%;
+        width: 110.2%;
     }
     #sectionContactUs .title-text{
         margin-left: 10px;
@@ -2065,7 +2081,7 @@ textarea {
 }
 @media only screen and (max-width: 480px) {
     #sectionWorkWithUs {
-        width: 107.5%;
+        width: 110.2%;
     }
     #sectionWorkWithUs .title-text{
         margin-left: 10px;
@@ -2162,7 +2178,7 @@ textarea {
 
 @media only screen and (max-width: 480px) {
     #sectionPromotion {
-        width: 107.5%;
+        width: 110.2%;
     }
     #sectionPromotion .title-text{
         margin-left: 10px;
@@ -2340,7 +2356,7 @@ textarea {
 
 @media only screen and (max-width: 480px) {
     #sectionTestimonial {
-        width: 102.7%;
+        width: 105.4%;
         margin: 0;
         padding: 0 20px 20px;
     }
@@ -2440,6 +2456,16 @@ textarea {
 @media screen and (max-width: 880px) {
     .background-tint-black .appointment-layout {
         margin: 80px 10px;
+    }
+
+    #privacyPolicy p {
+        margin: 5px 20px 5px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #privacyPolicy .outer-container {
+        margin: 60px 10px;
     }
 
     #privacyPolicy p {
@@ -2567,7 +2593,8 @@ footer .bottom p a {
 }
 @media screen and (max-width: 480px) {
     footer {
-        width: 113.5%;
+        width: 116.1%;
+        padding: 0;
     }
     footer .h-footer{
         display: grid;
@@ -2582,6 +2609,7 @@ footer .bottom p a {
         grid-column: 1;
         grid-row: 1;
         text-align: center;
+
     }
     footer .contact{
         grid-column: 1;
@@ -2606,6 +2634,9 @@ footer .bottom p a {
         height: 130px;
     width: 110px;
     margin-top: 0;
+    margin-left: 50px;
+    align-items: center;
+    justify-content: center;
     }
     footer .q-link a,
     footer .contact .v-layout p,
@@ -2618,8 +2649,8 @@ footer .bottom p a {
         margin: 0;
     }
     footer img{
-        width: 8px;
-        height: 12px;
+        width: 6px;
+        height: 6px;
     }
     footer .bottom p {
         font-size: 10px;
