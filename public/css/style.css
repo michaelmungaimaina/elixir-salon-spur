@@ -642,9 +642,9 @@ aside .sidebar {
     }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 480px) {
     #sectionHome {
-        width: 105.5%;
+        width: 113.5%;
         margin-top: 47px;
     }
 
@@ -840,9 +840,9 @@ aside .sidebar {
     }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 480px) {
     #sectionAboutUs{
-        width: 100%;
+        width: 108%;
         margin-left: 0;
         margin-right: 0;
     }
@@ -1124,9 +1124,9 @@ aside .sidebar {
     margin: 25px 0px 30px 30px;
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 480px) {
     #sectionOurServices {
-        width: 100%;
+        width: 107.5%;
     }
     #sectionOurServices .title-text{
         margin-left: 10px;
@@ -1163,7 +1163,7 @@ aside .sidebar {
     #serviceCatalog .container-right-picture {
         width: 110px;
         height: 107px;
-        margin: 5px 0 0 20px;
+        margin: 5px 0 0 45px;
         max-height: 250px;
     }
     #serviceCatalog .image {
@@ -1188,8 +1188,8 @@ aside .sidebar {
         padding: 5px 0px 5px 50px;
     }
     #service-waxing-detail .service-card {
-        width: 260px;
-        margin: 20px 0 0 0px;
+        width: 290px;
+        margin: 20px 0 0 10px;
     }
     #service-waxing-detail .service-card .list-item {
         height: 20px;
@@ -1203,7 +1203,7 @@ aside .sidebar {
     #service-waxing-detail .container-right-picture {
         width: 110px;
         height: 107px;
-        margin: 5px 0 0 5px;
+        margin: 5px 0 0 22px;
         max-height: 250px;
     }
     #service-waxing-detail .image {
@@ -1235,8 +1235,8 @@ aside .sidebar {
         padding: 5px 0px 5px 50px;
     }
     #service-body-scrub-detail .service-card {
-        width: 260px;
-        margin: 20px 0 0 0px;
+        width: 290px;
+        margin: 20px 0 0 10px;
     }
     #service-body-scrub-detail .service-card .list-item {
         height: 20px;
@@ -1250,7 +1250,7 @@ aside .sidebar {
     #service-body-scrub-detail .container-right-picture {
         width: 110px;
         height: 107px;
-        margin: 5px 0 0 5px;
+        margin: 5px 0 0 22px;
         max-height: 250px;
     }
     #service-body-scrub-detail .image {
@@ -1281,8 +1281,8 @@ aside .sidebar {
         padding: 5px 0px 5px 50px;
     }
     #service-hair-services-detail .service-card {
-        width: 260px;
-        margin: 20px 0 0 0px;
+        width: 290px;
+        margin: 20px 0 0 10px;
     }
     #service-hair-services-detail .service-card .list-item {
         height: 20px;
@@ -1296,7 +1296,7 @@ aside .sidebar {
     #service-hair-services-detail .container-right-picture {
         width: 110px;
         height: 107px;
-        margin: 5px 0 0 5px;
+        margin: 5px 0 0 22px;
         max-height: 250px;
     }
     #service-hair-services-detail .image {
@@ -1327,8 +1327,8 @@ aside .sidebar {
         padding: 5px 0px 5px 50px;
     }
     #service-make-up-lashes-detail .service-card {
-        width: 260px;
-        margin: 20px 0 0 0px;
+        width: 290px;
+        margin: 20px 0 0 10px;
     }
     #service-make-up-lashes-detail .service-card .list-item {
         height: 20px;
@@ -1342,7 +1342,7 @@ aside .sidebar {
     #service-make-up-lashes-detail .container-right-picture {
         width: 110px;
         height: 107px;
-        margin: 5px 0 0 5px;
+        margin: 5px 0 0 22px;
         max-height: 250px;
     }
     #service-make-up-lashes-detail .image {
@@ -1373,8 +1373,8 @@ aside .sidebar {
         padding: 5px 0px 5px 50px;
     }
     #service-eyebrows-detail .service-card {
-        width: 260px;
-        margin: 20px 0 0 0px;
+        width: 290px;
+        margin: 20px 0 0 10px;
     }
     #service-eyebrows-detail .service-card .list-item {
         height: 20px;
@@ -1388,7 +1388,7 @@ aside .sidebar {
     #service-eyebrows-detail .container-right-picture {
         width: 110px;
         height: 107px;
-        margin: 5px 0 0 5px;
+        margin: 5px 0 0 22px;
         max-height: 250px;
     }
     #service-eyebrows-detail .image {
@@ -1419,8 +1419,8 @@ aside .sidebar {
         padding: 5px 0px 5px 50px;
     }
     #service-men-services-detail .service-card {
-        width: 260px;
-        margin: 20px 0 0 0px;
+        width: 290px;
+        margin: 20px 0 0 10px;
     }
     #service-men-services-detail .service-card .list-item {
         height: 20px;
@@ -1434,7 +1434,7 @@ aside .sidebar {
     #service-men-services-detail .container-right-picture {
         width: 110px;
         height: 107px;
-        margin: 5px 0 0 5px;
+        margin: 5px 0 0 22px;
         max-height: 250px;
     }
     #service-men-services-detail .image {
@@ -1671,9 +1671,9 @@ aside .sidebar {
     display: none;
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 480px) {
     #sectionGallery {
-        width: 100%;
+        width: 107.5%;
     }
     #sectionGallery .title-text{
         margin-left: 10px;
@@ -1685,11 +1685,11 @@ aside .sidebar {
         margin-top: 0;
     }
     #photo-scroll-container {
-        width: 95%;
+        width: 98%;
         margin-left: 5px;
     }
     #video-scroll-container {
-        width: 95%;
+        width: 98%;
         margin-left: 5px;
         height: 250px;
     }
@@ -1770,9 +1770,9 @@ aside .sidebar {
     font-size: 25px;
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 480px) {
     #sectionBooking {
-        width: 98%;
+        width: 105.3%;
         padding: 0 15px;
         padding-bottom: 65px;
     }
@@ -1799,7 +1799,7 @@ aside .sidebar {
         flex-direction: column;
     }
     #sectionBooking .v-layout{
-        width: 89%;
+        width: 95%;
     }
     #sectionBooking .h-layout .container-right-picture {
         width: 110px;
@@ -1913,9 +1913,9 @@ textarea {
     margin: 20px 0 20px;
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 480px) {
     #sectionContactUs {
-        width: 100%;
+        width: 107.5%;
     }
     #sectionContactUs .title-text{
         margin-left: 10px;
@@ -2063,9 +2063,9 @@ textarea {
 #sectionWorkWithUs .popup form button:hover {
     background-color: #A06010;
 }
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 480px) {
     #sectionWorkWithUs {
-        width: 100%;
+        width: 107.5%;
     }
     #sectionWorkWithUs .title-text{
         margin-left: 10px;
@@ -2160,9 +2160,9 @@ textarea {
     margin-left: 80px;
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 480px) {
     #sectionPromotion {
-        width: 100%;
+        width: 107.5%;
     }
     #sectionPromotion .title-text{
         margin-left: 10px;
@@ -2190,7 +2190,7 @@ textarea {
     }
     #sectionPromotion .h-layout{
         flex-direction: column;
-        margin-left: 20px;
+        margin-left: 40px;
     }
     #sectionPromotion .v-layout {
         height: 250px;
@@ -2338,9 +2338,9 @@ textarea {
     margin-left: 10px;
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 480px) {
     #sectionTestimonial {
-        width: 95%;
+        width: 102.7%;
         margin: 0;
         padding: 0 20px 20px;
     }
@@ -2360,7 +2360,7 @@ textarea {
         margin-top: 0;
     }
     #sectionTestimonial .h-layout {
-        margin-left: 0PX;
+        margin-left: 18px;
     }
 }
 /**************************      Privacy Policy Page Syles     ****************************/
@@ -2565,9 +2565,9 @@ footer .bottom p a {
     text-decoration: none;
     color: #FFD700;
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 480px) {
     footer {
-        width: 105.5%;
+        width: 113.5%;
     }
     footer .h-footer{
         display: grid;
@@ -2600,7 +2600,7 @@ footer .bottom p a {
     }
     footer .gallery{
         height: 80px;
-    width: 110px;
+    width: 120px;
     }
     footer .image-logo {
         height: 130px;
