@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Elixilr Salon & Spa</title>
     <!-- Logo Icon-->
     <link rel="shortcut icon" href="./resources/elixir_logo.png" type="image/x-icon" />
 
@@ -76,7 +76,8 @@
                     <li><a href="#sectionPromotion" class="nav-link">PROMO</a></li>
                     <li><a href="#sectionTestimonial" class="nav-link">TESTIMONIALS</a></li>
                 </ul>
-                <button id="btnAsideBookApointment" class="flickering-button">BOOK APPOINTMENT NOW</button>
+                <a id="btnAsideBookApointment" href="https://bit.ly/elixirsalonandspaBooking"
+                    class="flickering-button booking-btn" style="text-decoration: none;">BOOK APPOINTMENT NOW</a>
             </div>
     </header>
 
@@ -103,9 +104,9 @@
                         <p class="description">Happy Customers</p>
                     </div>
                 </div>
-                <div class="h-layout">
-                    <a href="https://bit.ly/elixirsalonandspaBooking" class="flickering-button booking-btn">BOOK
-                        APPOINTMENT NOW</a>
+                <div class="h-layout button-layout">
+                    <a id="btnBookAppointment" href="https://bit.ly/elixirsalonandspaBooking"
+                        class="flickering-button booking-btn" style="text-decoration: none;">BOOK APPOINTMENT NOW</a>
                     <button id="btnExploreServices" class="flickering-button" onclick="scrollToService()">EXPLORE OUR
                         SERVICES</button>
                 </div>
@@ -161,7 +162,7 @@
         <p class="title-text">OUR SERVICES</p>
         <div id="serviceCatalog" class="v-layout about-container">
             <p class="header-text">Explore Our Premium Services</p>
-            <div class="h-layout">
+            <div class="h-layout catalog">
                 <div id="serviceList" class="v-layout">
                     <!--div class="banner catalog-banner">
                         <p>WAXING</p>
@@ -171,11 +172,13 @@
                         <button id="btnViewMoreServices" class="flickering-button">MORE SERVICES</button>
                     </div-->
                 </div>
-                <div class="container-right-picture">
-                    <div class="image right-image"></div>
-                </div>
-                <div class="container-right-picture">
-                    <div class="image right-image-two"></div>
+                <div class="h-layout right-container">
+                    <div class="container-right-picture">
+                        <div class="image right-image"></div>
+                    </div>
+                    <div class="container-right-picture">
+                        <div class="image right-image-two"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -233,11 +236,13 @@
                 <a id="btnBookWaxing" href="https://bit.ly/elixirsalonandspaBooking"
                     class="flickering-button booking-btn" style="text-decoration: none;">BOOK NOW</a>
             </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image"></div>
-            </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image-two"></div>
+            <div class="h-layout right-container">
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image"></div>
+                </div>
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image-two"></div>
+                </div>
             </div>
         </div>
         <!--START-->
@@ -279,11 +284,13 @@
                 <a id="btnBookBodyScrub" href="https://bit.ly/elixirsalonandspaBooking"
                     class="flickering-button booking-btn" style="text-decoration: none;">BOOK NOW</a>
             </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image"></div>
-            </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image-two"></div>
+            <div class="h-layout right-container">
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image"></div>
+                </div>
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image-two"></div>
+                </div>
             </div>
         </div>
         <!--END-->
@@ -342,11 +349,13 @@
                 <a id="btnBookHairServices" href="https://bit.ly/elixirsalonandspaBooking"
                     class="flickering-button booking-btn" style="text-decoration: none;">BOOK NOW</a>
             </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image"></div>
-            </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image-two"></div>
+            <div class="h-layout right-container">
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image"></div>
+                </div>
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image-two"></div>
+                </div>
             </div>
         </div>
         <!--END-->
@@ -405,11 +414,13 @@
                 <a id="btnBookMakeUp" href="https://bit.ly/elixirsalonandspaBooking"
                     class="flickering-button booking-btn" style="text-decoration: none;">BOOK NOW</a>
             </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image"></div>
-            </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image-two"></div>
+            <div class="h-layout right-container">
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image"></div>
+                </div>
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image-two"></div>
+                </div>
             </div>
         </div>
         <!--END-->
@@ -460,11 +471,13 @@
                 <a id="btnBookEyebrows" href="https://bit.ly/elixirsalonandspaBooking"
                     class="flickering-button booking-btn" style="text-decoration: none;">BOOK NOW</a>
             </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image"></div>
-            </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image-two"></div>
+            <div class="h-layout right-container">
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image"></div>
+                </div>
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image-two"></div>
+                </div>
             </div>
         </div>
         <!--END-->
@@ -519,11 +532,13 @@
                 <a id="btnBookMenServices" href="https://bit.ly/elixirsalonandspaBooking"
                     class="flickering-button booking-btn" style="text-decoration: none;">BOOK NOW</a>
             </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image"></div>
-            </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image-two"></div>
+            <div class="h-layout right-container">
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image"></div>
+                </div>
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image-two"></div>
+                </div>
             </div>
         </div>
         <!--END-->
@@ -555,15 +570,15 @@
                 <i class="fa-solid fa-xmark"></i>
             </div>
             <div class="h-layout">
-                <div class="border">
+                <div class="border left">
                     <div id="photoPopupLeft">
                         <img onclick="nextPhoto()" src="./resources/prev-icon.png" alt="" id="prevId">
                     </div>
                 </div>
-                <div class="border">
+                <div class="border center">
                     <div id="photoPopupCenter"></div>
                 </div>
-                <div class="border">
+                <div class="border right">
                     <div id="photoPopupRight">
                         <img src="./resources/next-icon.png" alt="" id="nextId" onclick="prevPhoto()">
                     </div>
@@ -576,28 +591,30 @@
             <div id="btnClosePhotoPopUp" onclick="closePopup()" class="btn_hover1" style="position: fixed;">
                 <i class="fa-solid fa-xmark"></i>
             </div>
-            <video id="popupVideo" controls autoplay></video>
+            <video id="popupVideo" controls autoplay muted></video>
         </div>
     </section>
 
     <!-- BOOKING SECTION -->
     <section id="sectionBooking" class="section-container">
         <p class="title-text">BOOKING</p>
-        <div class="h-layout">
+        <div class="h-layout outer-layout">
             <div class="v-layout">
                 <p class="header-text">Book Your Experience Today</p>
                 <h5 class="sub-header-text">Team of Professionals is Waiting for You.</h5>
                 <p class="sub-header-text">Choose your service, select a date and time,
                     and confirm your appointment in minutes
                 </p>
-                <a href="https://bit.ly/elixirsalonandspaBooking" class="flickering-button booking-btn">CLICK TO
+                <a id="btnBookAppointment" href="https://bit.ly/elixirsalonandspaBooking" class="flickering-button booking-btn">CLICK TO
                     CONTINUE</a>
             </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image"></div>
-            </div>
-            <div class="container-right-picture right-image-container">
-                <div class="image right-image-two"></div>
+            <div class="h-layout right-container">
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image"></div>
+                </div>
+                <div class="container-right-picture right-image-container">
+                    <div class="image right-image-two"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -606,7 +623,7 @@
     <section id="sectionContactUs" class="section-container">
         <p class="title-text">CONTACT US</p>
         <h3 class="header-text">We'd Love to Hear from You.</h3>
-        <div class="h-layout">
+        <div class="h-layout rev-col">
             <div class="v-layout right-col">
                 <p class="sub-header-text">We are here to answer all
                     your questions and assist with your bookings. Feel
@@ -660,7 +677,7 @@
     <section id="sectionWorkWithUs" class="section-container">
         <p class="title-text">WORK WITH US</p>
         <div class="v-layout">
-            <h2 class="header-text">Work With Us</h2>
+            <h2 class="header-text">Job Opportunities</h2>
             <p class="sub-header-text">At Elixir Salon & Spa, we’re always on the lookout for passionate, talented, and
                 creative individuals to join our growing team! If you’re ready to bring beauty and confidence to our
                 clients, we’d love to hear from you.</p>
@@ -754,7 +771,7 @@
         </div>
         <p class="header-text">Your Beauty Journey Starts Here.</p>
         <p class="sub-header-text">Don't wait to feel your best. Book your appointment with us today!</p>
-        <a href="https://bit.ly/elixirsalonandspaBooking" id="btnBookApointment" class="flickering-button">BOOK
+        <a href="https://bit.ly/elixirsalonandspaBooking" id="btnBookApointmentPromo" class="flickering-button">BOOK
             APPOINTMENT NOW</a>
     </section>
 
@@ -952,7 +969,7 @@
     <footer>
         <div class="h-layout h-footer">
             <!-- Logo Section -->
-            <div class="v-layout">
+            <div class="v-layout logo">
                 <div class="image-logo"></div>
                 <div class="h-layout socials">
                     <a href="https://www.facebook.com/profile.php?id=61571514984682"><i class="fa-brands fa-facebook"
@@ -991,10 +1008,10 @@
                         <img src="./resources/time.png" alt="">
                     </div>
                     <div class="v-layout">
-                        <p>MON: 08:00 - 20:00</p>
+                        <p>MON: 09:00 - 20:00</p>
                         <p>TUE - FRI: 07:30 - 20:00</p>
                         <p>SAT: 08:00 - 20:00</p>
-                        <p>SUN: 10:00 - 17:00</p>
+                        <p>SUN: 09:00 - 17:00</p>
                     </div>
                 </div>
             </div>
@@ -1011,7 +1028,7 @@
             </div>
 
             <!-- Gallery -->
-            <div class="v-layout">
+            <div class="v-layout gallery">
                 <p class="title">Gallery</p>
                 <div class="h-layout">
                     <div class="gallery"></div>

@@ -423,6 +423,7 @@ h5 {
     bottom: 0;
     transition: all 0.5s ease;
     overflow: scroll;
+    margin: 0;
 }
 
 .btn_hover1 {

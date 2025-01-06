@@ -8,6 +8,8 @@ const sectionPrivacyPolicy = document.getElementById('privacyPolicy');
 const btnClosePrivacyPolicy = document.getElementById('btnClosePrivacyPolicy');
 const sectionWorkApplicationOverlay = document.getElementById('workPopupOverlay');
 const sectionOurServices = document.getElementById('sectionOurServices');
+const bookingSection = this.document.getElementById('sectionBooking');
+const sidepanel = document.getElementById('mySidePanel');
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phonePattern = /^(?:\+254|0)(7|1)\d{8}$/;
@@ -60,7 +62,29 @@ document.addEventListener("DOMContentLoaded", () => {
     continuousScroll();
 });
 
-const bookingSection = this.document.getElementById('sectionBooking')
+function openNav() {
+    'use strict';
+    const navHeader = document.querySelector(".navbar");
+    if (sidepanel) {
+        navHeader.style.transform = "translateY(-100%)";
+        sidepanel.style.left = '0';
+    } else {
+        console.error('Error: sidepanel not found');
+    }
+}
+
+function closeNav() {
+    'use strict';
+    const navHeader = document.querySelector(".navbar");
+    const sidepanel = document.getElementById('mySidePanel');
+
+    if (sidepanel) {
+        sidepanel.style.left = '-320px';
+        navHeader.style.transform = "translateY(0)";
+    } else {
+        console.error('Error: sidepanel not found');
+    }
+}
 
 function scrollToSection() {
     if (bookingSection) {
@@ -335,7 +359,7 @@ function animateAddition() {
             // Add the banner to the layout
             serviceList.appendChild(banner);
             if (index === services.length - 1) {
-                hLayout.innerHTML = '<a href="https://bit.ly/elixirsalonandspaBooking" class="flickering-button booking-btn" style="text-decoration: none;">BOOK APPOINTMENT NOW</a>';
+                hLayout.innerHTML = '<a id="btnServiceCatalog" href="https://bit.ly/elixirsalonandspaBooking" class="flickering-button booking-btn" style="text-decoration: none;">BOOK APPOINTMENT NOW</a>';
                 banner.parentNode.appendChild(hLayout);
             }
             // Trigger the animation

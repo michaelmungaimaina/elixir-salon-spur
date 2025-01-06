@@ -214,7 +214,7 @@ aside .sidebar {
     background-image: linear-gradient(90deg, #B07614, #fdfacdcd, #B07614);
     background-size: 300% 100%;
     animation: flicker 6s linear infinite;
-    padding: 5px 10px;
+    padding: 5px 0px;
     border-radius: 6px;
     color: #000000;
     cursor: pointer;
@@ -236,14 +236,18 @@ aside .sidebar {
 
 .sidepanel ul {
     list-style: none;
-    padding: 0;
+    padding: 0 0 25px 0;
     margin: 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .sidepanel ul li {
     width: 100%;
+    height: 20px;
+    margin-bottom: -10px;
 }
 
 .sidepanel ul li a {
@@ -257,7 +261,7 @@ aside .sidebar {
 }
 
 #btnAsideBookApointment {
-    margin: 10px 20px;
+    margin: 80px 20px;
     box-shadow: none;
     background: linear-gradient(90deg, #B07614, #fffbc1, #B07614, #fffbc1, #B07614);
     background-size: 300% 100%;
@@ -338,6 +342,34 @@ aside .sidebar {
 
 @media only screen and (max-width: 680px) {
 
+    /** Hide horizontal top navbar **/
+    .navbar-items li {
+        display: none;
+    }
+
+    #btnBookApointment {
+        display: none;
+    }
+
+    #btnToggleSideNavbar {
+        display: block;
+    }
+
+    .left-nav-section {
+        width: 62px;
+        height: 42px;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 100% 100%, 0% 100%, 0% 0%);
+    }
+
+    .navbar-logo {
+        height: 110px;
+        width: 130px;
+    }
+}
+@media only screen and (max-width: 360px) {
+    nav{
+        width: 90%;
+    }
     /** Hide horizontal top navbar **/
     .navbar-items li {
         display: none;
@@ -602,6 +634,57 @@ aside .sidebar {
     }
 }
 
+@media only screen and (max-width: 803px) {
+    #sectionHome .image {
+        height: 250px;
+        width: 180px;
+        background-size: 80% 100%;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    #sectionHome {
+        width: 105.5%;
+        margin-top: 47px;
+    }
+
+    #sectionHome .container-right-pic,
+    #sectionHome .image {
+        display: none;
+    }
+    #sectionHome .home-container .header-text {
+        font-size: 20px;
+        margin-top: -5px;
+        text-align: start;
+    }
+    #sectionHome .home-container .sub-header-text {
+        font-size: 16px;
+        text-align: justify;
+        margin-right: 10px;
+    }
+    #sectionHome #btnExploreServices,
+    #sectionHome #btnBookAppointment {
+        margin: 35px 0px;
+        padding: 7px 10px;
+    }
+    #sectionHome .button-layout{
+        margin: 0 0px;
+    }
+    #sectionHome .home-container {
+        margin: 0px 5px 5px 5px;
+    }
+
+    #sectionHome #btnBookAppointment,
+    #sectionHome #btnExploreServices {
+        font-size: 10px;
+        margin: 25px 10px;
+    }
+
+    #sectionHome .description {
+        font-size: 12px;
+    }
+}
+
 /***  ABOUT DESIGN ***/
 #sectionAboutUs {
     background-color: #4F4B37;
@@ -754,6 +837,59 @@ aside .sidebar {
 
     #sectionAboutUs #aboutMoreContent {
         margin: 10px 5px 10px 5px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    #sectionAboutUs{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #sectionAboutUs .header-text {
+        font-size: 15px;
+    }
+
+    #sectionAboutUs .sub-header-text {
+        font-size: 11px;
+        margin-top: -5px;
+    }
+
+    #sectionAboutUs .title-text {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+    #sectionAboutUs #aboutIntroContent {
+        width: 90%;
+    }
+    #sectionAboutUs .container-right-picture {
+        width: 110px;
+        height: 175px;
+        margin: 30px 0 0 20px;
+        max-height: 250px;
+    }
+    #sectionAboutUs .image {
+        height: 210px;
+        width: 150px;
+        margin: -20px -8px 0px -20px;
+        background-size: 120% 150%;
+    }
+    #sectionAboutUs button {
+        font-size: 10px;
+        padding: 7px 10px;
+        margin: 0;
+    }
+    #sectionAboutUs #aboutIntroContent {
+        margin: 10px 0px 10px 5px;
+        width: 95%;
+    }
+    #sectionAboutUs #aboutMoreContent {
+        margin: 10px -6px 10px -2px;
+        padding: 7px 10px;
+        width: 95%;
+    }
+    #sectionAboutUs #aboutMoreContent .container-right-picture{
+        display: none;
     }
 }
 
@@ -988,6 +1124,334 @@ aside .sidebar {
     margin: 25px 0px 30px 30px;
 }
 
+@media only screen and (max-width: 360px) {
+    #sectionOurServices {
+        width: 100%;
+    }
+    #sectionOurServices .title-text{
+        margin-left: 10px;
+        font-size: 12px;
+    }
+    #sectionOurServices .header-text {
+        font-size: 15px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    #btnServiceCatalog{
+        font-size: 10px;
+        padding: 7px 10px;
+        margin: 0;
+    }
+    #serviceCatalog{
+        padding-bottom: 20px;
+    }
+    #serviceCatalog #serviceList {
+        margin: 0 0 0 5px;
+        width: 160px;
+    }
+    #serviceCatalog .catalog-banner {
+        height: 13px;
+        width: 140px;
+        padding: 5px 0px 5px 30px;
+    }
+    #serviceCatalog .catalog-banner p {
+        font-size: 11px;
+    }
+    #serviceCatalog .catalog .right-container{
+        flex-direction: column;
+    }
+    #serviceCatalog .container-right-picture {
+        width: 110px;
+        height: 107px;
+        margin: 5px 0 0 20px;
+        max-height: 250px;
+    }
+    #serviceCatalog .image {
+        height: 143px;
+        width: 150px;
+        margin: -20px -8px 0px -20px;
+        background-size: 100% 100%;
+    }
+    #service-waxing-detail{
+        font-size: 10px;
+        padding: 7px 10px 30px;
+        margin: 0;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+    #service-waxing-detail .banner p{
+        font-size: 11px;
+    }
+    #service-waxing-detail .banner{
+        height: 13px;
+        width: 140px;
+        padding: 5px 0px 5px 50px;
+    }
+    #service-waxing-detail .service-card {
+        width: 260px;
+        margin: 20px 0 0 0px;
+    }
+    #service-waxing-detail .service-card .list-item {
+        height: 20px;
+    }
+    #service-waxing-detail .service-card .list-item p {
+        font-size: 10px;
+    }
+    #service-waxing-detail .service-card .list-item .top {
+        font-size: 12px;
+    }
+    #service-waxing-detail .container-right-picture {
+        width: 110px;
+        height: 107px;
+        margin: 5px 0 0 5px;
+        max-height: 250px;
+    }
+    #service-waxing-detail .image {
+        height: 143px;
+        width: 150px;
+        margin: -20px -8px 0px -20px;
+        background-size: 100% 100%;
+    }
+    #btnBookWaxing {
+        margin: 175px 0px 30px 0px;
+    }
+    #service-waxing-detail .right-container{
+        margin-top: -230px;
+    }
+    
+    #service-body-scrub-detail{
+        font-size: 10px;
+        padding: 7px 10px 30px;
+        margin: 0;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+    #service-body-scrub-detail .banner p{
+        font-size: 11px;
+    }
+    #service-body-scrub-detail .banner{
+        height: 13px;
+        width: 140px;
+        padding: 5px 0px 5px 50px;
+    }
+    #service-body-scrub-detail .service-card {
+        width: 260px;
+        margin: 20px 0 0 0px;
+    }
+    #service-body-scrub-detail .service-card .list-item {
+        height: 20px;
+    }
+    #service-body-scrub-detail .service-card .list-item p {
+        font-size: 10px;
+    }
+    #service-body-scrub-detail .service-card .list-item .top {
+        font-size: 12px;
+    }
+    #service-body-scrub-detail .container-right-picture {
+        width: 110px;
+        height: 107px;
+        margin: 5px 0 0 5px;
+        max-height: 250px;
+    }
+    #service-body-scrub-detail .image {
+        height: 143px;
+        width: 150px;
+        margin: -20px -8px 0px -20px;
+        background-size: 100% 100%;
+    }
+    #btnBookBodyScrub {
+        margin: 175px 0px 30px 0px;
+    }
+    #service-body-scrub-detail .right-container{
+        margin-top: -230px;
+    }
+    #service-hair-services-detail{
+        font-size: 10px;
+        padding: 7px 10px 30px;
+        margin: 0;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+    #service-hair-services-detail .banner p{
+        font-size: 11px;
+    }
+    #service-hair-services-detail .banner{
+        height: 13px;
+        width: 140px;
+        padding: 5px 0px 5px 50px;
+    }
+    #service-hair-services-detail .service-card {
+        width: 260px;
+        margin: 20px 0 0 0px;
+    }
+    #service-hair-services-detail .service-card .list-item {
+        height: 20px;
+    }
+    #service-hair-services-detail .service-card .list-item p {
+        font-size: 10px;
+    }
+    #service-hair-services-detail .service-card .list-item .top {
+        font-size: 12px;
+    }
+    #service-hair-services-detail .container-right-picture {
+        width: 110px;
+        height: 107px;
+        margin: 5px 0 0 5px;
+        max-height: 250px;
+    }
+    #service-hair-services-detail .image {
+        height: 143px;
+        width: 150px;
+        margin: -20px -8px 0px -20px;
+        background-size: 100% 100%;
+    }
+    #btnBookHairServices {
+        margin: 175px 0px 30px 0px;
+    }
+    #service-hair-services-detail .right-container{
+        margin-top: -230px;
+    }
+    #service-make-up-lashes-detail{
+        font-size: 10px;
+        padding: 7px 10px 30px;
+        margin: 0;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+    #service-make-up-lashes-detail .banner p{
+        font-size: 11px;
+    }
+    #service-make-up-lashes-detail .banner{
+        height: 13px;
+        width: 140px;
+        padding: 5px 0px 5px 50px;
+    }
+    #service-make-up-lashes-detail .service-card {
+        width: 260px;
+        margin: 20px 0 0 0px;
+    }
+    #service-make-up-lashes-detail .service-card .list-item {
+        height: 20px;
+    }
+    #service-make-up-lashes-detail .service-card .list-item p {
+        font-size: 10px;
+    }
+    #service-make-up-lashes-detail .service-card .list-item .top {
+        font-size: 12px;
+    }
+    #service-make-up-lashes-detail .container-right-picture {
+        width: 110px;
+        height: 107px;
+        margin: 5px 0 0 5px;
+        max-height: 250px;
+    }
+    #service-make-up-lashes-detail .image {
+        height: 143px;
+        width: 150px;
+        margin: -20px -8px 0px -20px;
+        background-size: 100% 100%;
+    }
+    #btnBookMakeUp {
+        margin: 175px 0px 30px 0px;
+    }
+    #service-make-up-lashes-detail .right-container{
+        margin-top: -230px;
+    }
+    #service-eyebrows-detail{
+        font-size: 10px;
+        padding: 7px 10px 30px;
+        margin: 0;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+    #service-eyebrows-detail .banner p{
+        font-size: 11px;
+    }
+    #service-eyebrows-detail .banner{
+        height: 13px;
+        width: 140px;
+        padding: 5px 0px 5px 50px;
+    }
+    #service-eyebrows-detail .service-card {
+        width: 260px;
+        margin: 20px 0 0 0px;
+    }
+    #service-eyebrows-detail .service-card .list-item {
+        height: 20px;
+    }
+    #service-eyebrows-detail .service-card .list-item p {
+        font-size: 10px;
+    }
+    #service-eyebrows-detail .service-card .list-item .top {
+        font-size: 12px;
+    }
+    #service-eyebrows-detail .container-right-picture {
+        width: 110px;
+        height: 107px;
+        margin: 5px 0 0 5px;
+        max-height: 250px;
+    }
+    #service-eyebrows-detail .image {
+        height: 143px;
+        width: 150px;
+        margin: -20px -8px 0px -20px;
+        background-size: 100% 100%;
+    }
+    #btnBookEyebrows {
+        margin: 175px 0px 30px 0px;
+    }
+    #service-eyebrows-detail .right-container{
+        margin-top: -230px;
+    }
+    #service-men-services-detail{
+        font-size: 10px;
+        padding: 7px 10px 30px;
+        margin: 0;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+    #service-men-services-detail .banner p{
+        font-size: 11px;
+    }
+    #service-men-services-detail .banner{
+        height: 13px;
+        width: 140px;
+        padding: 5px 0px 5px 50px;
+    }
+    #service-men-services-detail .service-card {
+        width: 260px;
+        margin: 20px 0 0 0px;
+    }
+    #service-men-services-detail .service-card .list-item {
+        height: 20px;
+    }
+    #service-men-services-detail .service-card .list-item p {
+        font-size: 10px;
+    }
+    #service-men-services-detail .service-card .list-item .top {
+        font-size: 12px;
+    }
+    #service-men-services-detail .container-right-picture {
+        width: 110px;
+        height: 107px;
+        margin: 5px 0 0 5px;
+        max-height: 250px;
+    }
+    #service-men-services-detail .image {
+        height: 143px;
+        width: 150px;
+        margin: -20px -8px 0px -20px;
+        background-size: 100% 100%;
+    }
+    #btnBookMenServices {
+        margin: 175px 0px 30px 0px;
+    }
+    #service-men-services-detail .right-container{
+        margin-top: -230px;
+    }
+    
+}
+
 /** GALLERY SECTION  **/
 #sectionGallery {
     background-color: #4F4B37;
@@ -1207,6 +1671,79 @@ aside .sidebar {
     display: none;
 }
 
+@media only screen and (max-width: 360px) {
+    #sectionGallery {
+        width: 100%;
+    }
+    #sectionGallery .title-text{
+        margin-left: 10px;
+        font-size: 12px;
+    }
+    #sectionGallery .header-text {
+        font-size: 15px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    #photo-scroll-container {
+        width: 95%;
+        margin-left: 5px;
+    }
+    #video-scroll-container {
+        width: 95%;
+        margin-left: 5px;
+        height: 250px;
+    }
+    #sectionGallery .gallery .video-scroll-container .video-section video{
+        height: 247px;
+        width: 300px;
+    }
+    #sectionGallery {
+        height: 670px;
+    }
+    #overlay{
+        width: 100%;
+        margin: 0;
+    }
+    #overlay .h-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 10px; 
+        width: 100%;
+        margin-top: 115px;
+    }
+    
+    #overlay .h-layout .left {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center;
+    }
+    
+    #overlay .h-layout .center {
+        grid-column: 1 / span 2; 
+        grid-row: 1; 
+        text-align: center;
+    }
+    
+    #overlay .h-layout .right {
+        grid-column: 2; 
+        grid-row: 2; 
+        text-align: center;
+    }
+    #photoPopupCenter {
+        width: 350px;
+    }
+    #photoPopupLeft,
+    #photoPopupRight {
+        width: 70px;
+        height: 70px;
+    }
+    #overlay img {
+        height: 40px;
+        width: 20px;
+    }
+}
+
 
 /** BOOKING SECTION **/
 #sectionBooking {
@@ -1231,6 +1768,59 @@ aside .sidebar {
     margin-top: 20px;
     margin-bottom: 60px;
     font-size: 25px;
+}
+
+@media only screen and (max-width: 360px) {
+    #sectionBooking {
+        width: 98%;
+        padding: 0 15px;
+        padding-bottom: 65px;
+    }
+    #sectionBooking .title-text{
+        margin-left: 10px;
+        font-size: 12px;
+    }
+    #sectionBooking .header-text {
+        font-size: 15px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    #sectionBooking .sub-header-text {
+        font-size: 13px;
+        margin-left: 0;
+        margin-top: 0;
+        line-height: 17px;
+    }
+    #sectionBooking h5 {
+        margin-bottom: 20px;
+    }
+    #sectionBooking .outer-layout {
+        margin-left: 0px;
+        flex-direction: column;
+    }
+    #sectionBooking .v-layout{
+        width: 89%;
+    }
+    #sectionBooking .h-layout .container-right-picture {
+        width: 110px;
+        height: 107px;
+        margin: 5px 0 0 5px;
+        max-height: 250px;
+    }
+    #sectionBooking .h-layout .image {
+        height: 143px;
+        width: 150px;
+        margin: -20px -8px 0px -20px;
+        background-size: 100% 100%;
+    }
+    #sectionBooking .right-container{
+        margin-top: -200px;
+        width: 88%;
+        margin-left: 15px;
+    }
+    #btnBookAppointment {
+        margin: 175px 0px 0px 15px;
+    }
 }
 
 /** CONTACT SECTION **/
@@ -1321,6 +1911,42 @@ textarea {
 #btnSubmitContact {
     width: 100%;
     margin: 20px 0 20px;
+}
+
+@media only screen and (max-width: 360px) {
+    #sectionContactUs {
+        width: 100%;
+    }
+    #sectionContactUs .title-text{
+        margin-left: 10px;
+        font-size: 12px;
+    }
+    #sectionContactUs .header-text {
+        font-size: 15px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    #sectionContactUs .rev-col{
+        width: 96%;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    #sectionContactUs .right-col {
+        margin: 40px 0px;
+        width: 95%;
+    }
+    #sectionContactUs .right-col .h-layout p {
+        font-size: 12px;
+        text-align: justify;
+    }
+    #sectionContactUs .card-form {
+        margin: 0;
+    }
+    #sectionContactUs .card-form h6,
+    #sectionContactUs .card-form p {
+        font-size: 16px;
+        text-align: justify;
+    }
 }
 
 /** WORK SECTION **/
@@ -1437,8 +2063,34 @@ textarea {
 #sectionWorkWithUs .popup form button:hover {
     background-color: #A06010;
 }
+@media only screen and (max-width: 360px) {
+    #sectionWorkWithUs {
+        width: 100%;
+    }
+    #sectionWorkWithUs .title-text{
+        margin-left: 10px;
+        font-size: 12px;
+    }
+    #sectionWorkWithUs .header-text {
+        font-size: 15px;
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+    #sectionWorkWithUs .sub-header-text {
+        font-size: 12px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    #sectionWorkWithUs .v-layout {
+        margin: -30px 0;
+    }
+    #sectionWorkWithUs .v-layout h3 {
+        font-size: 15px;
+    }
+}
 
-/** WORK PROMOTION **/
+/** SECTION PROMOTION **/
 #sectionPromotion {
     background-color: #4F4B37;
     margin-top: 0.3px;
@@ -1449,6 +2101,7 @@ textarea {
     background-image: linear-gradient(90deg, rgba(79, 73, 55, 0.859)100%, rgba(83, 79, 51, 0.768)70%);
     border-top: 1.5px solid #7D8489;
     width: 100%;
+    height: 100%;
 }
 
 #sectionPromotion .header-text {
@@ -1505,6 +2158,44 @@ textarea {
 
 #sectionPromotion #btnBookApointment {
     margin-left: 80px;
+}
+
+@media only screen and (max-width: 360px) {
+    #sectionPromotion {
+        width: 100%;
+    }
+    #sectionPromotion .title-text{
+        margin-left: 10px;
+        font-size: 12px;
+    }
+    #sectionPromotion .header-text {
+        font-size: 15px;
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+    #sectionPromotion .sub-header-text {
+        font-size: 12px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    #sectionPromotion a {
+        font-size: 12px;
+    }
+    #sectionPromotion #offerTitle {
+        font-size: 20px;
+    }
+    #sectionPromotion #offerBody {
+        font-size: 14px;
+    }
+    #sectionPromotion .h-layout{
+        flex-direction: column;
+        margin-left: 20px;
+    }
+    #sectionPromotion .v-layout {
+        height: 250px;
+    }
+
 }
 
 /** TESTIMONIAL SECTION **/
@@ -1647,7 +2338,31 @@ textarea {
     margin-left: 10px;
 }
 
-
+@media only screen and (max-width: 360px) {
+    #sectionTestimonial {
+        width: 95%;
+        margin: 0;
+        padding: 0 20px 20px;
+    }
+    #sectionTestimonial .title-text{
+        margin-left: 10px;
+        font-size: 12px;
+    }
+    #sectionTestimonial .header-text {
+        font-size: 15px;
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+    #sectionTestimonial .sub-header-text {
+        font-size: 12px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    #sectionTestimonial .h-layout {
+        margin-left: 0PX;
+    }
+}
 /**************************      Privacy Policy Page Syles     ****************************/
 #btnClosePrivacyPolicy {
     width: 37px;
@@ -1849,4 +2564,65 @@ footer .bottom p a {
     font-weight: bold;
     text-decoration: none;
     color: #FFD700;
+}
+@media screen and (max-width: 360px) {
+    footer {
+        width: 105.5%;
+    }
+    footer .h-footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 10px; 
+        width: 90%;
+        margin-top: 115px;
+    }
+
+    footer .logo{
+        grid-column: 1;
+        grid-row: 1;
+        text-align: center;
+    }
+    footer .contact{
+        grid-column: 1;
+        grid-row: 2;
+        text-align: left;
+    }
+    footer .q-link{
+        grid-column: 2;
+        grid-row: 2;
+        text-align: left;
+    }
+    footer .gallery{
+        grid-column: 2;
+        grid-row: 1;
+        text-align: center;
+    }
+    footer .gallery{
+        height: 80px;
+    width: 110px;
+    }
+    footer .image-logo {
+        height: 130px;
+    width: 110px;
+    margin-top: 0;
+    }
+    footer .q-link a,
+    footer .contact .v-layout p,
+    footer .contact a,
+    footer .contact i {
+        font-size: 11px;
+    }
+    footer .q-link,
+    footer .contact {
+        margin: 0;
+    }
+    footer img{
+        width: 8px;
+        height: 12px;
+    }
+    footer .bottom p {
+        font-size: 10px;
+        margin-right: 10px;
+    }
 }
