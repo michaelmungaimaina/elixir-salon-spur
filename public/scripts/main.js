@@ -39,11 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Move the wrapper
         wrapper.style.transform = `translateX(${-wrapperWidth}px)`;
-        wrapper.style.transition = `transform 20s linear`;
+        wrapper.style.transition = `transform 100s linear`;
 
         // Move the clone after the wrapper scroll completes
         clone.style.transform = `translateX(${-wrapperWidth}px)`;
-        clone.style.transition = `transform 20s linear`;
+        clone.style.transition = `transform 100s linear`;
 
         // Reset position after transition ends
         setTimeout(() => {
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             clone.style.transform = `translateX(0)`;
 
             continuousScroll(); // Restart scroll
-        }, 20000); // Match the transition duration
+        }, 100000); // Match the transition duration
     }
 
     // Start the scroll
@@ -70,7 +70,7 @@ function scrollToSection() {
 
 scrollToSection(bookingSection);
 
-function scrollToService(){
+function scrollToService() {
     if (sectionOurServices) {
         sectionOurServices.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -122,6 +122,19 @@ function closeApplicationForm() {
     }
 }
 
+/**
+ * Submits the application form data to the server.
+ * 
+ * This function collects the user's name, email, phone number, and CV file from the form,
+ * validates the inputs, and sends the data to the server via a POST request.
+ * 
+ * @async
+ * @function submitApplication
+ * 
+ * @returns {Promise<void>} - A promise that resolves when the application is submitted.
+ * 
+ * @throws {Error} - Throws an error if the fetch request fails.
+ */
 async function submitApplication() {
 
     const errorMessageContainer = document.getElementById('errorMessageContainer');
@@ -441,57 +454,57 @@ async function sendWelcomeEmail(clientName, clientEmail) {
 }
 
 const photos = [
-    './resources/serv21.jpeg', 
-    './resources/serv22.jpeg', 
-    './resources/serv23.jpeg', 
-    './resources/serv24.jpeg', 
-    './resources/serv25.jpeg', 
-    './resources/serv26.jpeg', 
-    './resources/serv27.jpeg', 
-    './resources/serv28.jpeg', 
-    './resources/serv29.jpeg', 
-    './resources/serv31.jpeg', 
-    './resources/serv32.jpeg', 
-    './resources/ser33.jpeg', 
-    './resources/owner.jpeg', 
-    './resources/serv34.jpeg', 
-    './resources/serv35.jpeg', 
-    './resources/serv36.jpeg', 
-    './resources/serv37.jpeg', 
-    './resources/serv38.jpeg', 
-    './resources/serv39.jpeg', 
-    './resources/serv40.jpeg', 
-    './resources/serve2.jpeg', 
-    './resources/serv3.jpeg', 
-    './resources/serv4.jpeg', 
-    './resources/serv8.jpeg', 
-    './resources/serv10.jpeg', 
-    './resources/serv15.jpeg', 
-    './resources/home-back-photo.jpeg', 
-    './resources/home-back-photo1.jpeg', 
-    './resources/serv11.jpg', 
-    './resources/serv12.jpg', 
-    './resources/serv9.jpeg', 
+    './resources/serv21.jpeg',
+    './resources/serv22.jpeg',
+    './resources/serv23.jpeg',
+    './resources/serv24.jpeg',
+    './resources/serv25.jpeg',
+    './resources/serv26.jpeg',
+    './resources/serv27.jpeg',
+    './resources/serv28.jpeg',
+    './resources/serv29.jpeg',
+    './resources/serv31.jpeg',
+    './resources/serv32.jpeg',
+    './resources/ser33.jpeg',
+    './resources/owner.jpeg',
+    './resources/serv34.jpeg',
+    './resources/serv35.jpeg',
+    './resources/serv36.jpeg',
+    './resources/serv37.jpeg',
+    './resources/serv38.jpeg',
+    './resources/serv39.jpeg',
+    './resources/serv40.jpeg',
+    './resources/serve2.jpeg',
+    './resources/serv3.jpeg',
+    './resources/serv4.jpeg',
+    './resources/serv8.jpeg',
+    './resources/serv10.jpeg',
+    './resources/serv15.jpeg',
+    './resources/home-back-photo.jpeg',
+    './resources/home-back-photo1.jpeg',
+    './resources/serv11.jpg',
+    './resources/serv12.jpg',
+    './resources/serv9.jpeg',
     './resources/serve7.jpeg'
 ];
 
 const videos = [
-    './resources/vid1.mp4', 
-    './resources/vid2.mp4', 
-    './resources/vid3.mp4', 
-    './resources/vid4.mp4', 
-    './resources/vid5.mp4', 
-    './resources/vid6.mp4', 
-    './resources/vid7.mp4', 
-    './resources/vid8.mp4', 
-    './resources/vid9.mp4', 
-    './resources/vid10.mp4', 
-    './resources/vid11.mp4', 
-    './resources/vid12.mp4', 
-    './resources/vid13.mp4', 
-    './resources/vid14.mp4', 
-    './resources/vid15.mp4', 
-    './resources/vid16.mp4', 
+    './resources/vid1.mp4',
+    './resources/vid2.mp4',
+    './resources/vid3.mp4',
+    './resources/vid4.mp4',
+    './resources/vid5.mp4',
+    './resources/vid6.mp4',
+    './resources/vid7.mp4',
+    './resources/vid8.mp4',
+    './resources/vid9.mp4',
+    './resources/vid10.mp4',
+    './resources/vid11.mp4',
+    './resources/vid12.mp4',
+    './resources/vid13.mp4',
+    './resources/vid14.mp4',
+    './resources/vid15.mp4',
+    './resources/vid16.mp4',
     './resources/vid17.mp4'
 ];
 
@@ -540,7 +553,7 @@ function showPhotoPopup(index) {
 }
 
 function closePopup() {
-    videoPopup.style.display = 'none';
+    videoPopup.style.height = '0%';
     overlay.style.height = '0%';
 }
 
@@ -564,7 +577,7 @@ function updateBackground() {
 // Video Popup Functions
 function showVideoPopup(video) {
     popupVideo.src = video;
-    videoPopup.style.display = 'flex';
+    videoPopup.style.height = '100%';
     overlay.style.height = '0%';
 }
 
