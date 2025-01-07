@@ -1,12 +1,12 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const config = require('./config');
 
 // Debug the config
 console.log("Database config:", config.db);
 
 if (!config.db) {
-  console.error("Database configuration is missing.");
-  process.exit(1);
+    console.error("Database configuration is missing.");
+    process.exit(1);
 }
 
 const db = mysql.createConnection(config.db);
@@ -18,17 +18,18 @@ db.connect((err) => {
     }
     console.log('Connected to MySQL database.');
 
-    const createDbQuery = 'CREATE DATABASE IF NOT EXISTS userdb';
+    const createDbQuery = 'CREATE DATABASE IF NOT EXISTS elixir_salon';
     const createTableQuery = `
     CREATE TABLE IF NOT EXISTS users (
       id INT AUTO_INCREMENT PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
       email VARCHAR(255) NOT NULL,
+      password VARCHAR(255) NOT NULL,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
   `;
 
-  // Create ratings table SQL query
+    // Create ratings table SQL query
     const createTableRatings = `
 CREATE TABLE IF NOT EXISTS ratings (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -38,12 +39,12 @@ CREATE TABLE IF NOT EXISTS ratings (
     client_type VARCHAR(50) NOT NULL,
     comment TEXT NOT NULL,
     stars INT NOT NULL,
-    feedback TEXT NULL default ' ',
+    feedback TEXT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );`;
 
-const createTableApplications = 
-`CREATE TABLE IF NOT EXISTS applications (
+    const createTableApplications =
+        `CREATE TABLE IF NOT EXISTS applications (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
@@ -52,33 +53,66 @@ const createTableApplications =
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );`
 
-// Create database and tables
+    // Create database and tables
     db.query(createDbQuery, (err) => {
-        if (err) throw err;
+        if (err) {
+            console.error('Error creating database:', {
+                message: err.message,
+                code: err.code,
+                stack: err.stack,
+            });
+            return;
+        }
         console.log('Database created or already exists.');
 
         db.changeUser({ database: 'elixir_salon' }, (err) => {
-            if (err) throw err;
-            console.log('Changed to database elixir_salon');
+            if (err) {
+                console.error('Error switching to database "elixir_salon":', {
+                    message: err.message,
+                    code: err.code,
+                    stack: err.stack,
+                });
+                return;
+            }
+            console.log('Switched to database "elixir_salon".');
+
+            // Helper function to execute and debug queries
+            const executeQuery = (query, description) => {
+                db.query(query, (err, results) => {
+                    if (err) {
+                        console.error(`Error executing query for ${description}:`, {
+                            query,
+                            message: err.message,
+                            code: err.code,
+                            stack: err.stack,
+                        });
+                    } else {
+                        console.log(`${description} executed successfully.`);
+                    }
+                });
+            };
 
             // Create users table
-            db.query(createTableQuery, (err) => {
-                if (err) throw err;
-                console.log('Table users created or already exists.', err);
-            });
+            executeQuery(createTableQuery, 'users table');
 
             // Create ratings table
-            db.query(createTableRatings, (err) => {
-                if (err) throw err;
-                console.error('Table ratings creation failed:', err);
-            });
+            executeQuery(createTableRatings, 'ratings table');
 
             // Create applications table
-            db.query(createTableApplications, (err) => {
-                if (err) throw err;
-                console.error('Table applications creation failed:', err);
+            executeQuery(createTableApplications, 'applications table');
+
+            // Close the database connection
+            db.end((err) => {
+                if (err) {
+                    console.error('Error closing the database connection:', {
+                        message: err.message,
+                        code: err.code,
+                        stack: err.stack,
+                    });
+                } else {
+                    console.log('Database connection closed.');
+                }
             });
-            db.end();
         });
     });
 });
