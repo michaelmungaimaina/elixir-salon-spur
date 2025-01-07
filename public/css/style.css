@@ -2454,7 +2454,7 @@ textarea {
 
 /* Responsiveness of the Privacy Policy Section */
 @media screen and (max-width: 880px) {
-    .background-tint-black .appointment-layout {
+    #privacyPolicy .outer-container {
         margin: 80px 10px;
     }
 
@@ -2593,8 +2593,9 @@ footer .bottom p a {
 }
 @media screen and (max-width: 480px) {
     footer {
-        width: 116.1%;
+        width: 122.1%;
         padding: 0;
+        margin-left: -7px;
     }
     footer .h-footer{
         display: grid;
@@ -2602,14 +2603,14 @@ footer .bottom p a {
         grid-template-rows: auto auto;
         gap: 10px; 
         width: 90%;
-        margin-top: 115px;
+        margin-top: 25px;
     }
 
     footer .logo{
-        grid-column: 1;
+        grid-column: 1 / span 2;
         grid-row: 1;
         text-align: center;
-
+        justify-self: center;
     }
     footer .contact{
         grid-column: 1;
@@ -2620,11 +2621,10 @@ footer .bottom p a {
         grid-column: 2;
         grid-row: 2;
         text-align: left;
+        margin-left: 20px;
     }
     footer .gallery{
-        grid-column: 2;
-        grid-row: 1;
-        text-align: center;
+        display: none;
     }
     footer .gallery{
         height: 80px;

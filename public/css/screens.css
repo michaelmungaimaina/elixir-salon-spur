@@ -1,0 +1,127 @@
+/* For tablets (portrait) *
+@media (min-width: 481px) and (max-width: 768px) {
+    #sectionHome {
+        height: 100%;
+        width: 242.6% !important;
+        padding-left: 80px;
+    }
+    #sectionAboutUs {
+        width: 255%;
+    }
+    #sectionAboutUs .header-text {
+        font-size: 30px;
+    }
+
+    #sectionAboutUs .sub-header-text {
+        font-size: 15px;
+    }
+    #sectionAboutUs .container-right-picture {
+        width: 220px;
+        height: 250;
+        margin: 50px 20px 0 80px;
+    }
+
+    #sectionAboutUs .image {
+        height: 285px;
+        width: 300px;
+        margin: -50px 0px 0px -80px;
+        background-size: 110% 130%;
+    }
+    #sectionGallery {
+        width: 250.2%;
+    }
+    #sectionBooking {
+        width: 250.1%;
+    }
+    #sectionContactUs {
+        width: 250.2%;
+    }
+    #sectionWorkWithUs {
+        width: 250.2%;
+    }
+    #sectionPromotion {
+        width: 250.2%;
+    }
+    #sectionTestimonial {
+        width: 250.4%;
+    }
+    footer {
+        width: 260.1%;
+    }
+}*/
+
+/* For tablets (landscape) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #sectionHome {
+        width: 135.6% !important;
+        padding-left: 80px;
+    }
+    #sectionAboutUs{
+        width: 130.8%;
+    }
+    #sectionAboutUs .container-right-picture {
+        width: 260px;
+        height: 175px;
+        margin: 30px 0 0 20px;
+        max-height: 250px;
+    }
+    #sectionAboutUs .image {
+        height: 210px;
+        width: 300px;
+        margin: -20px -8px 0px -20px;
+        background-size: 100% 150%;
+    }
+    #sectionGallery {
+        width: 140.2%;
+    }
+    #sectionContactUs {
+        width: 140.2%;
+    }
+    #sectionContactUs .card-form {
+        margin-left: 50%;
+    }
+    #sectionWorkWithUs {
+        width: 140.2%;
+    }
+    #sectionPromotion {
+        width: 140.2%;
+    }
+    #sectionTestimonial {
+        width: 135.4%;
+    }
+    #sectionTestimonial a{
+        margin-left: 80px;
+    }
+    footer {
+        width: 147.1%;
+    }
+
+}
+
+/* For small laptops and desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    #sectionHome {
+        width: 95.5%;
+        padding-left: 80px;
+    }
+    #sectionTestimonial {
+        width: 101.6%;
+    }
+    footer {
+        width: 101.8%;
+    }
+}
+
+/* For large desktops */
+@media (min-width: 1281px) {
+    #sectionHome {
+        width: 95.5%;
+        padding-left: 80px;
+    }
+    #sectionTestimonial {
+        width: 101.6%;
+    }
+    footer {
+        width: 101.78%;
+    }
+}
