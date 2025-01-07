@@ -68,3 +68,5 @@ class Rating {
         this.feedback = feedback;
     }
 }
+
+module.exports = Rating;

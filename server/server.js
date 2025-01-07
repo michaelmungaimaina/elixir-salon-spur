@@ -42,7 +42,7 @@ app.post('/api/users', (req, res) => {
   const { name, email } = req.body;
 
   // Insert data into MySQL
-  const query = 'INSERT INTO users (name, email) VALUES (?, ?)';
+  const query = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
   db.query(query, [name, email], (err, results) => {
     if (err) {
       console.error(err);
@@ -212,7 +212,7 @@ app.post('/api/send-contact-email', async (req, res) => {
 });
 
 // API to add a new rating
-app.post('/ratings', (req, res) => {
+app.post('/api/ratings', (req, res) => {
     const { clientName, clientEmail, clientPhone, clientType, comment, stars, feedback } = req.body;
     const rating = new Rating(clientName, clientEmail, clientPhone, clientType, comment, stars, feedback);
     const query = 'INSERT INTO ratings (client_name, client_email, client_phone, client_type, comment, stars, feedback) VALUES (?, ?, ?, ?, ?, ?, ?)';
@@ -231,7 +231,7 @@ app.post('/ratings', (req, res) => {
 });
 
 // API to get all ratings
-app.get('/ratings', (req, res) => {
+app.get('/api/ratings', (req, res) => {
     db.query('SELECT * FROM ratings', (err, results) => {
         if (err) return res.status(500).send(err);
         res.json(results.map(row => new Rating(row.client_name, row.client_email, row.client_phone, row.client_type, row.comment, row.stars, row.feedback, row.created_at)));
