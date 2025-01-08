@@ -5,7 +5,7 @@
 
 Elixil Salon and Spur is a web application designed to offer a modern, elegant, and user-friendly online presence for a salon and spa. The website enables users to explore services, make bookings, and interact with the salon’s offerings conveniently.
 
-**Website URL:** [www.elixirsalonandspur.co.ke](https://www.elixirsalonandspur.co.ke)
+**Website URL:** [www.elixirsalonandspa.co.ke](https://www.elixirsalonandspa.co.ke)
 
 ### Figma Design Mockups:
 The designs for the site are available in the Figma file:
