@@ -2657,3 +2657,28 @@ footer .bottom p a {
         margin-right: 10px;
     }
 }
+
+#rateUsForm .v-layout{
+    height: fit-content;
+    justify-self: center;
+    align-items: center;
+    margin-top: 70px;
+    background-color: #4F4B37;
+    border: 1.5px solid #745803;
+    border-radius: 20px;
+    padding: 40px;
+}
+#rateUsForm .header-text{
+    margin-top: -20px;
+}
+#rateUsForm form{
+    display: flex;
+    flex-direction: column;
+}
+#submitRating{
+    margin-top: 20px;
+}
+
+#rateUsForm textarea{
+    max-height: 150px;
+}

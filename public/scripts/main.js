@@ -1,6 +1,6 @@
 console.log('main.js - Loaded');
-let DOMAIN_NAME= 'http://127.0.0.1:3000/';
-let API_PATH= 'api/';
+let DOMAIN_NAME = 'http://127.0.0.1:3000/';
+let API_PATH = 'api/';
 const DOMAIN = `${DOMAIN_NAME}${API_PATH}`;
 
 // Component initialization
@@ -12,6 +12,7 @@ const btnClosePrivacyPolicy = document.getElementById('btnClosePrivacyPolicy');
 const sectionWorkApplicationOverlay = document.getElementById('workPopupOverlay');
 const sectionOurServices = document.getElementById('sectionOurServices');
 const bookingSection = this.document.getElementById('sectionBooking');
+const ratingSection = this.document.getElementById('rateUsForm');
 const sidepanel = document.getElementById('mySidePanel');
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -115,9 +116,11 @@ function getUrlParameter(name) {
 window.onload = function () {
     const privacyPolicy = getUrlParameter('privacy-policy');
     const workAplication = getUrlParameter('apply-for-work');
+    const rateUs = getUrlParameter('rate-us');
 
     if (privacyPolicy === 'true') openPrivacyPolicy();
     if (workAplication === 'true') openApplicationForm();
+    if (rateUs === 'true') openRateUsForm();
 };
 
 function openPrivacyPolicy() {
@@ -422,7 +425,7 @@ async function fetchRatings() {
     const response = await fetch(`${DOMAIN}ratings`);
     const ratings = await response.json();
     appContainer.innerHTML = ratings.map(rating => `
-        <div class="v-layout card-rating">
+        <div class="v-layout card-rating" onclick="openRateUsForm()">
             <p id="clientName">${rating.clientName}</p>
             <p id="type">${rating.clientType}</p>
             <p id="clientComment">${rating.comment}</p>
@@ -435,13 +438,99 @@ async function fetchRatings() {
     `).join('');
 }
 
+function openRateUsForm() {
+    if (ratingSection) {
+        ratingSection.style.height = '100%';
+        const newUrl = `${baseUrl.slice(0, 0)}?rate-us=true`;
+        window.history.pushState({}, '', newUrl);
+    }
+}
+
+function closeRteUsForm() {
+    if (ratingSection) {
+        ratingSection.style.height = '0%';
+        window.history.pushState({}, '', baseUrl);
+    }
+}
+
+async function submitRating(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('customerName').value;
+    const rate = document.getElementById('customerRate').value;
+    const comment = document.getElementById('customerComment').value;
+    const errorMessageContainer = document.getElementById('errorMessageContainer').value;
+
+    if (name.trim() === '') {
+        document.getElementById('customerName').focus();
+        errorMessages = 'Full Name is required!';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+    if (!twoWordsPattern.test(name.trim())) {
+        document.getElementById('customerName').focus();
+        errorMessages = 'Full Name is Short!';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+    if (rate.trim() === '') {
+        document.getElementById('customerName').focus();
+        errorMessages = 'Full Name is required!';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+    if (!/^[1-5]$/.test(rate)) {
+        document.getElementById('customerRate').focus();
+        errorMessages = 'Rate must be a digit between 1 and 5!';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+    if (comment.trim() === '') {
+        document.getElementById('customerComment').focus();
+        errorMessages = 'Tell Us What You Felt!';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+    if (!twoWordsPattern.test(comment.trim())) {
+        document.getElementById('customerComment').focus();
+        errorMessages = 'That was a short feeling!';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+
+    let rating = []
+    rating = [
+       { 
+        name: name,
+        type: 'Customer' || 'Agent',
+        comment: comment,
+        feedback: ''
+       }
+    ]
+
+    try {
+        await addRating(rating);
+        console.log("Rating added successfully!");
+        handleErrorMessage("", errorMessageContainer); // Clear error messages
+      } catch (error) {
+        console.error("Error adding rating:", error.message);
+        handleErrorMessage(error.message, errorMessageContainer);
+      }
+
+}
+
 // Add a new rating
 async function addRating(rating) {
-    await fetch(`${DOMAIN}ratings`, {
+    const response = await fetch(`${DOMAIN}ratings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(rating)
     });
+
+    if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText || 'Failed to Add Rating');
+    }
     // Refresh the ratings
     fetchRatings();
 }
@@ -619,7 +708,7 @@ function balanceSectionHeights() {
     }
 }
 
-async function submitContactUsData(){
+async function submitContactUsData() {
     const name = document.getElementById('fullName').value;
     const email = document.getElementById('clientEmail').value;
     const phone = document.getElementById('phone').value;
