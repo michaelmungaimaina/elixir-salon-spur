@@ -28,6 +28,18 @@ db.connect((err) => {
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
   `;
+  
+  // Create Contact info:
+    const createContactData = `
+    CREATE TABLE IF NOT EXISTS contact_data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+  `;
 
     // Create ratings table SQL query
     const createTableRatings = `
@@ -100,6 +112,9 @@ CREATE TABLE IF NOT EXISTS ratings (
 
             // Create applications table
             executeQuery(createTableApplications, 'applications table');
+            
+            // Create applications table
+            executeQuery(createContactData, 'Contact-Data table');
 
             // Close the database connection
             db.end((err) => {

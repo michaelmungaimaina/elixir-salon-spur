@@ -39,40 +39,84 @@ const transporter = nodemailer.createTransport({
 
 // API Endpoints
 app.post('/api/users', (req, res) => {
-  const { name, email } = req.body;
+  const { name, email, password } = req.body;
 
   // Insert data into MySQL
   const query = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
-  db.query(query, [name, email], (err, results) => {
+  db.query(query, [name, email, password], (err, results) => {
     if (err) {
       console.error(err);
       return res.status(500).send('Database error');
     }
+    res.status(201).send('User data saved sent');
+  });
+});
 
-    // Send notification email
-    const adminMailOptions = {
-      from: config.mail.user,
-      to: 'admin@example.com', // Replace with your admin email
-      subject: `New User Data Shared`,
-      text: `User ${name} (${email}) has shared their data.`,
-    };
+// API endpoint for user authentication
+app.post("/api/auth", (req, res) => {
+  const { username, password } = req.body;
 
-    const userMailOptions = {
-      from: config.mail.user,
-      to: email,
-      subject: 'Thank you for sharing your data',
-      text: `Hi ${name},\n\nThank you for sharing your data with us.\n\nBest regards,\nYour Team`,
-    };
+  if (!username || !password) {
+    return res.status(400).json({ error: "Username and password are required" });
+  }
 
-    transporter.sendMail(adminMailOptions, (err) => {
-      if (err) console.error('Error sending admin email:', err);
-    });
+  const query = "SELECT * FROM users WHERE name = ? AND password = ?";
+  db.query(query, [username, password], (err, results) => {
+    if (err) {
+      console.error("Database query error:", err);
+      return res.status(500).json({ error: "Internal server error" });
+    }
 
-    transporter.sendMail(userMailOptions, (err) => {
-      if (err) console.error('Error sending user email:', err);
-    });
+    if (results.length > 0) {
+      /* Store user data in the session
+      req.session.user = {
+        id: results[0].id,
+        username: results[0].username,
+      };**/
 
-    res.status(201).send('User data saved and emails sent');
+      return res.status(200).json({ message: "Login successful", /*user: req.session.user*/ });
+    } else {
+      return res.status(401).json({ error: "Invalid username or password" });
+    }
+  });
+});
+
+// Endpoint to fetch all users
+app.get("/api/users", (req, res) => {
+  const fetchQuery = `SELECT id, name, email, password, created_at FROM users`;
+
+  db.query(fetchQuery, (err, results) => {
+    if (err) {
+      console.error("Error fetching users:", err);
+      return res.status(500).json({ error: "Failed to fetch users" });
+    }
+
+    res.status(200).json(results);
+  });
+});
+
+
+app.post('/api/contact', (req, res) => {
+  const { name, email, phone, message } = req.body;
+  // Validate input data
+  if (!name || !email || !phone || !message) {
+    return res.status(400).send('All fields are required');
+  }
+  // Prepare the SQL query to insert the data into the contact_data table
+  const query = `
+    INSERT INTO contact_data (name, email, phone, message) 
+    VALUES (?, ?, ?, ?)
+  `;
+  // Execute the query
+  db.query(query, [name, email, phone, message], (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('Database error');
+    }
+    // Send Confirmation Email
+    sendWelcomeEmail(name.trim().split(' ')[0],email);
+    // Send a success response
+    res.status(201).send('Contact data submitted successfully');
   });
 });
 
@@ -191,6 +235,97 @@ async function sendWelcomeEmail(clientName, clientEmail) {
   }
 }
 
+async function sendWorkApplicationConfirmationEmail(clientName, clientEmail) {
+  const mailOptions = {
+      from: `"Elixir Salon & Spa" <${process.env.EMAIL_USER}>`, // Sender email
+      to: clientEmail, // Recipient email
+      subject: 'Job Application Receipt',
+      html: `
+         <body style="font-family: Arial, sans-serif; color: #fff; padding: 20px">
+    <div style="
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+    ">
+        <div style="
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 100px;
+      background-color: rgba(21, 39, 13, 0.8);
+      border-radius: 10px;
+    ">
+            <p style="line-height: 1.5;">
+                Hello <span style="font-weight: bold;">${clientName},</span>,
+            </p>
+            <p style="line-height: 1.5;">
+                Thank you for your interest in employment at <a href="https://elixirsalonandspa.co.ke" style="color: #FFD700;
+            font-weight: bold;
+            font-size: large;
+            transition: color 0.3s ease;
+            text-decoration: none;
+            text-align: justify;">Elixir Salon & Spa!</a>
+                We are excited to meet you.
+                <br>
+                <br>
+                Our team will review your application and if there is a strong alignment 
+                with the position, we will schedule a call to get to know you better and to 
+                answer any questions you have about <a href="https://elixirsalonandspa.co.ke" style="color: #FFD700;
+                font-weight: bold;
+                font-size: large;
+                transition: color 0.3s ease;
+                text-decoration: none;">Elixir Salon & Spa</a> and the role. <br>
+                <p style="line-height: 1.5; text-align: justify;">
+                    We know that putting together a resume and application is a lot of work. We will give each a thoughtful consideration.
+                    We appreciate your patience through this process.
+                </p>
+            </p style="line-height: 1.5;">
+            <p style="line-height: 1.5;">Should you have any questions, do not hesitate to contact us!</p>
+            <p style="line-height: 1.5;">Warm regards,<br /></p>
+            <p style="line-height: 1.5;">
+                <br />
+                <a href="https://elixirsalonandspa.co.ke" style="color: #FFD700;
+        text-decoration: none; font-weight: bolder;">The Elixir Salon & Spa Team</a><br />
+                Commodore Office Suites,<br>
+                Kindaruma Road, Nairobi County <br>
+                Phone: 0717 733 000 / 07 77 733 004 <br>
+                Email: info@elixirsalonandspa.co.ke
+            </p>
+            <footer style="text-align: center;
+        margin-top: 30px;
+        color: #fff;
+        font-size: 14px;">
+                <p style="font-size: x-large; font-weight: bolder; color: #6d6d6d">
+                    Powered By <br /><a href="https://elixirsalonandspa.co.ke" style="color: #FFD700;
+                font-weight: bold;
+                text-decoration: none;
+                font-size: large;
+                transition: color 0.3s ease;
+                text-decoration: none;
+                line-height: 5em;
+                margin-bottom: -50px;">Elixir Salon & Spa</a>
+                </p>
+                <p style="line-height: 1.5;">
+                    <a href="https://adconnect.co.ke/unsubscribe" style="color: #f65730;
+                text-decoration: none;
+                margin-top: -10px;"></a>
+                </p>
+            </footer>
+        </div>
+    </div>
+</body>
+    `,
+  };
+
+  try {
+      await transporter.sendMail(mailOptions);
+      console.log('Welcome email sent successfully!');
+  } catch (error) {
+      console.error('Error sending welcome email:', error);
+      throw error;
+  }
+}
+
 // Send a welcome email to the client
 app.post('/api/send-contact-email', async (req, res) => {
   const { clientName, clientEmail } = req.body;
@@ -203,6 +338,26 @@ app.post('/api/send-contact-email', async (req, res) => {
   try {
       console.log(req.body);
       await sendWelcomeEmail(clientName, clientEmail);
+      console.log('Welcome email sent successfully');
+      res.status(200).json({ message: 'Welcome email sent successfully' });
+  } catch (error) {
+      console.error('Failed to send email:', error);
+      res.status(500).json({ error: 'Failed to send email' });
+  }
+});
+
+// Send a welcome email to the client
+app.post('/api/application-email', async (req, res) => {
+  const { clientName, clientEmail } = req.body;
+
+  if (!clientName || !clientEmail) {
+      console.log('Client name and email are required');
+      return res.status(400).json({ error: 'Client name and email are required' });
+  }
+
+  try {
+      console.log(req.body);
+      await sendWorkApplicationConfirmationEmail(clientName, clientEmail);
       console.log('Welcome email sent successfully');
       res.status(200).json({ message: 'Welcome email sent successfully' });
   } catch (error) {
@@ -254,7 +409,10 @@ app.post('/api/applications', upload.single('cv'), (req, res) => {
   const query = 'INSERT INTO applications (name, email, phone, cv) VALUES (?, ?, ?, ?)';
   db.query(query, [name, email, phone, cvPath], (err) => {
       if (err) return res.status(500).send(err);
-      res.status(200).send('Application submitted successfully!');
+
+      // Send Confirmation Email
+      sendWorkApplicationConfirmationEmail(name.trim().split(' ')[0],email);
+      res.status(200).send('Application submitted and Confirmation Sent successfully!');
   });
 });
 

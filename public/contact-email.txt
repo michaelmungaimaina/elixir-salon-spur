@@ -1,0 +1,15 @@
+Hi [Client’s First Name],
+
+Thank you for contacting us at Elixir Salon & Spa! 🌟
+
+We’ve received your message and will get back to you within [timeframe, e.g., 24-48 hours]. Your inquiries and feedback are important to us, and we’re here to assist you.
+
+In the meantime, feel free to explore our:
+💇‍♀️ Services: [Link to your services page]
+📅 Book an Appointment: https://bit.ly/elixirsalonandspaBooking
+📞 Call Us: 0717 733 000
+
+We’re excited to connect with you soon!
+
+Warm regards,
+The Elixir Salon & Spa Team ✨

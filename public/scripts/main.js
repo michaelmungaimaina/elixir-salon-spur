@@ -1,4 +1,7 @@
 console.log('main.js - Loaded');
+let DOMAIN_NAME= 'http://127.0.0.1:3000/';
+let API_PATH= 'api/';
+const DOMAIN = `${DOMAIN_NAME}${API_PATH}`;
 
 // Component initialization
 const serviceList = document.getElementById('serviceList');
@@ -203,27 +206,27 @@ async function submitApplication() {
         handleErrorMessage(errorMessages, errorMessageContainer);
         return true;
     }
-    if (cv === null) {
+    if (!(cv.size > 0)) {
         document.getElementById('cv').focus();
-        errorMessages = 'Phone Number is required!';
+        errorMessages = 'Please select a file!';
         handleErrorMessage(errorMessages, errorMessageContainer);
         return true;
     }
 
 
     const formData = new FormData();
-    formData.append('name', document.getElementById('name').value);
+    formData.append('name', document.getElementById('name').value.toUpperCase());
     formData.append('email', document.getElementById('email').value);
     formData.append('phone', document.getElementById('phoneNumber').value);
     formData.append('cv', document.getElementById('cv').files[0]);
 
-    const response = await fetch('/api/applications', {
+    const response = await fetch(`${DOMAIN}applications`, {
         method: 'POST',
         body: formData,
     });
 
     if (response.ok) {
-        alert('Application submitted successfully!');
+        alert('Application submitted successfully! \nPlease Check Your Email for Verification.');
         closeApplicationForm();
     } else {
         alert('Failed to submit application.');
@@ -351,7 +354,7 @@ function animateAddition() {
                     const topPosition = serviceDetail.offsetTop - offset;
                     window.scrollTo({ top: topPosition, behavior: 'smooth' });
                 } else {
-                    alert(`Service details for ${service} not found.\n Please Click the button Below for more Details.`);
+                    alert(`Service details for ${service} are in the booking section.\n Please Click thebooking  button for more Details.`);
                 }
             });
             banner.innerHTML = `<p>${service}</p>`;
@@ -416,7 +419,7 @@ const appContainer = document.querySelector('#sectionTestimonial .testimonial-co
 
 // Fetch ratings when the page loads
 async function fetchRatings() {
-    const response = await fetch('/ratings');
+    const response = await fetch(`${DOMAIN}ratings`);
     const ratings = await response.json();
     appContainer.innerHTML = ratings.map(rating => `
         <div class="v-layout card-rating">
@@ -434,7 +437,7 @@ async function fetchRatings() {
 
 // Add a new rating
 async function addRating(rating) {
-    await fetch('/ratings', {
+    await fetch(`${DOMAIN}ratings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(rating)
@@ -613,5 +616,82 @@ function balanceSectionHeights() {
         videoSection.style.minHeight = `${photoSectionHeight}px`;
     } else {
         photoSection.style.minHeight = `${videoSectionHeight}px`;
+    }
+}
+
+async function submitContactUsData(){
+    const name = document.getElementById('fullName').value;
+    const email = document.getElementById('clientEmail').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+    const errorMessageContainer = document.getElementById('message');
+
+    if (name.trim() === '') {
+        document.getElementById('fullName').focus();
+        errorMessages = 'Full Name is required!';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+    if (!twoWordsPattern.test(name.trim())) {
+        document.getElementById('name').focus();
+        errorMessages = 'Your Name is too Short!';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+    if (email.trim() === '') {
+        document.getElementById('clientEmail').focus();
+        errorMessages = 'Email is required!';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+    if (!emailPattern.test(email)) {
+        document.getElementById('clientEmail').focus();
+        errorMessages = 'Enter a valid email';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+    if (phone.trim() === '') {
+        document.getElementById('phone').focus();
+        errorMessages = 'Phone number is required!';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+    if (!phonePattern.test(phone)) {
+        document.getElementById('phone').focus();
+        errorMessages = 'Enter a valid phone number';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+    if (message.trim() === '') {
+        document.getElementById('message').focus();
+        errorMessages = 'Tell us something!';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+    if (!twoWordsPattern.test(message.trim())) {
+        document.getElementById('message').focus();
+        errorMessages = 'Your Message is too Short!';
+        handleErrorMessage(errorMessages, errorMessageContainer);
+        return true;
+    }
+
+    const response = await fetch(`${DOMAIN}contact`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone,
+            message: message
+        }),
+    });
+
+    if (response.ok) {
+        alert('Application submitted successfully! \nPlease Check Your Email for Verification.');
+        closeApplicationForm();
+    } else {
+        alert('Failed to submit application.');
     }
 }

@@ -1,0 +1,363 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    background-color: #1A5B38;
+    overflow: hidden;
+}
+
+.hidden {
+    width: 100%;
+    height: 100%;
+}
+
+.admin-vavbar {
+    position: fixed;
+    display: none;
+    flex-direction: row;
+    background-color: #1A5B38;
+    width: 100%;
+    height: 65px;
+    z-index: 10px;
+}
+
+.right-nav-section {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    top: 0;
+}
+
+h4 {
+    height: 40px;
+    justify-self: center;
+    color: #FDFACD;
+    font-weight: bold;
+    margin-left: 200px;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: auto;
+}
+
+#login-page {
+    background-color: #4F4B37;
+    flex-direction: column;
+    display: flex;
+}
+
+#dashboard {
+    width: 100%;
+    height: 100%;
+    background-color: #292820;
+    z-index: 10;
+    align-items: start;
+    padding: 70px 5px;
+    height: 100%;
+    overflow-x: hidden;
+    display: none;
+    flex-direction: row;
+}
+
+.sidebar {
+    margin-top: 30px;
+    width: 8.3%;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    left: 0%;
+    margin-left: -10px;
+    position: fixed;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+}
+
+.sidebar ul li {
+    font-weight: bold;
+    margin: 10px 0;
+    cursor: pointer;
+    margin: 20px 0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.sidebar ul li:hover {
+    color: darkgoldenrod;
+}
+.sidebar ul li::before{
+    color: darkgoldenrod;
+}
+
+.content {
+    height: 0%;
+    width: 85%;
+    padding: 20px;
+    height: 500px;
+}
+
+.my-content{
+    margin-left: 170px;
+    margin-top: 20px;
+    height: 530px;
+}
+
+#contact{
+    width: 1500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 450px;
+    /*height: 400px;*/
+}
+
+#ratings{
+    width: 1500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 450px;
+}
+#applications{
+    width: 1500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 450px;
+}
+#media{
+    width: 1500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 450px;
+}
+
+.content-section {
+    display: block;
+    width: 80%;         /**    */
+    height: 0%;
+    margin-top: 40px;
+}
+
+.content-section h2 {
+    width: fit-content;
+    margin-top: 0;
+    font-size: 30px;
+    margin-left: 50px;
+    color: #FDFACD;
+}
+
+.content-section:not(.hidden) {
+    display: block;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 276px;
+    background-color: #292820;
+    border-radius: 15px;
+    padding: 0 20px 15px;
+}
+
+form .login {
+    font-size: 45px;
+    margin-left: 70px;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+.header-bar {
+    background-color: #4F4B37;
+    border-radius: 10px 10px 0 0px;
+    width: fit-content;
+    height: 55px;
+    padding: 0 15px;
+    margin-top: -60px;
+}
+
+
+h6 {
+    color: #FDFACD;
+    font-size: 15px;
+    height: 0px;
+    line-height: 0.1px;
+    margin-top: 26px;
+}
+
+.contact-texts {
+    display: flex;
+    background-color: #2e2b1cb9;
+    border-bottom: 0.01px solid #FDFACD;
+    align-items: start;
+    justify-items: center;
+    height: 40px;
+}
+
+p {
+    font-size: 13px;
+    color: #fff;
+}
+.dat-tile{
+    width: 120px;
+    margin: 27px 0px 0px 0px;
+}
+.name-tile{
+    width: 120px;
+    margin: 27px 0px 0px 0px;
+}
+.email-tile{
+    width: 120px;
+    margin: 27px 0px 0px 60px;
+}
+.type-tile{
+    width: 50px;
+    margin: 27px 0px 0px 50px;
+}
+.phone-tile{
+    width: 120px;
+    margin: 27px 0px 0px 100px;
+}
+.message-tile{
+    width: 120px;
+    margin: 27px 0px 0px 0px;
+}
+.comment-tile{
+    width: 120px;
+    margin: 27px 0px 0px 30px;
+}
+.action{
+    width: 120px;
+    margin: 27px 74px 0px 100px;
+}
+
+.dat {
+    width: 120px;
+    margin: 13px 0px 0px 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 5px;
+}
+
+.name {
+    width: 180px;
+    margin: 13px 0px 0px 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.phone {
+    width: 80px;
+    margin: 13px 15px 0px 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.email {
+    width: 210px;
+    margin: 13px 20px 0px 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.type {
+    width: 60px;
+    margin: 13px 20px 0px 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message {
+    width: 215px;
+    margin: 13px 15px 0px 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.button {
+    width: fit-content;
+    padding-left: 10px;
+    padding: 3px 20px;
+    margin: 10px 20px 0px 0px;
+    border: 1px solid #00d061;
+    white-space: nowrap;
+    border-radius: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 2;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: goldenrod;
+}
+
+.red {
+    border: 1px solid #ff0000;
+}
+
+.yellow {
+    border: 1px solid #e5ff00;
+}
+.orange {
+    border: 1px solid #e5ff00;
+}
+
+#popup .popup-content{
+    margin: 80px;
+    background-color: #4F4B37;
+    width: 500px;
+    padding: 25px;
+    max-height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 15px;
+    border: 1.5px solid goldenrod;
+}
+#popup .popup-content p{
+    max-height: 700px;
+    text-align: justify;
+    width: 100%;
+}
