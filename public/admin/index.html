@@ -74,27 +74,27 @@
         </div>
         <div class="v-layout my-content">
             <div id="contact" class="content-section">
+                <div id="contact-bar" class="h-layout header-bar contact-content" style="position: fixed;">
+                    <h6 class="dat-tile">DATE</h6>
+                    <h6 class="name-tile">NAME</h6>
+                    <h6 class="email-tile">EMAIL</h6>
+                    <h6 class="phone-tile">PHONE</h6>
+                    <h6 class="message-tile">MASSAGE</h6>
+                    <h6 class="action">ACTION</h6>
+                </div>
                 <div class="v-layout contact-content" id="data-list" style="overflow-y: scroll; overflow-x: hidden;">
-                    <div id="contact-bar" class="h-layout header-bar" style="position: fixed;">
-                        <h6 class="dat-tile">DATE</h6>
-                        <h6 class="name-tile">NAME</h6>
-                        <h6 class="email-tile">EMAIL</h6>
-                        <h6 class="phone-tile">PHONE</h6>
-                        <h6 class="message-tile">MASSAGE</h6>
-                        <h6 class="action">ACTION</h6>
-                    </div>
                 </div>
             </div>
             <div id="ratings" class="content-section">
+                <div id="rating-bar" class="h-layout header-bar contact-content" style="position: fixed;">
+                    <h6 class="dat-tile">DATE</h6>
+                    <h6 class="name-tile">NAME</h6>
+                    <h6 class="type-tile">TYPE</h6>
+                    <h6 class="comment-tile">COMMENT</h6>
+                    <h6 class="phone-tile">STAR</h6>
+                    <h6 class="action">ACTION</h6>
+                </div>
                 <div class="v-layout contact-content" id="rating-list" style="overflow-y: scroll; overflow-x: hidden;">
-                    <div id="rating-bar" class="h-layout header-bar" style="position: fixed;">
-                        <h6 class="dat-tile">DATE</h6>
-                        <h6 class="name-tile">NAME</h6>
-                        <h6 class="type-tile">TYPE</h6>
-                        <h6 class="comment-tile">COMMENT</h6>
-                        <h6 class="phone-tile">STAR</h6>
-                        <h6 class="action">ACTION</h6>
-                    </div>
                     <div class="h-layout contact-texts">
                         <p class="dat">2025-01-10 UTC</p>
                         <p class="name">MICHAEL MAINA</p>
@@ -109,16 +109,16 @@
             </div>
 
             <div id="applications" class="content-section">
+                <div id="application-bar" class="h-layout header-bar contact-content" style="position: fixed;">
+                    <h6 class="dat-tile">DATE</h6>
+                    <h6 class="name-tile">NAME</h6>
+                    <h6 class="email-tile">EMAIL</h6>
+                    <h6 class="phone-tile">PHONE</h6>
+                    <h6 class="message-tile">DOCUMENT</h6>
+                    <h6 class="action">ACTION</h6>
+                </div>
                 <div class="v-layout contact-content" id="application-list"
                     style="overflow-y: scroll; overflow-x: hidden;">
-                    <div id="application-bar" class="h-layout header-bar" style="position: fixed;">
-                        <h6 class="dat-tile">DATE</h6>
-                        <h6 class="name-tile">NAME</h6>
-                        <h6 class="email-tile">EMAIL</h6>
-                        <h6 class="phone-tile">PHONE</h6>
-                        <h6 class="message-tile">DOCUMENT</h6>
-                        <h6 class="action">ACTION</h6>
-                    </div>
                     <div class="h-layout contact-texts">
                         <p class="dat">2025-01-10 UTC</p>
                         <p class="name">MICHAEL MAINA</p>
@@ -156,6 +156,17 @@
             <button id="submitFeedback" class="flickering-button" onclick="submitFeedback()">SUBMIT</button>
         </div>
     </section>
+
+    <div id="application-list"></div>
+
+<section id="viewDoc" class="background-tint-gold" style="display: none;">
+    <div id="btnClosePrivacyPolicy" onclick="closePrivacyPolicy()" class="btn_hover1" style="position: fixed;">
+        <i class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="appointment-layout outer-container">
+        <!-- Document content will be inserted here -->
+    </div>
+</section>
 
 
     <script src="../scripts/admin.js"></script>

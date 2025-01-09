@@ -393,6 +393,20 @@ app.get('/api/ratings', (req, res) => {
     });
 });
 
+// Delete a specific rating by ID
+app.delete('/api/ratings/:id', (req, res) => {
+  const ratingId = req.params.id;
+  db.query('DELETE FROM ratings WHERE id = ?', [ratingId], (err, result) => {
+      if (err) {
+          console.error(err);
+          return res.status(500).send('Error deleting rating');
+      }
+      if (result.affectedRows === 0) {
+          return res.status(404).send('Rating not found');
+      }
+      res.status(200).send('Rating deleted successfully');
+  });
+});
 // Multer Configuration for File Upload
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, 'uploads/'),
@@ -419,10 +433,75 @@ app.post('/api/applications', upload.single('cv'), (req, res) => {
 app.get('/api/applications', (req, res) => {
   const query = 'SELECT * FROM applications';
   db.query(query, (err, results) => {
-      if (err) return res.status(500).send(err);
-      res.status(200).json(results);
+    if (err) return res.status(500).send(err);
+    res.status(200).json(results);
   });
 });
+
+app.delete('/api/applications/:id', (req, res) => {
+  const { id } = req.params;
+
+  // Fetch the CV path to delete the file from storage
+  const selectQuery = 'SELECT cv FROM applications WHERE id = ?';
+  db.query(selectQuery, [id], (err, results) => {
+    if (err) return res.status(500).send(err);
+    if (results.length === 0) return res.status(404).send('Application not found');
+
+    const cvPath = results[0].cv;
+
+    // Delete the application from the database
+    const deleteQuery = 'DELETE FROM applications WHERE id = ?';
+    db.query(deleteQuery, [id], (err) => {
+      if (err) return res.status(500).send(err);
+
+      // Delete the file from storage
+      fs.unlink(cvPath, (err) => {
+        if (err) console.error(`Error deleting file: ${cvPath}`, err);
+      });
+
+      res.status(200).send('Application deleted successfully');
+    });
+  });
+});
+
+
+app.put('/api/applications/:id', upload.single('cv'), (req, res) => {
+  const { id } = req.params;
+  const { name, email, phone } = req.body;
+  const newCvPath = req.file ? req.file.path : null;
+
+  // Fetch the current CV path to delete if a new CV is uploaded
+  const selectQuery = 'SELECT cv FROM applications WHERE id = ?';
+  db.query(selectQuery, [id], (err, results) => {
+    if (err) return res.status(500).send(err);
+    if (results.length === 0) return res.status(404).send('Application not found');
+
+    const oldCvPath = results[0].cv;
+
+    // Update the database
+    const updateQuery = newCvPath
+      ? 'UPDATE applications SET name = ?, email = ?, phone = ?, cv = ? WHERE id = ?'
+      : 'UPDATE applications SET name = ?, email = ?, phone = ? WHERE id = ?';
+
+    const queryParams = newCvPath
+      ? [name, email, phone, newCvPath, id]
+      : [name, email, phone, id];
+
+    db.query(updateQuery, queryParams, (err) => {
+      if (err) return res.status(500).send(err);
+
+      // Delete the old CV if a new one is uploaded
+      if (newCvPath) {
+        fs.unlink(oldCvPath, (err) => {
+          if (err) console.error(`Error deleting file: ${oldCvPath}`, err);
+        });
+      }
+
+      res.status(200).send('Application updated successfully');
+    });
+  });
+});
+
 
 // Start Server
 app.listen(port, () => {

@@ -17,6 +17,10 @@ const applicationPage = document.getElementById('applications');
 
 let feedbackIndex = 0;
 
+document.addEventListener("DOMContentLoaded", () => {
+    getRatings(); // Fetch and display ratings when the page loads
+});
+
 async function handleLogin(event) {
     event.preventDefault();
     const username = document.getElementById('username').value;
@@ -152,41 +156,39 @@ const mockData = [
     { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
     { date: '2025-01-12 UTC', name: 'Sam Wilson', email: 'sam@example.com', phone: '0799876543', message: 'Checking in, this is Sam.' }
 ];
-let ratingsList = [];
+
+let ratingsList = []; // To hold fetched data
+
 async function getRatings() {
     try {
         const response = await fetch(`${DOMAIN}ratings`);
-        ratingsList = await response.json(); // Store the fetched data in ratingsList
-        console.log("Fetched ratings:", ratingsList); // Check the data
-        populateRatings(); // Populate the data once fetched
+        ratingsList = await response.json(); // Parse the response as JSON
+        console.log("Fetched ratings:", ratingsList); // Debugging
+        populateRatings(); // Populate data after fetching
     } catch (error) {
         console.error("Error fetching ratings:", error);
     }
 }
-/*const ratingsList = [
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '3' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'CLIENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '4' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'AGENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '1' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'CLIENT', comment: 'The quick brown fox jumped over the lazy dogs.', star: '5' },
-    { date: '2025-01-10 UTC', name: 'Michael Maina', type: 'CUSTOMER', comment: 'The quick brown fox jumped over the lazy dogs.', star: '2' }
-];*/
 
-const applicationList = [
+let applicationList = [];
+
+async function fetchApplications() {
+    try {
+      const response = await fetch(`${DOMAIN}applications`);
+      applicationList = await response.json();
+      console.log("Fetched Applications:", applicationList); 
+      populateApplications();
+    } catch (error) {
+      console.error('Error fetching applications:', error);
+    }
+  }
+  
+
+
+
+/*const applicationList = [
     { date: '2025-01-10 UTC', name: 'Michael Maina', email: 'CLIENT', phone: '0799292048', document: 'The quick brown fox jumped over the lazy dogs.' }
-];
+];*/
 
 function populateData() {
     const dataList = document.getElementById('data-list');
@@ -211,11 +213,16 @@ populateData();
 
 function populateRatings() {
     const dataList = document.getElementById('rating-list');
-    dataList.innerHTML = ''; // Clear the existing content
+    dataList.innerHTML = ''; // Clear existing content
+
+    if (ratingsList.length === 0) {
+        dataList.innerHTML = '<p>No ratings available.</p>'; // Display a fallback message
+        return;
+    }
 
     ratingsList.forEach((item, index) => {
         const listItem = document.createElement('div');
-        listItem.classList.add('h-layout', 'contact-texts');
+        listItem.classList.add('h-layout', 'contact-texts'); // Add required classes
         listItem.innerHTML = `
             <p class="dat">${item.created_at || "N/A"}</p>
             <p class="name">${item.name || "N/A"}</p>
@@ -226,7 +233,7 @@ function populateRatings() {
             <p class="button orange" onclick="viewComment(${index})">VIEW</p>
             <p class="button red" onclick="deleteRating(${index})">DELETE</p>
         `;
-        dataList.appendChild(listItem);
+        dataList.appendChild(listItem); // Append the created element to the list
     });
 }
 
@@ -238,24 +245,28 @@ function viewRating(index) {
 
 function populateApplications() {
     const dataList = document.getElementById('application-list');
-    //dataList.innerHTML = '';
+    dataList.innerHTML = ''; // Clear existing content
+  
     applicationList.forEach((item, index) => {
-        const listItem = document.createElement('div');
-        listItem.classList.add('h-layout', 'contact-texts');
-        listItem.innerHTML = `
-            <p class="dat">${item.date}</p>
-            <p class="name">${item.name}</p>
-            <p class="email">${item.email}</p>
-            <p class="phone">${item.phone}</p>
-            <p class="message">${item.document}</p>
-            <p class="button" onclick="viewApplicationDoc(${index})">VIEW</p>
-            <p class="button red" onclick="deleteApplication(${index})">DELETE</p>
-        `;
-        dataList.appendChild(listItem);
+      const listItem = document.createElement('div');
+      listItem.classList.add('h-layout', 'contact-texts');
+      listItem.innerHTML = `
+        <p class="dat">${item.date || 'N/A'}</p>
+        <p class="name">${item.name || 'N/A'}</p>
+        <p class="email">${item.email || 'N/A'}</p>
+        <p class="phone">${item.phone || 'N/A'}</p>
+        <p class="message">${item.cv.split('/').pop() || 'N/A'}</p>
+        <p class="button" onclick="viewApplicationDoc('${item.cv}')">VIEW</p>
+        <p class="button red" onclick="deleteApplication(${index}, ${item.id})">DELETE</p>
+      `;
+      dataList.appendChild(listItem);
     });
-}
+  }
+  
+
 populateRatings();
 populateApplications();
+
 
 
 function viewMessage(index) {
@@ -279,12 +290,21 @@ function viewRating(index) {
     document.getElementById('input-popup').style.height = '100%';
 }
 
-function viewApplicationDoc(index) {
-    const message = applicationList[index].message;
-    document.getElementById('input-message').textContent = message;
-    document.getElementById('input-popup').style.display = 'flex';
-    document.getElementById('input-popup').style.height = '100%';
-}
+function viewApplicationDoc(cvPath) {
+    const viewDocSection = document.getElementById('viewDoc');
+    const docContainer = viewDocSection.querySelector('.appointment-layout.outer-container');
+  
+    docContainer.innerHTML = `
+      <iframe src="${DOMAIN}${cvPath}" width="100%" height="500px" style="border: none;"></iframe>
+    `;
+    viewDocSection.style.height = '100%'; // Show the popup
+  }
+  
+  function closePrivacyPolicy() {
+    const viewDocSection = document.getElementById('viewDoc');
+    viewDocSection.style.height = '100%'; // Hide the popup
+  }
+  
 
 function submitFeedback() {
     // feedback update
@@ -305,12 +325,48 @@ function deleteItem(index) {
     mockData.splice(index, 1);
     populateData();
 }
-function deleteRating(index) {
-    ratingsList.splice(index, 1);
-    populateRatings();
-}
 
-function deleteApplication(index) {
-    applicationList.splice(index, 1);
-    populateApplications();
+async function deleteApplication(index, id) {
+    if (confirm('Are you sure you want to delete this application?')) {
+      try {
+        const response = await fetch(`${DOMAIN}applications/${id}`, { method: 'DELETE' });
+        if (!response.ok) throw new Error('Failed to delete application');
+        alert('Application deleted successfully');
+        applicationList.splice(index, 1);
+        populateApplications();
+      } catch (error) {
+        console.error('Error deleting application:', error);
+        alert('Failed to delete the application. Please try again.');
+      }
+    }
+  }
+  
+
+
+async function deleteRating(index) {
+    const rating = ratingsList[index]; // Get the rating to be deleted
+    if (!rating || !rating.id) {
+        alert("Invalid rating selected for deletion.");
+        return;
+    }
+
+    if (confirm("Are you sure you want to delete this rating?")) {
+        try {
+            const response = await fetch(`${DOMAIN}ratings/${rating.id}`, {
+                method: 'DELETE',
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Failed to delete rating: ${errorText}`);
+            }
+
+            alert("Rating deleted successfully.");
+            ratingsList.splice(index, 1); // Remove the item from the local array
+            populateRatings(); // Refresh the displayed list
+        } catch (error) {
+            console.error("Error deleting rating:", error);
+            alert("Failed to delete the rating. Please try again.");
+        }
+    }
 }
