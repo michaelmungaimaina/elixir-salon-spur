@@ -19,6 +19,8 @@ let feedbackIndex = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
     getRatings(); // Fetch and display ratings when the page loads
+    fetchApplications();
+    populateContacts();
 });
 
 async function handleLogin(event) {
@@ -138,25 +140,6 @@ async function addUser(name, email, password) {
     }
 }
 
-const mockData = [
-    { date: '2025-01-10 UTC', name: 'Michael Maina', email: 'pantalemonmongah@gmail.com', phone: '0799292048', message: 'The quick brown fox jumped over the lazy dogs.' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from from disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed disappointed Jane!' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
-    { date: '2025-01-11 UTC', name: 'Jane Smith', email: 'jane@example.com', phone: '0799234567', message: 'Hello from Jane!' },
-    { date: '2025-01-12 UTC', name: 'Sam Wilson', email: 'sam@example.com', phone: '0799876543', message: 'Checking in, this is Sam.' }
-];
-
 let ratingsList = []; // To hold fetched data
 
 async function getRatings() {
@@ -183,6 +166,17 @@ async function fetchApplications() {
     }
   }
   
+  let contactList = [];
+
+async function fetchContacts() {
+  try {
+    const response = await fetch(`${DOMAIN}contact`);
+    contactList = await response.json();
+    populateContacts();
+  } catch (error) {
+    console.error('Error fetching contact messages:', error);
+  }
+}
 
 
 
@@ -190,26 +184,75 @@ async function fetchApplications() {
     { date: '2025-01-10 UTC', name: 'Michael Maina', email: 'CLIENT', phone: '0799292048', document: 'The quick brown fox jumped over the lazy dogs.' }
 ];*/
 
-function populateData() {
+function populateContacts() {
     const dataList = document.getElementById('data-list');
-    //dataList.innerHTML = '';
-    mockData.forEach((item, index) => {
-        const listItem = document.createElement('div');
-        listItem.classList.add('h-layout', 'contact-texts');
-        listItem.innerHTML = `
-            <p class="dat">${item.date}</p>
-            <p class="name">${item.name}</p>
-            <p class="email">${item.email}</p>
-            <p class="phone">${item.phone}</p>
-            <p class="message">${item.message}</p>
-            <p class="button" onclick="viewMessage(${index})">VIEW</p>
-            <p class="button red" onclick="deleteItem(${index})">DELETE</p>
-        `;
-        dataList.appendChild(listItem);
+    dataList.innerHTML = ''; // Clear existing content
+  
+    if (contactList.length === 0) {
+      dataList.innerHTML = '<p>No contact messages available.</p>';
+      return;
+    }
+  
+    contactList.forEach((item, index) => {
+      const listItem = document.createElement('div');
+      listItem.classList.add('h-layout', 'contact-texts');
+      listItem.innerHTML = `
+        <p class="dat">${item.date}</p>
+        <p class="name">${item.name}</p>
+        <p class="email">${item.email}</p>
+        <p class="phone">${item.phone}</p>
+        <p class="message">${item.message}</p>
+        <p class="button" onclick="viewMessage(${index})">VIEW</p>
+        <p class="button orange" onclick="editContact(${index})">EDIT</p>
+        <p class="button red" onclick="deleteContact(${index})">DELETE</p>
+      `;
+      dataList.appendChild(listItem);
     });
-}
+  }
 
-populateData();
+  // Edit a contact message
+async function editContact(index) {
+    const contact = contactList[index];
+    const name = prompt('Enter new name:', contact.name);
+    const email = prompt('Enter new email:', contact.email);
+    const phone = prompt('Enter new phone:', contact.phone);
+    const message = prompt('Enter new message:', contact.message);
+  
+    if (name && email && phone && message) {
+      const updatedContact = { name, email, phone, message };
+  
+      try {
+        await fetch(`${DOMAIN}contact/${contact.id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(updatedContact),
+        });
+        fetchContacts(); // Refresh the contact list
+      } catch (error) {
+        console.error('Error updating contact:', error);
+      }
+    }
+  }
+
+  // Delete a contact message
+async function deleteContact(index) {
+    const contact = contactList[index];
+    if (confirm('Are you sure you want to delete this contact message?')) {
+      try {
+        await fetch(`${DOMAIN}contact/${contact.id}`, {
+          method: 'DELETE',
+        });
+        contactList.splice(index, 1); // Remove from the array
+        populateContacts(); // Refresh the list
+      } catch (error) {
+        console.error('Error deleting contact:', error);
+      }
+    }
+  }
+  
+  
 
 function populateRatings() {
     const dataList = document.getElementById('rating-list');
@@ -265,7 +308,7 @@ function populateApplications() {
   
 
 populateRatings();
-populateApplications();
+//populateApplications();
 
 
 
@@ -291,19 +334,24 @@ function viewRating(index) {
 }
 
 function viewApplicationDoc(cvPath) {
-    const viewDocSection = document.getElementById('viewDoc');
-    const docContainer = viewDocSection.querySelector('.appointment-layout.outer-container');
-  
+    
+    const viewDocSection = document.getElementById('doc-popup');
+    const docContainer = viewDocSection.querySelector('.popup-content');
+    const normalizedPath = cvPath.replace(/\\/g, '/');
+    const normalized = normalizedPath.replace(/\{/g, '/');
+    console.log(normalized);
     docContainer.innerHTML = `
-      <iframe src="${DOMAIN}${cvPath}" width="100%" height="500px" style="border: none;"></iframe>
+      <iframe src="${DOMAIN}${normalized}" width="100%" height="500px" style="border: none;"></iframe>
     `;
-    viewDocSection.style.height = '100%'; // Show the popup
+    ///viewDocSection.style.height = '100%'; // Show the popup
+    document.getElementById('doc-popup').style.display = 'flex';
+    document.getElementById('doc-popup').style.height = '100%';
   }
   
-  function closePrivacyPolicy() {
+  /*function closePrivacyPolicy() {
     const viewDocSection = document.getElementById('viewDoc');
     viewDocSection.style.height = '100%'; // Hide the popup
-  }
+  }*/
   
 
 function submitFeedback() {
@@ -319,6 +367,8 @@ function closePopup() {
     document.getElementById('popup').style.display = 'none';
     document.getElementById('input-popup').style.height = '0%';
     document.getElementById('input-popup').style.display = 'none';
+    document.getElementById('doc-popup').style.display = 'none';
+    document.getElementById('doc-popup').style.height = '0%';
 }
 
 function deleteItem(index) {
