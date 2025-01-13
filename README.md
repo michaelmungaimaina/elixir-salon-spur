@@ -25,7 +25,7 @@ This project is built using the following technologies:
 - **Backend:**
   - Node.js
   - Express.js (for creating the server and API routes)
-  - MongoDB (for storing data such as user information and service details)
+  - MySQL DB (for storing data such as user information and service details)
 
 ---
 
